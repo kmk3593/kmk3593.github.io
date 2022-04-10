@@ -1,197 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: python - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li class="is-active"><a href="#" aria-current="page">python</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-04T00:00:00.000Z" title="2022. 4. 4. 오전 9:00:00">2022-04-04</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.228Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">8 minutes read (About 1185 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/04/chapter_5_2/">chapter_5_2</a></h1><div class="content"><h1 id="교차-검증과-그리드-서치"><a href="#교차-검증과-그리드-서치" class="headerlink" title="교차 검증과 그리드 서치"></a>교차 검증과 그리드 서치</h1><ul>
-<li>키워드 : 하이퍼 파라미터</li>
-<li>데이터가 작을 때, 주로 사용</li>
-<li>하이퍼 파라미터<ul>
-<li>max_depth : 3, 정확도가 84%</li>
-</ul>
-</li>
-<li>결론<ul>
-<li>모르면 디폴트만 쓰자!</li>
-<li>가성비 (시간 대비 성능 보장 안됨!)</li>
-</ul>
-</li>
-</ul>
-<h3 id="검증-세트"><a href="#검증-세트" class="headerlink" title="검증 세트"></a>검증 세트</h3><ul>
-<li>테스트 세트(1회성)</li>
-<li>훈련 데이터를 훈련 데이터 + 검증 데이터로 재 분할</li>
-</ul>
-<h3 id="현실"><a href="#현실" class="headerlink" title="현실"></a>현실</h3><ul>
-<li><p>테스트 데이터가 별도로 존재하지 않음!</p>
-</li>
-<li><p>전체 데이터 &#x3D; 훈련 (6) : 검증 (2) : 테스트 (2)</p>
-<ul>
-<li>테스트 데이터는 모르는 데이터로 생각!</li>
-</ul>
-</li>
-<li><p>캐글</p>
-<ul>
-<li>캐글에서는 훈련, 테스트 데이터가 제공된다. 훈련 데이터만 한 번 쪼개서 사용하면 된다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h3><ul>
-<li>사이킷 런 : <a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html</a></li>
-<li>구글링 : 그리드 탐색(서치) vs 랜덤 탐색(서치)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">wine = pd.read_csv(<span class="string">&quot;https://bit.ly/wine_csv_data&quot;</span>)</span><br><span class="line"></span><br><span class="line">data = wine[[<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>]].to_numpy()</span><br><span class="line">target = wine[<span class="string">&#x27;class&#x27;</span>].to_numpy()</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(</span><br><span class="line">    data, target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sub_input, val_input, sub_target, val_target = train_test_split(</span><br><span class="line">    train_input, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="모델-만든-후-평가"><a href="#모델-만든-후-평가" class="headerlink" title="모델 만든 후 평가"></a>모델 만든 후 평가</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line">dt = DecisionTreeClassifier(random_state=<span class="number">42</span>)</span><br><span class="line">dt.fit(sub_input, sub_target)</span><br><span class="line"><span class="built_in">print</span>(dt.score(sub_input, sub_target))</span><br><span class="line"><span class="built_in">print</span>(dt.score(val_input, val_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.9971133028626413
-0.864423076923077
-</code></pre>
-<h3 id="교차-검증"><a href="#교차-검증" class="headerlink" title="교차 검증"></a>교차 검증</h3><ul>
-<li>많이 하면 많이 할수록 좋다.</li>
-<li>교차 검증의 목적 : 좋은 모델이 만들어진다!<ul>
-<li>좋은 모델 !&#x3D; 성능 좋은 모델</li>
-<li>좋은 모델 &#x3D; 과대 적합이 아닌 모델 &#x3D; 모형의 오차가 적은 모델 &#x3D; 안정적인 모델</li>
-</ul>
-</li>
-<li>교재 245p<ul>
-<li>모델 평가 1 : 90%</li>
-<li>모델 평가 2 : 85%</li>
-<li>모델 평가 3 : 80%</li>
-</ul>
-</li>
-<li>단점 : 시간이 오래 걸림</li>
-</ul>
-<h3 id="교차-검증-함수"><a href="#교차-검증-함수" class="headerlink" title="교차 검증 함수"></a>교차 검증 함수</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_validate</span><br><span class="line">scores = cross_validate(dt, train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(scores)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&#123;&#39;fit_time&#39;: array([0.01164412, 0.00772762, 0.00744891, 0.00796771, 0.00716805]), &#39;score_time&#39;: array([0.00128865, 0.00070405, 0.0007143 , 0.00097823, 0.00069904]), &#39;test_score&#39;: array([0.86923077, 0.84615385, 0.87680462, 0.84889317, 0.83541867])&#125;
-</code></pre>
-<ul>
-<li>최종점수 평균 구하기</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.855300214703487
-</code></pre>
-<ul>
-<li>훈련 세트 섞은 후, 10-폴드 교차검증</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> StratifiedKFold</span><br><span class="line">splitter = StratifiedKFold(n_splits = <span class="number">10</span>, shuffle = <span class="literal">True</span>, random_state=<span class="number">42</span>)</span><br><span class="line">scores = cross_validate(dt, train_input, train_target, cv = splitter)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8574181117533719
-</code></pre>
-<h3 id="하이퍼-파라미터-튜닝-꼭-하고-싶다"><a href="#하이퍼-파라미터-튜닝-꼭-하고-싶다" class="headerlink" title="하이퍼 파라미터 튜닝 꼭 하고 싶다!"></a>하이퍼 파라미터 튜닝 꼭 하고 싶다!</h3><ul>
-<li>랜덤 서치 사용하자! <ul>
-<li>그리드 서치보다 편리하다</li>
-</ul>
-</li>
-<li>자동으로 잡아주는 라이브러리들이 등장하기 시작함<ul>
-<li>hyperopt</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span> : [<span class="number">0.0001</span>, <span class="number">0.0002</span>, <span class="number">0.0003</span>, <span class="number">0.0004</span>, <span class="number">0.0005</span>],</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># dt = DecisionTreeClassifier(random_state=42)</span></span><br><span class="line">gs = GridSearchCV(DecisionTreeClassifier(random_state=<span class="number">42</span>), params, n_jobs=-<span class="number">1</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>CPU times: user 83.8 ms, sys: 1.66 ms, total: 85.5 ms
-Wall time: 264 ms
-</code></pre>
-<ul>
-<li>pamas에 2줄을 쓰면 시간이 2배 이상 더 걸린다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span> : [<span class="number">0.0001</span>, <span class="number">0.0002</span>, <span class="number">0.0003</span>, <span class="number">0.0004</span>, <span class="number">0.0005</span>],</span><br><span class="line">    <span class="string">&#x27;max_depth&#x27;</span> : [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># dt = DecisionTreeClassifier(random_state=42)</span></span><br><span class="line">gs = GridSearchCV(DecisionTreeClassifier(random_state=<span class="number">42</span>), params, n_jobs=-<span class="number">1</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>CPU times: user 191 ms, sys: 1.13 ms, total: 192 ms
-Wall time: 674 ms
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span> : [<span class="number">0.0001</span>, <span class="number">0.0002</span>, <span class="number">0.0003</span>, <span class="number">0.0004</span>, <span class="number">0.0005</span>],</span><br><span class="line">    <span class="string">&#x27;max_depth&#x27;</span> : [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># dt = DecisionTreeClassifier(random_state=42)</span></span><br><span class="line">gs = GridSearchCV(DecisionTreeClassifier(random_state=<span class="number">42</span>), params, n_jobs=-<span class="number">1</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br><span class="line"></span><br><span class="line">dt = gs.best_estimator_</span><br><span class="line"><span class="built_in">print</span>(dt)</span><br><span class="line"><span class="built_in">print</span>(dt.score(train_input, train_target))</span><br><span class="line"><span class="built_in">print</span>(gs.best_params_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>DecisionTreeClassifier(max_depth=7, min_impurity_decrease=0.0005,
-                       random_state=42)
-0.8830094285164518
-&#123;&#39;max_depth&#39;: 7, &#39;min_impurity_decrease&#39;: 0.0005&#125;
-CPU times: user 284 ms, sys: 38.7 ms, total: 323 ms
-Wall time: 2.15 s
-</code></pre>
-<ul>
-<li>이 부분에 의해 결과가 (5x5&#x3D;)25개 출력된다.<ul>
-<li>‘min_impurity_decrease’ : [0.0001, 0.0002, 0.0003, 0.0004, 0.0005]</li>
-<li>‘max_depth’ : [3, 4, 5, 6, 7]</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gs.cv_results_[<span class="string">&#x27;mean_test_score&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[0.84125583 0.84125583 0.84125583 0.84125583 0.84125583 0.85337806
- 0.85337806 0.85337806 0.85337806 0.85318557 0.85780355 0.85799604
- 0.85857352 0.85857352 0.85838102 0.85645721 0.85799678 0.85876675
- 0.85972866 0.86088306 0.85607093 0.85761031 0.85799511 0.85991893
- 0.86280466]
-</code></pre>
-<h3 id="랜덤-서치"><a href="#랜덤-서치" class="headerlink" title="랜덤 서치"></a>랜덤 서치</h3><ul>
-<li>p252. 매개변수 값의목록을 전달하는 것이 아니라 매개변수를 샘플링할 수 있도록 확률 분포 객체를 전달.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> uniform, randint</span><br><span class="line">rgen = randint(<span class="number">0</span>, <span class="number">10</span>)</span><br><span class="line">rgen.rvs(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>array([7, 9, 7, 4, 2, 0, 4, 8, 6, 3])
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.unique(rgen.rvs(<span class="number">1000</span>), return_counts = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
- array([103,  90,  88, 110,  84, 115, 105, 102, 104,  99]))
-</code></pre>
-<ul>
-<li>254p</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> RandomizedSearchCV</span><br><span class="line"></span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span> : uniform(<span class="number">0.0001</span>, <span class="number">0.001</span>),</span><br><span class="line">    <span class="string">&#x27;max_depth&#x27;</span> : randint(<span class="number">20</span>,<span class="number">50</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gs = RandomizedSearchCV(DecisionTreeClassifier(random_state=<span class="number">42</span>),</span><br><span class="line">                        params, n_iter = <span class="number">100</span>, n_jobs = -<span class="number">1</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line">gs.fit(train_input, train_target)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>RandomizedSearchCV(estimator=DecisionTreeClassifier(random_state=42),
-                   n_iter=100, n_jobs=-1,
-                   param_distributions=&#123;&#39;max_depth&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7fa6910bdd90&gt;,
-                                        &#39;min_impurity_decrease&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7fa6907f3810&gt;&#125;,
-                   random_state=42)
-</code></pre>
-<ul>
-<li>위 parmas에 정의된 매개변수 범위에서 총 100번(n_iter 매개변수)을 샘플링하여 교차 검증을 수행하고 최적의 매개변수 조합을 찾는다.</li>
-<li>앞서 그리드 서치보다 훨씬 교차 검증 수를 줄이면서 넓은 영역을 효과적으로 탐색할 수 있다.</li>
-<li>결과를 확인해보자. 먼저 최적의 매개변수 조합을 출력한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gs.best_params_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&#123;&#39;max_depth&#39;: 29, &#39;min_impurity_decrease&#39;: 0.000437615171403628&#125;
-</code></pre>
-<ul>
-<li>최고의 교차 검증 점수도 확인한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.<span class="built_in">max</span>(gs.cv_results_[<span class="string">&#x27;mean_test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8689635004071962
-</code></pre>
-<ul>
-<li>최적의 모델은 이미 전체 훈련 세트(train_input, train_target)로 훈련되어 best_estimator_속성에 저장되어 있다. </li>
-<li>이 모델을 최종 모델로 결정하고 테스트 세트의 성능을 확인해 보자</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dt = gs.best_estimator_</span><br><span class="line"><span class="built_in">print</span>(dt.score(test_input, test_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8638461538461538
-</code></pre>
-<ul>
-<li><p>테스트 세트 점수는 검증 세트에 대한 점수보다 조금 작은 것이 일반적이다.</p>
-</li>
-<li><p>여기까지 두 서치를 사용해 본 결과, 랜덤 서치가 더 사용하기 용이하였다.</p>
-</li>
-<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
-</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-04T00:00:00.000Z" title="2022. 4. 4. 오전 9:00:00">2022-04-04</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.219Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">15 minutes read (About 2261 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/04/chapter_5_1/">chapter_5_1</a></h1><div class="content"><h1 id="결정-트리"><a href="#결정-트리" class="headerlink" title="결정 트리"></a>결정 트리</h1><ul>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: python - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li class="is-active"><a href="#" aria-current="page">python</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-04T00:00:00.000Z" title="2022. 4. 4. 오전 9:00:00">2022-04-04</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.219Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">15 minutes read (About 2261 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/04/chapter_5_1/">chapter_5_1</a></h1><div class="content"><h1 id="결정-트리"><a href="#결정-트리" class="headerlink" title="결정 트리"></a>결정 트리</h1><ul>
 <li>결정 트리로 다음 문제를 해결해 보자<ul>
 <li>와인 캔에 인쇄된 알코올 도수, 당도, pH값으로 와인 종류를 구별해야 한다.</li>
 </ul>
@@ -730,6 +538,198 @@ memory usage: 203.2 KB
 <p><img src="/images/chapter_5_1/output_40_0.png" alt="png"></p>
 <ul>
 <li>Reference : 혼자 공부하는 머신러닝 + 딥러닝</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-04T00:00:00.000Z" title="2022. 4. 4. 오전 9:00:00">2022-04-04</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.228Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">8 minutes read (About 1185 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/04/chapter_5_2/">chapter_5_2</a></h1><div class="content"><h1 id="교차-검증과-그리드-서치"><a href="#교차-검증과-그리드-서치" class="headerlink" title="교차 검증과 그리드 서치"></a>교차 검증과 그리드 서치</h1><ul>
+<li>키워드 : 하이퍼 파라미터</li>
+<li>데이터가 작을 때, 주로 사용</li>
+<li>하이퍼 파라미터<ul>
+<li>max_depth : 3, 정확도가 84%</li>
+</ul>
+</li>
+<li>결론<ul>
+<li>모르면 디폴트만 쓰자!</li>
+<li>가성비 (시간 대비 성능 보장 안됨!)</li>
+</ul>
+</li>
+</ul>
+<h3 id="검증-세트"><a href="#검증-세트" class="headerlink" title="검증 세트"></a>검증 세트</h3><ul>
+<li>테스트 세트(1회성)</li>
+<li>훈련 데이터를 훈련 데이터 + 검증 데이터로 재 분할</li>
+</ul>
+<h3 id="현실"><a href="#현실" class="headerlink" title="현실"></a>현실</h3><ul>
+<li><p>테스트 데이터가 별도로 존재하지 않음!</p>
+</li>
+<li><p>전체 데이터 &#x3D; 훈련 (6) : 검증 (2) : 테스트 (2)</p>
+<ul>
+<li>테스트 데이터는 모르는 데이터로 생각!</li>
+</ul>
+</li>
+<li><p>캐글</p>
+<ul>
+<li>캐글에서는 훈련, 테스트 데이터가 제공된다. 훈련 데이터만 한 번 쪼개서 사용하면 된다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h3><ul>
+<li>사이킷 런 : <a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html</a></li>
+<li>구글링 : 그리드 탐색(서치) vs 랜덤 탐색(서치)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">wine = pd.read_csv(<span class="string">&quot;https://bit.ly/wine_csv_data&quot;</span>)</span><br><span class="line"></span><br><span class="line">data = wine[[<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>]].to_numpy()</span><br><span class="line">target = wine[<span class="string">&#x27;class&#x27;</span>].to_numpy()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(</span><br><span class="line">    data, target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sub_input, val_input, sub_target, val_target = train_test_split(</span><br><span class="line">    train_input, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="모델-만든-후-평가"><a href="#모델-만든-후-평가" class="headerlink" title="모델 만든 후 평가"></a>모델 만든 후 평가</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line">dt = DecisionTreeClassifier(random_state=<span class="number">42</span>)</span><br><span class="line">dt.fit(sub_input, sub_target)</span><br><span class="line"><span class="built_in">print</span>(dt.score(sub_input, sub_target))</span><br><span class="line"><span class="built_in">print</span>(dt.score(val_input, val_target))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.9971133028626413
+0.864423076923077
+</code></pre>
+<h3 id="교차-검증"><a href="#교차-검증" class="headerlink" title="교차 검증"></a>교차 검증</h3><ul>
+<li>많이 하면 많이 할수록 좋다.</li>
+<li>교차 검증의 목적 : 좋은 모델이 만들어진다!<ul>
+<li>좋은 모델 !&#x3D; 성능 좋은 모델</li>
+<li>좋은 모델 &#x3D; 과대 적합이 아닌 모델 &#x3D; 모형의 오차가 적은 모델 &#x3D; 안정적인 모델</li>
+</ul>
+</li>
+<li>교재 245p<ul>
+<li>모델 평가 1 : 90%</li>
+<li>모델 평가 2 : 85%</li>
+<li>모델 평가 3 : 80%</li>
+</ul>
+</li>
+<li>단점 : 시간이 오래 걸림</li>
+</ul>
+<h3 id="교차-검증-함수"><a href="#교차-검증-함수" class="headerlink" title="교차 검증 함수"></a>교차 검증 함수</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_validate</span><br><span class="line">scores = cross_validate(dt, train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(scores)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&#123;&#39;fit_time&#39;: array([0.01164412, 0.00772762, 0.00744891, 0.00796771, 0.00716805]), &#39;score_time&#39;: array([0.00128865, 0.00070405, 0.0007143 , 0.00097823, 0.00069904]), &#39;test_score&#39;: array([0.86923077, 0.84615385, 0.87680462, 0.84889317, 0.83541867])&#125;
+</code></pre>
+<ul>
+<li>최종점수 평균 구하기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.855300214703487
+</code></pre>
+<ul>
+<li>훈련 세트 섞은 후, 10-폴드 교차검증</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> StratifiedKFold</span><br><span class="line">splitter = StratifiedKFold(n_splits = <span class="number">10</span>, shuffle = <span class="literal">True</span>, random_state=<span class="number">42</span>)</span><br><span class="line">scores = cross_validate(dt, train_input, train_target, cv = splitter)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8574181117533719
+</code></pre>
+<h3 id="하이퍼-파라미터-튜닝-꼭-하고-싶다"><a href="#하이퍼-파라미터-튜닝-꼭-하고-싶다" class="headerlink" title="하이퍼 파라미터 튜닝 꼭 하고 싶다!"></a>하이퍼 파라미터 튜닝 꼭 하고 싶다!</h3><ul>
+<li>랜덤 서치 사용하자! <ul>
+<li>그리드 서치보다 편리하다</li>
+</ul>
+</li>
+<li>자동으로 잡아주는 라이브러리들이 등장하기 시작함<ul>
+<li>hyperopt</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span> : [<span class="number">0.0001</span>, <span class="number">0.0002</span>, <span class="number">0.0003</span>, <span class="number">0.0004</span>, <span class="number">0.0005</span>],</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># dt = DecisionTreeClassifier(random_state=42)</span></span><br><span class="line">gs = GridSearchCV(DecisionTreeClassifier(random_state=<span class="number">42</span>), params, n_jobs=-<span class="number">1</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>CPU times: user 83.8 ms, sys: 1.66 ms, total: 85.5 ms
+Wall time: 264 ms
+</code></pre>
+<ul>
+<li>pamas에 2줄을 쓰면 시간이 2배 이상 더 걸린다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span> : [<span class="number">0.0001</span>, <span class="number">0.0002</span>, <span class="number">0.0003</span>, <span class="number">0.0004</span>, <span class="number">0.0005</span>],</span><br><span class="line">    <span class="string">&#x27;max_depth&#x27;</span> : [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># dt = DecisionTreeClassifier(random_state=42)</span></span><br><span class="line">gs = GridSearchCV(DecisionTreeClassifier(random_state=<span class="number">42</span>), params, n_jobs=-<span class="number">1</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>CPU times: user 191 ms, sys: 1.13 ms, total: 192 ms
+Wall time: 674 ms
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span> : [<span class="number">0.0001</span>, <span class="number">0.0002</span>, <span class="number">0.0003</span>, <span class="number">0.0004</span>, <span class="number">0.0005</span>],</span><br><span class="line">    <span class="string">&#x27;max_depth&#x27;</span> : [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># dt = DecisionTreeClassifier(random_state=42)</span></span><br><span class="line">gs = GridSearchCV(DecisionTreeClassifier(random_state=<span class="number">42</span>), params, n_jobs=-<span class="number">1</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br><span class="line"></span><br><span class="line">dt = gs.best_estimator_</span><br><span class="line"><span class="built_in">print</span>(dt)</span><br><span class="line"><span class="built_in">print</span>(dt.score(train_input, train_target))</span><br><span class="line"><span class="built_in">print</span>(gs.best_params_)</span><br></pre></td></tr></table></figure>
+
+<pre><code>DecisionTreeClassifier(max_depth=7, min_impurity_decrease=0.0005,
+                       random_state=42)
+0.8830094285164518
+&#123;&#39;max_depth&#39;: 7, &#39;min_impurity_decrease&#39;: 0.0005&#125;
+CPU times: user 284 ms, sys: 38.7 ms, total: 323 ms
+Wall time: 2.15 s
+</code></pre>
+<ul>
+<li>이 부분에 의해 결과가 (5x5&#x3D;)25개 출력된다.<ul>
+<li>‘min_impurity_decrease’ : [0.0001, 0.0002, 0.0003, 0.0004, 0.0005]</li>
+<li>‘max_depth’ : [3, 4, 5, 6, 7]</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gs.cv_results_[<span class="string">&#x27;mean_test_score&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0.84125583 0.84125583 0.84125583 0.84125583 0.84125583 0.85337806
+ 0.85337806 0.85337806 0.85337806 0.85318557 0.85780355 0.85799604
+ 0.85857352 0.85857352 0.85838102 0.85645721 0.85799678 0.85876675
+ 0.85972866 0.86088306 0.85607093 0.85761031 0.85799511 0.85991893
+ 0.86280466]
+</code></pre>
+<h3 id="랜덤-서치"><a href="#랜덤-서치" class="headerlink" title="랜덤 서치"></a>랜덤 서치</h3><ul>
+<li>p252. 매개변수 값의목록을 전달하는 것이 아니라 매개변수를 샘플링할 수 있도록 확률 분포 객체를 전달.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> uniform, randint</span><br><span class="line">rgen = randint(<span class="number">0</span>, <span class="number">10</span>)</span><br><span class="line">rgen.rvs(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([7, 9, 7, 4, 2, 0, 4, 8, 6, 3])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.unique(rgen.rvs(<span class="number">1000</span>), return_counts = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
+ array([103,  90,  88, 110,  84, 115, 105, 102, 104,  99]))
+</code></pre>
+<ul>
+<li>254p</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> RandomizedSearchCV</span><br><span class="line"></span><br><span class="line">params = &#123;</span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span> : uniform(<span class="number">0.0001</span>, <span class="number">0.001</span>),</span><br><span class="line">    <span class="string">&#x27;max_depth&#x27;</span> : randint(<span class="number">20</span>,<span class="number">50</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gs = RandomizedSearchCV(DecisionTreeClassifier(random_state=<span class="number">42</span>),</span><br><span class="line">                        params, n_iter = <span class="number">100</span>, n_jobs = -<span class="number">1</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line">gs.fit(train_input, train_target)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>RandomizedSearchCV(estimator=DecisionTreeClassifier(random_state=42),
+                   n_iter=100, n_jobs=-1,
+                   param_distributions=&#123;&#39;max_depth&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7fa6910bdd90&gt;,
+                                        &#39;min_impurity_decrease&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7fa6907f3810&gt;&#125;,
+                   random_state=42)
+</code></pre>
+<ul>
+<li>위 parmas에 정의된 매개변수 범위에서 총 100번(n_iter 매개변수)을 샘플링하여 교차 검증을 수행하고 최적의 매개변수 조합을 찾는다.</li>
+<li>앞서 그리드 서치보다 훨씬 교차 검증 수를 줄이면서 넓은 영역을 효과적으로 탐색할 수 있다.</li>
+<li>결과를 확인해보자. 먼저 최적의 매개변수 조합을 출력한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gs.best_params_)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&#123;&#39;max_depth&#39;: 29, &#39;min_impurity_decrease&#39;: 0.000437615171403628&#125;
+</code></pre>
+<ul>
+<li>최고의 교차 검증 점수도 확인한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.<span class="built_in">max</span>(gs.cv_results_[<span class="string">&#x27;mean_test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8689635004071962
+</code></pre>
+<ul>
+<li>최적의 모델은 이미 전체 훈련 세트(train_input, train_target)로 훈련되어 best_estimator_속성에 저장되어 있다. </li>
+<li>이 모델을 최종 모델로 결정하고 테스트 세트의 성능을 확인해 보자</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dt = gs.best_estimator_</span><br><span class="line"><span class="built_in">print</span>(dt.score(test_input, test_target))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8638461538461538
+</code></pre>
+<ul>
+<li><p>테스트 세트 점수는 검증 세트에 대한 점수보다 조금 작은 것이 일반적이다.</p>
+</li>
+<li><p>여기까지 두 서치를 사용해 본 결과, 랜덤 서치가 더 사용하기 용이하였다.</p>
+</li>
+<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
+</li>
 </ul>
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-03T00:00:00.000Z" title="2022. 4. 3. 오전 9:00:00">2022-04-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.236Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">11 minutes read (About 1669 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/03/chapter_4_2_%EA%B9%80%EB%AF%BC%EA%B7%A0/">chapter4_2</a></h1><div class="content"><h1 id="확률적-경사-하강법"><a href="#확률적-경사-하강법" class="headerlink" title="확률적 경사 하강법"></a>확률적 경사 하강법</h1><ul>
 <li><p>1차 가장 큰 차이 (기존 ML모형)</p>
