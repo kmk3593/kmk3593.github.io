@@ -1,5 +1,417 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: 딥러닝 - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li><a href="/categories/python/">python</a></li><li><a href="/categories/python/machine-learning/">machine learning</a></li><li class="is-active"><a href="#" aria-current="page">딥러닝</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.752Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">12 minutes read (About 1794 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_1/">chapter_7_1</a></h1><div class="content"><h3 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝"></a>딥러닝</h3><p>인공신경망 1943년 즈음 등장</p>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: 딥러닝 - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li><a href="/categories/python/">python</a></li><li><a href="/categories/python/machine-learning/">machine learning</a></li><li class="is-active"><a href="#" aria-current="page">딥러닝</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.760Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">17 minutes read (About 2608 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_2/">chapter_7_2</a></h1><div class="content"><h1 id="심층-신경망"><a href="#심층-신경망" class="headerlink" title="심층 신경망"></a>심층 신경망</h1><ul>
+<li><p>인공신경망에 층을 여러 개 추가하여 패션 MNIST 데이터셋을 분류한다.</p>
+</li>
+<li><p>동시에 케라스로 심층 신경망을 만들어본다.</p>
+</li>
+<li><p>368p 그림 참고</p>
+</li>
+<li><p>케라스로 API를 사용해 패션 MNIST 데이터셋을 불러온다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"></span><br><span class="line">(train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+32768/29515 [=================================] - 0s 0us/step
+40960/29515 [=========================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26427392/26421880 [==============================] - 0s 0us/step
+26435584/26421880 [==============================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+16384/5148 [===============================================================================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4423680/4422102 [==============================] - 0s 0us/step
+4431872/4422102 [==============================] - 0s 0us/step
+</code></pre>
+<ul>
+<li>이미지의 픽셀값을 0 ~ 255 범위에서 0 ~ 1로 변환</li>
+<li>28x28 크기의 2차원 배열을 784 크기인 1차원 배열로 펼친다.</li>
+<li>train_test_split() 함수로 훈련 세트와 검증 세트로 나눈다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line">train_scaled = train_scaled.reshape(-<span class="number">1</span>, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>입력층과 출력층 사이에 밀집층을 만들 예정이다.</p>
+</li>
+<li><p>은닉층 : 입력층과 출력층 사이에 있는 모든 층 </p>
+</li>
+<li><p>케라스의 Dense 클래스로 다음 내용을 만든다.</p>
+<ul>
+<li>sigmoid 활성화 함수를 사용한 은닉층</li>
+<li>softmax 함수를 사용한 출력층</li>
+</ul>
+</li>
+<li><p>층을 추가하는 방법</p>
+<ul>
+<li>Dense 클래스의 객체 dense1, 2를 만들어 Sequential 클래스에 전달한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dense1 = keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>, input_shape=(<span class="number">784</span>,))</span><br><span class="line">dense2 = keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>dense1이 은닉층이고 100개의 뉴런을 가진 밀집층이다.<ul>
+<li>활성화 함수를 ‘sigmoid’로 지정했고 매개변수로 입력의 크기를 (784,)로 지정했다.</li>
+</ul>
+</li>
+<li>dense2는 출력층이다.<ul>
+<li>10개의 클래스를 분류하므로 10개의 뉴런을 두었고 활성화 함수는 softmax로 지정했다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="심층-신경망-1"><a href="#심층-신경망-1" class="headerlink" title="심층 신경망"></a>심층 신경망</h3><ul>
+<li><p>컨셉만 이해하라!</p>
+</li>
+<li><p>직접 신경망 만들 일은 없고 가져다 쓰기만 하면 된다.</p>
+</li>
+<li><p>앞의 dense1과 dense2 객체를 Sequential 클래스에 추가하여 심층 신경망을 만들 예정이다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([dense1, dense2])</span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Model: &quot;sequential&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 100)               78500     
+                                                                 
+ dense_1 (Dense)             (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<ul>
+<li>위와 같이 Sequential 클래스의 객체를 만들 때 여러 개의 층을 추가하려면 층을 리스트로 만들어 전달해야 한다.</li>
+<li>model.summary()로 층에 대한 정보를 얻을 수 있다.<ul>
+<li>첫 줄에 모델의 이름이 나온다.</li>
+<li>이 모델에 들어 있는 층이 순서대로 나열된다.<ul>
+<li>이 순서는 맨 처음 추가한 은닉층에서 출력층의 순서로 나열된다.</li>
+</ul>
+</li>
+<li>층마다 층 이름, 클래스, 출력 크기, 모델 파라미터 개수가 출력된다.</li>
+<li>name 매개변수로 이름을 지정하지 않으면 디폴트인 ‘dense’로 네이밍된다.</li>
+<li>출력 크기는 (None,100)인데, 첫 번째 차원은 샘플 개수를 나타낸다.<ul>
+<li>None인 이유는 어떤 배치 크기에도 잘 대응하기 위함이다.</li>
+<li>두 번째 차원인 100은 뉴런 개수가 100이며, 따라서 100개의 출력이 나옴을 나타낸다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="층을-추가하는-다른-방법"><a href="#층을-추가하는-다른-방법" class="headerlink" title="층을 추가하는 다른 방법"></a>층을 추가하는 다른 방법</h3><ul>
+<li>Sequential 클래스의 생성자 안에서 바로 Dense 클래스의 객체를 만든다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([</span><br><span class="line">    keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>, input_shape=(<span class="number">784</span>,), name=<span class="string">&#x27;hidden&#x27;</span>),   <span class="comment"># 층을 쌓아간다</span></span><br><span class="line">    keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>, name=<span class="string">&#x27;output&#x27;</span>)                         <span class="comment"># 층을 쌓아간다</span></span><br><span class="line">], name=<span class="string">&#x27;패션 MNIST 모델&#x27;</span>)</span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Model: &quot;패션 MNIST 모델&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ hidden (Dense)              (None, 100)               78500     
+                                                                 
+ output (Dense)              (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<h3 id="층을-추가하는-다른-방법-2"><a href="#층을-추가하는-다른-방법-2" class="headerlink" title="층을 추가하는 다른 방법 2"></a>층을 추가하는 다른 방법 2</h3><ul>
+<li>Sequential 클래스의 객체를 만들고 이 객체의 add() 메서드를 호출하여 층을 추가한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential()</span><br><span class="line">model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>, input_shape=(<span class="number">784</span>,)))    <span class="comment"># 층을 쌓아간다</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))                         <span class="comment"># 층을 쌓아간다</span></span><br><span class="line"></span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Model: &quot;sequential_1&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_2 (Dense)             (None, 100)               78500     
+                                                                 
+ dense_3 (Dense)             (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<ul>
+<li>이제 모델을 훈련한다.<ul>
+<li>반복할 에포크 횟수를 epochs 매개변수로 지정</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 6s 3ms/step - loss: 0.5628 - accuracy: 0.8069
+Epoch 2/5
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.4087 - accuracy: 0.8522
+Epoch 3/5
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3747 - accuracy: 0.8645
+Epoch 4/5
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3506 - accuracy: 0.8737
+Epoch 5/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.3344 - accuracy: 0.8784
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7f5bcb861b50&gt;
+</code></pre>
+<ul>
+<li><p>렐루 함수</p>
+<ul>
+<li>층이 많은 신경망일수록 그 효과가 누적되어 학습이 어려워진다.</li>
+<li>이를 개선하기 위한 활성화 함수이다. </li>
+<li>relu() 함수는 입력이 양수일 그냥 통과시키고, 입력이 음수라면 0으로 만든다.</li>
+</ul>
+</li>
+<li><p>Flatten 클래스</p>
+<ul>
+<li>배치 차원을 제외하고 나머지 입력 차원을 모두 일렬로 펼친다.</li>
+<li>Flatten 클래스를 층처럼 입렬층과 은닉층 사잉에 추가하기 때문에 이를 층이라 부른다. </li>
+<li>다음 코드처럼 입력층 바로 뒤에 추가한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential()</span><br><span class="line">model.add(keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>)))  <span class="comment"># 기존 코드 비교</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;relu&#x27;</span>)) <span class="comment"># relu 로 변경</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))</span><br><span class="line"></span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Model: &quot;sequential_2&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten (Flatten)           (None, 784)               0         
+                                                                 
+ dense_4 (Dense)             (None, 100)               78500     
+                                                                 
+ dense_5 (Dense)             (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<ul>
+<li>훈련 데이터를 다시 준비해서 모델을 훈련한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>모델을 컴파일하고 훈련한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.5283 - accuracy: 0.8151
+Epoch 2/5
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3926 - accuracy: 0.8602
+Epoch 3/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.3562 - accuracy: 0.8713
+Epoch 4/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.3336 - accuracy: 0.8809
+Epoch 5/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.3203 - accuracy: 0.8853
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7f5bcb762a10&gt;
+</code></pre>
+<ul>
+<li>시그모이드 함수를 사용했을 때와 비교하면 성능이 조금 향상되었다.</li>
+<li>검증 세트에서의 성능도 확인하자.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>375/375 [==============================] - 1s 3ms/step - loss: 0.3713 - accuracy: 0.8717
+
+
+
+
+
+[0.3712655007839203, 0.871749997138977]
+</code></pre>
+<ul>
+<li>검증 성능도 향상되었다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.3094 - accuracy: 0.8890
+Epoch 2/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.2989 - accuracy: 0.8951
+Epoch 3/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.2902 - accuracy: 0.8974
+Epoch 4/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.2825 - accuracy: 0.9018
+Epoch 5/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.2781 - accuracy: 0.9024
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7f5bcb835d10&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>375/375 [==============================] - 1s 1ms/step - loss: 0.4110 - accuracy: 0.8792
+
+
+
+
+
+[0.41104814410209656, 0.8791666626930237]
+</code></pre>
+<h3 id="옵티마이저의-개념"><a href="#옵티마이저의-개념" class="headerlink" title="옵티마이저의 개념"></a>옵티마이저의 개념</h3><p>–&gt; Adam 사용하라<br>–&gt; why Adam? 최고점을 찾기 위해서</p>
+<ul>
+<li>스텝방향 &amp; 스템사이즈를 모두 고려한 옵티마이저</li>
+<li>스텝방향 : GD, SGD, Momentum, NAG</li>
+<li>스텝사이즈 : GD, SGD, Adagrad, RMSProp</li>
+</ul>
+<ul>
+<li>하이퍼 파라미터는 사람이 지정해야 하는 파라미터</li>
+<li>신경망에는 특히 하이퍼 파라미터가 많다.</li>
+<li>은닉층의 뉴런 개수도 하이퍼 파라미터이다.</li>
+<li>compile() 에서는 케라스의 기본 하강법 알고리즘인 RMSprop을 사용했다.<ul>
+<li>케라스는 다양한 종류의 경사 하강법 알고리즘을 제공한다.</li>
+<li>이들을 ‘옵티마이저’라고 부른다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="옵티마이저"><a href="#옵티마이저" class="headerlink" title="옵티마이저"></a>옵티마이저</h3><ul>
+<li>381p</li>
+<li>SGD 옵티마이저를 사용하려면 compile() 메서드의 optimizer 매개변수를 ‘sgd’로 지정</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;sgd&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>‘sgd’ 문자열은 이 클래스의 기본 설정 매개변수로 생성한 객체와 동일하다.</li>
+<li>다음 코드는 위의 코드와 정확히 동일하다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sgd = keras.optimizers.SGD()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=sgd, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>382p</li>
+<li>learning_rate &#x3D; 0.1<ul>
+<li>만약 SGD 클래스의 학습률 기본값이 0.01일 때 이를 바꾸고 싶다면 다음와 같이 지정한다.</li>
+</ul>
+</li>
+<li>랜덤서치, 그리드서치</li>
+<li>딥러닝에서도 하이퍼파라미터 튜닝</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgd = keras.optimizers.SGD(learning_rate = <span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>기본 경사 하강법 옵티마이저는 모두 SGD 클래스에서 제공한다.</li>
+<li>SGD 클래서의 momentum 매개변수의 기본값은 0이다. 보통 0.9이상을 지정한다.</li>
+<li>다음처럼 SGD 클래스의 nesterov 매개변수를 기본값 False 에서 True로 바꾸면 네스테로프 모멘텀 최적화를 사용한다.<ul>
+<li>테스테로프 모멘텀은 모멘텀 최적화를 2번 반복하여 구현한다.</li>
+<li>대부분의 경우 네스테로프 모멘텀 최적화가 기본 확률적 경사 하강법보다 더 나은 성능을 제공한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgd = keras.optimizers.SGD(momentum = <span class="number">0.9</span>, nesterov = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>적응적 학습률</p>
+<ul>
+<li>모델이 최적점에 가까이 갈수록 학습률을 낮출 수 있다.</li>
+<li>이렇게 하면 안정적으로 최적점에 수렴할 가능성이 높다.</li>
+<li>이런 학습률을 적응적 학습률이라고 한다.</li>
+</ul>
+</li>
+<li><p>Adagrad() 클래스</p>
+<ul>
+<li>적응적 학습률을 사용하는 대표적인 옵티마이저이다.</li>
+<li>optimizer 매개변수에서 지정할 수 있다.</li>
+<li>optimizer 매개변수의 기본값이 바로 rmsprop이다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adagrad = keras.optimizers.Adagrad()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=adagrad, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>RMSprop() 클래스<ul>
+<li>적응적 학습률을 사용하는 대표적인 옵티마이저이다.</li>
+<li>optimizer 매개변수에서 지정할 수 있다.</li>
+<li>optimizer 매개변수의 기본값이 바로 rmsprop이다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rmsprop = keras.optimizers.RMSprop()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=rmsprop, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>다만, Adam을 사용하는 것이 더 좋다.</p>
+</li>
+<li><p>Adam</p>
+<ul>
+<li>모멘텀 최적화와 RMSprop의 장점을 접목한 것이 Adam이다.</li>
+<li>적응적 학습률을 사용하는 이 3개의 클래스는 learning_rate 매개변수의 기본값을 0.001로 두고 사용한다.</li>
+</ul>
+</li>
+<li><p>Adam 클래스의 매개변수 기본값을 사용해 패션 MNIST 모델을 훈련해본다.</p>
+</li>
+<li><p>일단 모델을 다시 생성한다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential()</span><br><span class="line">model.add(keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>)))  <span class="comment"># 기존 코드 비교</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;relu&#x27;</span>)) <span class="comment"># relu 로 변경</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>compile() 메서드의 optimizer를 ‘adam’으로 설정하고 5번의 에포크 동안 훈련한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">5</span>)</span><br><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.5293 - accuracy: 0.8155
+Epoch 2/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.3980 - accuracy: 0.8571
+Epoch 3/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.3542 - accuracy: 0.8713
+Epoch 4/5
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3287 - accuracy: 0.8798
+Epoch 5/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.3081 - accuracy: 0.8867
+375/375 [==============================] - 1s 2ms/step - loss: 0.3296 - accuracy: 0.8806
+
+
+
+
+
+[0.32961416244506836, 0.8805833458900452]
+</code></pre>
+<ul>
+<li>결과를 보면 기본 RMSprop을 사용했을 때와 거의 같은 성능을 보인다.</li>
+<li>검증 세트에서의  성능도 확인한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>375/375 [==============================] - 1s 3ms/step - loss: 0.3296 - accuracy: 0.8806
+
+
+
+
+
+[0.32961416244506836, 0.8805833458900452]
+</code></pre>
+<ul>
+<li><p>환경마다 차이가 있을 수 있지만 여기서는 기본 RMSprop보다 조금 더 나은 성능을 보인다.</p>
+</li>
+<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.752Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">12 minutes read (About 1794 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_1/">chapter_7_1</a></h1><div class="content"><h3 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝"></a>딥러닝</h3><p>인공신경망 1943년 즈음 등장</p>
 <p>1차 융성기 ~ 1960 후반</p>
 <ul>
 <li><p>로봇이 인간들과 함께 살 것이다 예언</p>
@@ -677,418 +1089,6 @@ _________________________________________________________________
 <p><img src="/images/chapter_7_3/output_54_0.png" alt="png"></p>
 <ul>
 <li><p>이런 식으로 조기 종료 기법을 사용하면 안심하고 에포크 횟수를 크게 지정해도 괜찮다.</p>
-</li>
-<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
-</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.760Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">17 minutes read (About 2608 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_2/">chapter_7_2</a></h1><div class="content"><h1 id="심층-신경망"><a href="#심층-신경망" class="headerlink" title="심층 신경망"></a>심층 신경망</h1><ul>
-<li><p>인공신경망에 층을 여러 개 추가하여 패션 MNIST 데이터셋을 분류한다.</p>
-</li>
-<li><p>동시에 케라스로 심층 신경망을 만들어본다.</p>
-</li>
-<li><p>368p 그림 참고</p>
-</li>
-<li><p>케라스로 API를 사용해 패션 MNIST 데이터셋을 불러온다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"></span><br><span class="line">(train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()</span><br></pre></td></tr></table></figure>
-
-<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
-32768/29515 [=================================] - 0s 0us/step
-40960/29515 [=========================================] - 0s 0us/step
-Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
-26427392/26421880 [==============================] - 0s 0us/step
-26435584/26421880 [==============================] - 0s 0us/step
-Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
-16384/5148 [===============================================================================================] - 0s 0us/step
-Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
-4423680/4422102 [==============================] - 0s 0us/step
-4431872/4422102 [==============================] - 0s 0us/step
-</code></pre>
-<ul>
-<li>이미지의 픽셀값을 0 ~ 255 범위에서 0 ~ 1로 변환</li>
-<li>28x28 크기의 2차원 배열을 784 크기인 1차원 배열로 펼친다.</li>
-<li>train_test_split() 함수로 훈련 세트와 검증 세트로 나눈다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line">train_scaled = train_scaled.reshape(-<span class="number">1</span>, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>입력층과 출력층 사이에 밀집층을 만들 예정이다.</p>
-</li>
-<li><p>은닉층 : 입력층과 출력층 사이에 있는 모든 층 </p>
-</li>
-<li><p>케라스의 Dense 클래스로 다음 내용을 만든다.</p>
-<ul>
-<li>sigmoid 활성화 함수를 사용한 은닉층</li>
-<li>softmax 함수를 사용한 출력층</li>
-</ul>
-</li>
-<li><p>층을 추가하는 방법</p>
-<ul>
-<li>Dense 클래스의 객체 dense1, 2를 만들어 Sequential 클래스에 전달한다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dense1 = keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>, input_shape=(<span class="number">784</span>,))</span><br><span class="line">dense2 = keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>dense1이 은닉층이고 100개의 뉴런을 가진 밀집층이다.<ul>
-<li>활성화 함수를 ‘sigmoid’로 지정했고 매개변수로 입력의 크기를 (784,)로 지정했다.</li>
-</ul>
-</li>
-<li>dense2는 출력층이다.<ul>
-<li>10개의 클래스를 분류하므로 10개의 뉴런을 두었고 활성화 함수는 softmax로 지정했다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="심층-신경망-1"><a href="#심층-신경망-1" class="headerlink" title="심층 신경망"></a>심층 신경망</h3><ul>
-<li><p>컨셉만 이해하라!</p>
-</li>
-<li><p>직접 신경망 만들 일은 없고 가져다 쓰기만 하면 된다.</p>
-</li>
-<li><p>앞의 dense1과 dense2 객체를 Sequential 클래스에 추가하여 심층 신경망을 만들 예정이다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([dense1, dense2])</span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
-
-<pre><code>Model: &quot;sequential&quot;
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- dense (Dense)               (None, 100)               78500     
-                                                                 
- dense_1 (Dense)             (None, 10)                1010      
-                                                                 
-=================================================================
-Total params: 79,510
-Trainable params: 79,510
-Non-trainable params: 0
-_________________________________________________________________
-</code></pre>
-<ul>
-<li>위와 같이 Sequential 클래스의 객체를 만들 때 여러 개의 층을 추가하려면 층을 리스트로 만들어 전달해야 한다.</li>
-<li>model.summary()로 층에 대한 정보를 얻을 수 있다.<ul>
-<li>첫 줄에 모델의 이름이 나온다.</li>
-<li>이 모델에 들어 있는 층이 순서대로 나열된다.<ul>
-<li>이 순서는 맨 처음 추가한 은닉층에서 출력층의 순서로 나열된다.</li>
-</ul>
-</li>
-<li>층마다 층 이름, 클래스, 출력 크기, 모델 파라미터 개수가 출력된다.</li>
-<li>name 매개변수로 이름을 지정하지 않으면 디폴트인 ‘dense’로 네이밍된다.</li>
-<li>출력 크기는 (None,100)인데, 첫 번째 차원은 샘플 개수를 나타낸다.<ul>
-<li>None인 이유는 어떤 배치 크기에도 잘 대응하기 위함이다.</li>
-<li>두 번째 차원인 100은 뉴런 개수가 100이며, 따라서 100개의 출력이 나옴을 나타낸다.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="층을-추가하는-다른-방법"><a href="#층을-추가하는-다른-방법" class="headerlink" title="층을 추가하는 다른 방법"></a>층을 추가하는 다른 방법</h3><ul>
-<li>Sequential 클래스의 생성자 안에서 바로 Dense 클래스의 객체를 만든다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([</span><br><span class="line">    keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>, input_shape=(<span class="number">784</span>,), name=<span class="string">&#x27;hidden&#x27;</span>),   <span class="comment"># 층을 쌓아간다</span></span><br><span class="line">    keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>, name=<span class="string">&#x27;output&#x27;</span>)                         <span class="comment"># 층을 쌓아간다</span></span><br><span class="line">], name=<span class="string">&#x27;패션 MNIST 모델&#x27;</span>)</span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
-
-<pre><code>Model: &quot;패션 MNIST 모델&quot;
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- hidden (Dense)              (None, 100)               78500     
-                                                                 
- output (Dense)              (None, 10)                1010      
-                                                                 
-=================================================================
-Total params: 79,510
-Trainable params: 79,510
-Non-trainable params: 0
-_________________________________________________________________
-</code></pre>
-<h3 id="층을-추가하는-다른-방법-2"><a href="#층을-추가하는-다른-방법-2" class="headerlink" title="층을 추가하는 다른 방법 2"></a>층을 추가하는 다른 방법 2</h3><ul>
-<li>Sequential 클래스의 객체를 만들고 이 객체의 add() 메서드를 호출하여 층을 추가한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential()</span><br><span class="line">model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>, input_shape=(<span class="number">784</span>,)))    <span class="comment"># 층을 쌓아간다</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))                         <span class="comment"># 층을 쌓아간다</span></span><br><span class="line"></span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
-
-<pre><code>Model: &quot;sequential_1&quot;
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- dense_2 (Dense)             (None, 100)               78500     
-                                                                 
- dense_3 (Dense)             (None, 10)                1010      
-                                                                 
-=================================================================
-Total params: 79,510
-Trainable params: 79,510
-Non-trainable params: 0
-_________________________________________________________________
-</code></pre>
-<ul>
-<li>이제 모델을 훈련한다.<ul>
-<li>반복할 에포크 횟수를 epochs 매개변수로 지정</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Epoch 1/5
-1500/1500 [==============================] - 6s 3ms/step - loss: 0.5628 - accuracy: 0.8069
-Epoch 2/5
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.4087 - accuracy: 0.8522
-Epoch 3/5
-1500/1500 [==============================] - 5s 3ms/step - loss: 0.3747 - accuracy: 0.8645
-Epoch 4/5
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.3506 - accuracy: 0.8737
-Epoch 5/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.3344 - accuracy: 0.8784
-
-
-
-
-
-&lt;keras.callbacks.History at 0x7f5bcb861b50&gt;
-</code></pre>
-<ul>
-<li><p>렐루 함수</p>
-<ul>
-<li>층이 많은 신경망일수록 그 효과가 누적되어 학습이 어려워진다.</li>
-<li>이를 개선하기 위한 활성화 함수이다. </li>
-<li>relu() 함수는 입력이 양수일 그냥 통과시키고, 입력이 음수라면 0으로 만든다.</li>
-</ul>
-</li>
-<li><p>Flatten 클래스</p>
-<ul>
-<li>배치 차원을 제외하고 나머지 입력 차원을 모두 일렬로 펼친다.</li>
-<li>Flatten 클래스를 층처럼 입렬층과 은닉층 사잉에 추가하기 때문에 이를 층이라 부른다. </li>
-<li>다음 코드처럼 입력층 바로 뒤에 추가한다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential()</span><br><span class="line">model.add(keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>)))  <span class="comment"># 기존 코드 비교</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;relu&#x27;</span>)) <span class="comment"># relu 로 변경</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))</span><br><span class="line"></span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
-
-<pre><code>Model: &quot;sequential_2&quot;
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- flatten (Flatten)           (None, 784)               0         
-                                                                 
- dense_4 (Dense)             (None, 100)               78500     
-                                                                 
- dense_5 (Dense)             (None, 10)                1010      
-                                                                 
-=================================================================
-Total params: 79,510
-Trainable params: 79,510
-Non-trainable params: 0
-_________________________________________________________________
-</code></pre>
-<ul>
-<li>훈련 데이터를 다시 준비해서 모델을 훈련한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>모델을 컴파일하고 훈련한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Epoch 1/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.5283 - accuracy: 0.8151
-Epoch 2/5
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.3926 - accuracy: 0.8602
-Epoch 3/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.3562 - accuracy: 0.8713
-Epoch 4/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.3336 - accuracy: 0.8809
-Epoch 5/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.3203 - accuracy: 0.8853
-
-
-
-
-
-&lt;keras.callbacks.History at 0x7f5bcb762a10&gt;
-</code></pre>
-<ul>
-<li>시그모이드 함수를 사용했을 때와 비교하면 성능이 조금 향상되었다.</li>
-<li>검증 세트에서의 성능도 확인하자.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>375/375 [==============================] - 1s 3ms/step - loss: 0.3713 - accuracy: 0.8717
-
-
-
-
-
-[0.3712655007839203, 0.871749997138977]
-</code></pre>
-<ul>
-<li>검증 성능도 향상되었다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(train_input, train_target), (test_input, test_target) = keras.datasets.fashion_mnist.load_data()</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Epoch 1/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.3094 - accuracy: 0.8890
-Epoch 2/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.2989 - accuracy: 0.8951
-Epoch 3/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.2902 - accuracy: 0.8974
-Epoch 4/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.2825 - accuracy: 0.9018
-Epoch 5/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.2781 - accuracy: 0.9024
-
-
-
-
-
-&lt;keras.callbacks.History at 0x7f5bcb835d10&gt;
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>375/375 [==============================] - 1s 1ms/step - loss: 0.4110 - accuracy: 0.8792
-
-
-
-
-
-[0.41104814410209656, 0.8791666626930237]
-</code></pre>
-<h3 id="옵티마이저의-개념"><a href="#옵티마이저의-개념" class="headerlink" title="옵티마이저의 개념"></a>옵티마이저의 개념</h3><p>–&gt; Adam 사용하라<br>–&gt; why Adam? 최고점을 찾기 위해서</p>
-<ul>
-<li>스텝방향 &amp; 스템사이즈를 모두 고려한 옵티마이저</li>
-<li>스텝방향 : GD, SGD, Momentum, NAG</li>
-<li>스텝사이즈 : GD, SGD, Adagrad, RMSProp</li>
-</ul>
-<ul>
-<li>하이퍼 파라미터는 사람이 지정해야 하는 파라미터</li>
-<li>신경망에는 특히 하이퍼 파라미터가 많다.</li>
-<li>은닉층의 뉴런 개수도 하이퍼 파라미터이다.</li>
-<li>compile() 에서는 케라스의 기본 하강법 알고리즘인 RMSprop을 사용했다.<ul>
-<li>케라스는 다양한 종류의 경사 하강법 알고리즘을 제공한다.</li>
-<li>이들을 ‘옵티마이저’라고 부른다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="옵티마이저"><a href="#옵티마이저" class="headerlink" title="옵티마이저"></a>옵티마이저</h3><ul>
-<li>381p</li>
-<li>SGD 옵티마이저를 사용하려면 compile() 메서드의 optimizer 매개변수를 ‘sgd’로 지정</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;sgd&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>‘sgd’ 문자열은 이 클래스의 기본 설정 매개변수로 생성한 객체와 동일하다.</li>
-<li>다음 코드는 위의 코드와 정확히 동일하다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sgd = keras.optimizers.SGD()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=sgd, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>382p</li>
-<li>learning_rate &#x3D; 0.1<ul>
-<li>만약 SGD 클래스의 학습률 기본값이 0.01일 때 이를 바꾸고 싶다면 다음와 같이 지정한다.</li>
-</ul>
-</li>
-<li>랜덤서치, 그리드서치</li>
-<li>딥러닝에서도 하이퍼파라미터 튜닝</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgd = keras.optimizers.SGD(learning_rate = <span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>기본 경사 하강법 옵티마이저는 모두 SGD 클래스에서 제공한다.</li>
-<li>SGD 클래서의 momentum 매개변수의 기본값은 0이다. 보통 0.9이상을 지정한다.</li>
-<li>다음처럼 SGD 클래스의 nesterov 매개변수를 기본값 False 에서 True로 바꾸면 네스테로프 모멘텀 최적화를 사용한다.<ul>
-<li>테스테로프 모멘텀은 모멘텀 최적화를 2번 반복하여 구현한다.</li>
-<li>대부분의 경우 네스테로프 모멘텀 최적화가 기본 확률적 경사 하강법보다 더 나은 성능을 제공한다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgd = keras.optimizers.SGD(momentum = <span class="number">0.9</span>, nesterov = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>적응적 학습률</p>
-<ul>
-<li>모델이 최적점에 가까이 갈수록 학습률을 낮출 수 있다.</li>
-<li>이렇게 하면 안정적으로 최적점에 수렴할 가능성이 높다.</li>
-<li>이런 학습률을 적응적 학습률이라고 한다.</li>
-</ul>
-</li>
-<li><p>Adagrad() 클래스</p>
-<ul>
-<li>적응적 학습률을 사용하는 대표적인 옵티마이저이다.</li>
-<li>optimizer 매개변수에서 지정할 수 있다.</li>
-<li>optimizer 매개변수의 기본값이 바로 rmsprop이다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adagrad = keras.optimizers.Adagrad()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=adagrad, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>RMSprop() 클래스<ul>
-<li>적응적 학습률을 사용하는 대표적인 옵티마이저이다.</li>
-<li>optimizer 매개변수에서 지정할 수 있다.</li>
-<li>optimizer 매개변수의 기본값이 바로 rmsprop이다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rmsprop = keras.optimizers.RMSprop()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=rmsprop, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>다만, Adam을 사용하는 것이 더 좋다.</p>
-</li>
-<li><p>Adam</p>
-<ul>
-<li>모멘텀 최적화와 RMSprop의 장점을 접목한 것이 Adam이다.</li>
-<li>적응적 학습률을 사용하는 이 3개의 클래스는 learning_rate 매개변수의 기본값을 0.001로 두고 사용한다.</li>
-</ul>
-</li>
-<li><p>Adam 클래스의 매개변수 기본값을 사용해 패션 MNIST 모델을 훈련해본다.</p>
-</li>
-<li><p>일단 모델을 다시 생성한다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential()</span><br><span class="line">model.add(keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>)))  <span class="comment"># 기존 코드 비교</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;relu&#x27;</span>)) <span class="comment"># relu 로 변경</span></span><br><span class="line">model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>compile() 메서드의 optimizer를 ‘adam’으로 설정하고 5번의 에포크 동안 훈련한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">5</span>)</span><br><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Epoch 1/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.5293 - accuracy: 0.8155
-Epoch 2/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.3980 - accuracy: 0.8571
-Epoch 3/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.3542 - accuracy: 0.8713
-Epoch 4/5
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.3287 - accuracy: 0.8798
-Epoch 5/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.3081 - accuracy: 0.8867
-375/375 [==============================] - 1s 2ms/step - loss: 0.3296 - accuracy: 0.8806
-
-
-
-
-
-[0.32961416244506836, 0.8805833458900452]
-</code></pre>
-<ul>
-<li>결과를 보면 기본 RMSprop을 사용했을 때와 거의 같은 성능을 보인다.</li>
-<li>검증 세트에서의  성능도 확인한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>375/375 [==============================] - 1s 3ms/step - loss: 0.3296 - accuracy: 0.8806
-
-
-
-
-
-[0.32961416244506836, 0.8805833458900452]
-</code></pre>
-<ul>
-<li><p>환경마다 차이가 있을 수 있지만 여기서는 기본 RMSprop보다 조금 더 나은 성능을 보인다.</p>
 </li>
 <li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
 </li>
