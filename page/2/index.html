@@ -1,5 +1,141 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-14T00:00:00.000Z" title="2022. 4. 14. 오전 9:00:00">2022-04-14</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-17T02:42:46.286Z" title="2022. 4. 17. 오전 11:42:46">2022-04-17</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/setting/">setting</a><span> / </span><a class="link-muted" href="/categories/setting/wsl2/">wsl2</a></span><span class="level-item">3 minutes read (About 432 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/14/WSL2/">WSL2 install</a></h1><div class="content"><h1 id="WSL2-and-Linux"><a href="#WSL2-and-Linux" class="headerlink" title="WSL2 and Linux"></a>WSL2 and Linux</h1><p>다음 링크 참고 :</p>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-15T00:00:00.000Z" title="2022. 4. 15. 오전 9:00:00">2022-04-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-17T02:42:46.273Z" title="2022. 4. 17. 오전 11:42:46">2022-04-17</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/setting/">setting</a><span> / </span><a class="link-muted" href="/categories/setting/NiFi/">NiFi</a></span><span class="level-item">7 minutes read (About 1074 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/15/Apache_NiFi/">Apache Nifi Install</a></h1><div class="content"><h1 id="Apache-NiFi"><a href="#Apache-NiFi" class="headerlink" title="Apache NiFi"></a>Apache NiFi</h1><p><a target="_blank" rel="noopener" href="https://dschloe.github.io/settings/apache_nifi_wsl2/">Apache NiFi 설치와 설정 in WSL2 - Data Science | DSChloe</a></p>
+<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a><strong>설치</strong></h2><ul>
+<li>wsl2에서 JAVA 설치 한다.</li>
+</ul>
+<p>관리자 권한으로 실행 : Ubuntu</p>
+<p>→ <code>ls</code>  → <code>cd ..</code> → <code>ls</code> → <code>cd ..</code> → <code>ls</code>  &#x2F;&#x2F; ls 하여 파일 출력 될 때까지</p>
+<p>→ <code>java --version</code></p>
+<p>→ 설치 안 되어 있을 시 : <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code></p>
+<p>→ 설치 안 되어 있을 시 : <code>sudo apt install openjdk-11-jdk</code></p>
+<p>→ <code>vi ~/.bash_profile</code></p>
+<p>→ vi 편집기로 이동된다.</p>
+<p>→ 내용 추가 : <code>export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64</code></p>
+<p>→ esc + :wq 하여 저장</p>
+<ul>
+<li>source 사용하여 상태 저장</li>
+</ul>
+<p>→ <code>source ~/.bash_profile</code></p>
+<p>→ <code>echo $JAVA_HOME</code></p>
+<p>→ 다음 내용 출력 시 성공 : &#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-11-openjdk-amd64  </p>
+<ul>
+<li>curl을 이용해서 NiFi를 현재 경로에 내려받는다. 오래 걸린다.</li>
+</ul>
+<p>→ <code>sudo wget https://downloads.apache.org/nifi/1.16.0/nifi-1.16.0-bin.tar.gz</code></p>
+<p>→ <code>ls</code> </p>
+<p>→ 현재 있는 기본 경로에 nifi 가 출력 됨을 알 수 있다.</p>
+<p><img src="/images/Apache_NiFi/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>&#x2F;mnt&#x2F;c 경로로 파일을 옮기자.</li>
+<li>mv 명령이 안 먹혀서 cp 명령 사용</li>
+<li>다음 명령을 실행하여 &#x2F;mnt&#x2F;c 경로로 복사 붙여넣었다.</li>
+<li>참고 자료 : <a target="_blank" rel="noopener" href="https://www.manualfactory.net/10805">리눅스 &#x2F; 명령어 &#x2F; cp &#x2F; 복사하는 명령어, mv – 이동하는 명령어 – MANUAL FACTORY</a></li>
+</ul>
+<p>→<code>cp nifi-1.16.0-bin.tar.gz mnt/c/nifi-1.16.0-bin.tar.gz</code></p>
+<p>→ <code>cd mnt</code></p>
+<p>→ <code>cd c</code></p>
+<p>→ <code>ls</code></p>
+<p>→ &#x2F;mnt&#x2F;c 경로에 nifi 가 생겼다.</p>
+<p><img src="/images/Apache_NiFi/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>.tar.gz 파일의 압축을 푼다</li>
+</ul>
+<p>→ <code>sudo tar xvaf nifi</code> 까지 타이핑하고 Tab 하여 다음 코드 작성</p>
+<p>→ <code>sudo tar xvzf nifi-1.16.0-bin.tar.gz</code></p>
+<ul>
+<li>압축파일을 푼 다음에는 cd nifi-1.16.0 폴더에 접속을 한다.</li>
+</ul>
+<p>→ Tab 이용하여 다음 코드 작성하고 실행</p>
+<p>→ <code>cd nifi-1.16.0/bin</code></p>
+<ul>
+<li>ls를 실행해서 <strong><a target="_blank" rel="noopener" href="http://nifi-env.sh/">nifi-env.sh</a></strong> 파일이 있는지 확인하고 있다면, vi 에디터로 연다.</li>
+<li>bash_profile에서 한 것처럼 동일하게 자바 환경변수를 잡아준다</li>
+</ul>
+<p>→ <code>sudo vi nifi-env.sh</code></p>
+<p>→ 내용 추가 : <code>export JAVA_HOME=&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;</code></p>
+<p>→ esc + :wq 하여 저장하고 나온다.</p>
+<ul>
+<li>그리고, <strong><a target="_blank" rel="noopener" href="http://nifi-env.sh/">nifi-env.sh</a></strong> 파일을 실행</li>
+</ul>
+<p>→ <code>sudo ./nifi.sh start</code></p>
+<ul>
+<li>NiFi 화면에 접속한다. <strong><a target="_blank" rel="noopener" href="https://127.0.0.1:8443/nifi/login">https://127.0.0.1:8443/nifi/login</a></strong></li>
+</ul>
+<p>→ 몇 분간 새로고침한다. ( 계속 안될 경우 : stop하고 기록을 지운 다음 다시 start)</p>
+<p>→ 비공개 화면 … 이라는 문구가 출력된다.</p>
+<p>→ ‘고급’ 선택</p>
+<p>→ 나타나는 주소를 클릭하여 들어간다.</p>
+<p>→ 다음 화면이 출력된다.</p>
+<p><img src="/images/Apache_NiFi/Untitled%202.png" alt="Untitled"></p>
+<ul>
+<li>종료</li>
+</ul>
+<p>&#x2F;mnt&#x2F;c&#x2F;nifi-1.16.0$ 상태에서 다음 명령 실행해야 한다.</p>
+<p>→ <code>cd ..</code></p>
+<p>→ <code>sudo ./bin/nifi.sh stop</code></p>
+<ul>
+<li>로그인 준비.</li>
+<li>아이디와 비밀번호를 설정한다. ( *비밀번호는 최소 13자리)</li>
+</ul>
+<p>→ <code>sudo ./bin/nifi.sh set-single-user-credentials human 1234567890123</code></p>
+<ul>
+<li>그리고, <strong><a target="_blank" rel="noopener" href="http://nifi-env.sh/">nifi-env.sh</a></strong> 파일을 실행</li>
+<li>단, &#x2F;bin 경로에서 한다.</li>
+</ul>
+<p>→ <code>cd bin/</code></p>
+<p>→ <code>sudo ./nifi.sh start</code></p>
+<ul>
+<li>NiFi 화면에 접속한다. <strong><a target="_blank" rel="noopener" href="https://127.0.0.1:8443/nifi/login">https://127.0.0.1:8443/nifi/login</a></strong></li>
+</ul>
+<p>→ 몇 분간 새로고침한다.</p>
+<p>→ 다음 정보로 로그인</p>
+<p>id : human</p>
+<p>password : 1234567890123</p>
+<p>→ 다음 화면이 출력되면 성공.</p>
+<p><img src="/images/Apache_NiFi/Untitled%203.png" alt="Untitled"></p>
+<ul>
+<li>세팅은 끝났으니 일단 종료시켜놓자.</li>
+<li>종료</li>
+<li>&#x2F;mnt&#x2F;c&#x2F;nifi-1.16.0$ 상태에서 다음 명령 실행해야 한다.</li>
+</ul>
+<p>→ <code>cd ..</code></p>
+<p>→ <code>sudo ./bin/nifi.sh stop</code></p>
+<h3 id="기록-지우는-법"><a href="#기록-지우는-법" class="headerlink" title="기록 지우는 법"></a>기록 지우는 법</h3><p>ubuntu에서 다음 명령 실행</p>
+<p><code>cd..</code></p>
+<p><code>cd..</code></p>
+<p><code>cd mnt/c</code></p>
+<p><code>ls</code></p>
+<p><code>cd nifi-1/16/0/</code></p>
+<p><code>ls</code></p>
+<p><code>cd logs</code></p>
+<p><code>ls</code></p>
+<p><code>sudo rm -rf *</code></p>
+<p><code>ls</code></p>
+<p>→ 삭제 되어 아무것도 출력되지 않는다.</p>
+<h3 id="NiFi-사용법"><a href="#NiFi-사용법" class="headerlink" title="NiFi 사용법"></a>NiFi 사용법</h3><ul>
+<li>Nifi 사용법을 익혀보자</li>
+<li>실무 예제로 배우는 데이터 공학 19p 부터 따라해본다.</li>
+</ul>
+<p>메뉴바에서 process를 드래그하여 캔버스에 놓는다.</p>
+<p>→ 다음 그림의 우측 상단에서 검색한다.</p>
+<p>→ 검색 : GenerateFlowFile</p>
+<p>→ ADD 버튼 클릭</p>
+<p><img src="/images/Apache_NiFi/Untitled%204.png" alt="Untitled"></p>
+<p>→ 같은 방법으로 검색</p>
+<p>→ 검색 : putfile</p>
+<p>→ ADD</p>
+<p>나타난 박스를 우클릭 → configure</p>
+<p>→ properties</p>
+<p>→ field 를 설정할 수 있다.</p>
+<p>설정 후에는 박스끼리 연결할 수 있다.</p>
+<p>→ 박스 하나의 중앙을 드래그하여 다른 박스에 놓는다.</p>
+<p>→ 연결된다.</p>
+<p>→ 이 상태에서 GenerateFlowFile에서 파일을 생성하여 PutFile에 옮길 수 있다.</p>
+<p><img src="/images/Apache_NiFi/Untitled%205.png" alt="Untitled"></p>
+<ul>
+<li>Reference : 실무 예제로 배우는 데이터 공학</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-14T00:00:00.000Z" title="2022. 4. 14. 오전 9:00:00">2022-04-14</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-17T02:42:46.286Z" title="2022. 4. 17. 오전 11:42:46">2022-04-17</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/setting/">setting</a><span> / </span><a class="link-muted" href="/categories/setting/wsl2/">wsl2</a></span><span class="level-item">3 minutes read (About 432 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/14/WSL2/">WSL2 install</a></h1><div class="content"><h1 id="WSL2-and-Linux"><a href="#WSL2-and-Linux" class="headerlink" title="WSL2 and Linux"></a>WSL2 and Linux</h1><p>다음 링크 참고 :</p>
 <ul>
 <li>반드시 설정 확인</li>
 <li><a target="_blank" rel="noopener" href="https://www.lainyzine.com/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">https://www.lainyzine.com/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/</a></li>
@@ -1474,316 +1610,7 @@ Epoch 5/5
 <li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
 </li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.752Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">12 minutes read (About 1794 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_1/">chapter_7_1</a></h1><div class="content"><h3 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝"></a>딥러닝</h3><p>인공신경망 1943년 즈음 등장</p>
-<p>1차 융성기 ~ 1960 후반</p>
-<ul>
-<li><p>로봇이 인간들과 함께 살 것이다 예언</p>
-</li>
-<li><p>XOR 문제 해결 못함</p>
-</li>
-<li><p>AI 연구 겨울 찾아옴</p>
-</li>
-<li><p>대안 : 최근접이웃, 결정트리, 서포트벡터머신 등</p>
-</li>
-<li><p>토론토 대학 AI 연구소 (역전파 알고리즘 개발)</p>
-</li>
-<li><p>CNN 알고리즘 (1980년대 후반)</p>
-</li>
-</ul>
-<p>-2차 융성시기 ~ 1990년대 후반</p>
-<ul>
-<li><p>CNN, RNN 알고리즘 등장</p>
-</li>
-<li><p>연산 속도 문제&#x2F;정확도 문제</p>
-</li>
-<li><p>산업계 즉시 활용 어려움</p>
-</li>
-</ul>
-<p>-3차 융성시기 2012 ~ 현재까지</p>
-<ul>
-<li><p>GPU 세팅 (그래픽카드)</p>
-</li>
-<li><p>연산속도문제가 해결</p>
-</li>
-<li><p>세돌 vs 알파고 바둑 대회(2017년)</p>
-</li>
-<li><p>정부에서도 본격적으로 투자</p>
-</li>
-<li><p>교육쪽으로 먼저 투자 시작</p>
-</li>
-<li><p>대학교육 + 국비교육</p>
-</li>
-<li><p>데이터과학</p>
-</li>
-</ul>
-<p>2012년</p>
-<ul>
-<li><p>CNN 알고리즘 논문 다수 출현</p>
-</li>
-<li><p>이미지 기본데이터셋</p>
-</li>
-<li><ol>
-<li>기존대비 성능이 좋아야 함</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>개존대비 연산속도가 좋아야 함</li>
-</ol>
-</li>
-</ul>
-<p>→ 각자 딥러닝 관심 생김</p>
-<p>→ 공부하는 패턴 : 최운선순위는 가장 최근 나온 알고리즘</p>
-<p>분야가 정말 많음</p>
-<ul>
-<li><p>지도학습 : 분류&#x2F;수치 예측(회귀)&#x2F;비지도학습</p>
-</li>
-<li><p>엑셀데이터(정형데이터)</p>
-</li>
-<li><p>기초 통계가 중요(리포트 형태가 더 중요)</p>
-</li>
-<li><p>개발의 상대적 중요성 떨어짐(성과 측면)</p>
-</li>
-</ul>
-<p>딥러닝:비정형데이터</p>
-<ul>
-<li><p>텍스트,음성,이미지,영상</p>
-</li>
-<li><p>주로 쓰이는 알고리즘 탐색 (최신 알고리즘)</p>
-</li>
-<li><p>계속 업그레이드 되고 있음</p>
-</li>
-<li><p>이세돌 vs 알파고 바둑 대회 (2017년)</p>
-</li>
-<li><p>데이터과학</p>
-</li>
-</ul>
-<p>지도 학습 vs 딥러닝 </p>
-<p>→ 개발자라면 딥러닝 알고리즘을 가져다가 빠르게 개발하는 기술을 습득.</p>
-<h3 id="딥러닝-라이브러리"><a href="#딥러닝-라이브러리" class="headerlink" title="딥러닝 라이브러리"></a>딥러닝 라이브러리</h3><ul>
-<li>텐서플로 : <a target="_blank" rel="noopener" href="https://www.tensorflow.org/">https://www.tensorflow.org/</a><ul>
-<li>2016년 텐서플로 1 버전 vs 텐서플로 2 버전</li>
-<li>문법적으로 매우 다름</li>
-<li>산업용</li>
-</ul>
-</li>
-<li>파이토치 : <a target="_blank" rel="noopener" href="https://pytorch.org/">https://pytorch.org/</a><ul>
-<li>연구용</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow</span><br><span class="line"><span class="built_in">print</span>(tensorflow.__version__)</span><br></pre></td></tr></table></figure>
-
-<pre><code>2.8.0
-</code></pre>
-<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><h3 id="패션-MNIST"><a href="#패션-MNIST" class="headerlink" title="패션 MNIST"></a>패션 MNIST</h3><ul>
-<li>10종류의 패션 아이템으로 구성된 데이터셋</li>
-<li>텐서프로를 사용해 이 데이터를 불러온다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line">(train_input, train_target), (test_input, test_target)= keras.datasets.fashion_mnist.load_data()  </span><br><span class="line"><span class="comment"># load.data()함수는 훈련 데이터와 테스트 데이터를 나누어 반환한다.</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>데이터 확인</p>
-</li>
-<li><p>훈련 데이터</p>
-<ul>
-<li>60,000개 이미지, 이미지 크기는 28x28</li>
-<li>타깃은 60,000개 원소가 있는 1차원 배열</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_input.shape, train_target.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(60000, 28, 28) (60000,)
-</code></pre>
-<ul>
-<li>테스트 세트<ul>
-<li>10,000개의 이미지로 이루어짐</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(test_input.shape, test_target.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(10000, 28, 28) (10000,)
-</code></pre>
-<ul>
-<li>이미지 시각화</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">10</span>, figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">  axs[i].imshow(train_input[i], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">  axs[i].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_7_1/output_12_0.png" alt="png"></p>
-<ul>
-<li>타겟 값 리스트<ul>
-<li>패션 MNIST의 타깃은 0~9까지의 숫자 레이블로 구성된다.</li>
-<li>같은 숫자가 나온다면 타깃이 같은 두 샘플은 같은 종류의 옷이다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([train_target[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[9, 0, 0, 3, 0, 2, 7, 2, 5, 5]
-</code></pre>
-<ul>
-<li>실제 타겟값의 값을 확인</li>
-<li>각 라벨당 6000개의 이미지 존재 60,000개</li>
-<li>즉, 각 의류마다 6,000개의 샘플이 들어있다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(np.unique(train_target, return_counts = <span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=uint8), array([6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000]))
-</code></pre>
-<h3 id="로지스틱-회귀로-패션-아이템-분류하기"><a href="#로지스틱-회귀로-패션-아이템-분류하기" class="headerlink" title="로지스틱 회귀로 패션 아이템 분류하기"></a>로지스틱 회귀로 패션 아이템 분류하기</h3><ul>
-<li>경사하강법 (기울기)<ul>
-<li>샘플이 60,000개나 되기에 샘플을 하나씩 꺼내서 모델을 훈련하는 게 더 효율적</li>
-<li>해당 상황에 맞는 것이 강사하강법이다.</li>
-</ul>
-</li>
-<li>전제 조건 : 각 컬럼의 데이터셋 동일 (표준화)</li>
-<li>why 255? 각 픽셀의 값 0~255 사이의 정수값을 가진다.</li>
-<li>255로 나누어 0~1 사이의 값으로 정규화 시킴<ul>
-<li>표준화는 아니지만 양수 값으로 이루어진 이미지를 전처리할 때 사용하는 방벙</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 경사하강법 사용을 위해 1차원 배열로 만들기</span></span><br><span class="line">train_scaled = train_scaled.reshape(-<span class="number">1</span>, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line"><span class="built_in">print</span>(train_scaled.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(60000, 784)
-</code></pre>
-<h3 id="모델-만들기"><a href="#모델-만들기" class="headerlink" title="모델 만들기"></a>모델 만들기</h3><ul>
-<li><p>비정형데이터에 선형모델 또는 비선형모델을 적용시키는 것이 합리적인가?</p>
-<ul>
-<li>결론은 아니다!</li>
-<li>다른 대안이 있는냐? 인공신경망!</li>
-</ul>
-</li>
-<li><p>정형데이터에 인공신경망 및 딥러닝 모델을 적용시키는 것이 합리적인가?</p>
-<ul>
-<li>결론은 아니다!</li>
-</ul>
-</li>
-<li><p>SGDClassifier 클래스와 cross_validate 함수로 이 데이터에서 교차 검증으로 성능을 확인한다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_validate</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDClassifier</span><br><span class="line"></span><br><span class="line">sc = SGDClassifier(loss=<span class="string">&#x27;log&#x27;</span>, max_iter=<span class="number">5</span>, random_state=<span class="number">42</span>)   <span class="comment"># 반복 횟수를 5번으로 지정</span></span><br><span class="line"></span><br><span class="line">scores = cross_validate(sc, train_scaled, train_target, n_jobs=-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>])) </span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8195666666666668
-</code></pre>
-<ul>
-<li>로지스틱 회귀 공식을 그림으로 나타내면 인공신경망의 그림과 같다.</li>
-<li>인동신경망을 만들어 패션 아이템 분류 문제의 성능을 높일 수 있는지 지켜보자.</li>
-</ul>
-<h3 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h3><ul>
-<li>355~356p</li>
-<li>인공신경망 : <a target="_blank" rel="noopener" href="http://alexlenail.me/NN-SVG/index.html">http://alexlenail.me/NN-SVG/index.html</a></li>
-<li>입력층, 출력층, 뉴런(유닛)에 대해 숙지하자.</li>
-</ul>
-<h3 id="인공신경망-모델-적용"><a href="#인공신경망-모델-적용" class="headerlink" title="인공신경망 모델 적용"></a>인공신경망 모델 적용</h3><ul>
-<li>이미지 분류에는 인공 신경망이 적합하다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>텐서플로 &#x3D; 케라스</li>
-<li>케라스 API를 사용해 패션 아이템을 분류하는 가장 간단한 인공 신경망을 만들어 보자.</li>
-<li>train_test_split()</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>test_size&#x3D;0.2<ul>
-<li>훈련 세트에서 20%를 검증 세트로 덜어 내었다.</li>
-</ul>
-</li>
-<li>훈련 세트와 검증 세트의 크기를 알아보자.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_scaled.shape, train_target.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(48000, 784) (48000,)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(val_scaled.shape, val_target.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(12000, 784) (12000,)
-</code></pre>
-<ul>
-<li><p>60,000개 중에 12,000개가 검증 세트로 분리되었다.</p>
-</li>
-<li><p>먼저 훈련 세트로 모델을 만든다. 그 다음 검증 세트로 훈련한 모델을 평가해본다.</p>
-</li>
-<li><p>이미지 하나에 있는 픽셀은 784개. 뉴런은 10개. 이것을 모두 연결.</p>
-</li>
-<li><p>완전 연결층 &#x3D; 밀집층 &#x3D; 밀집하게 연결되어 있는 것</p>
-<ul>
-<li>fully connected layer &#x3D; dense layer</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_target[:<span class="number">10</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[7 3 5 8 6 9 3 3 9 9]
-</code></pre>
-<ul>
-<li>Dense 클래스를 통해 밀집층을 만들어보자</li>
-<li>활성화 함수<ul>
-<li>softmax와 같이 뉴런의 선형 방정직 계산 결과에 적용되는 함수.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 매개변수의 의미는 차례대로 뉴런개수, 뉴런의 출력에 적용할 함수, 입력의 크기다.</span></span><br><span class="line">dense = keras.layers.Dense(<span class="number">10</span>, activation = <span class="string">&#x27;softmax&#x27;</span>, input_shape=(<span class="number">784</span>, ))</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>방금 만든 밀집층을 가진 신경망 모델을 만들자.</li>
-<li>Sequential 클래스를 사용한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential(dense)</span><br></pre></td></tr></table></figure>
-
-<h3 id="인공-신경망으로-패션-아이템-분류하기"><a href="#인공-신경망으로-패션-아이템-분류하기" class="headerlink" title="인공 신경망으로 패션 아이템 분류하기"></a>인공 신경망으로 패션 아이템 분류하기</h3><ul>
-<li>훈련하기 전의 설정 단계</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss = <span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics = <span class="string">&quot;accuracy&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>모델을 훈련한다.<ul>
-<li>반복할 에포크 횟수를 epochs 매개변수로 지정</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.fit(train_scaled, train_target, epochs = <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Epoch 1/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.4782 - accuracy: 0.8383
-Epoch 2/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.4574 - accuracy: 0.8484
-Epoch 3/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.4450 - accuracy: 0.8525
-Epoch 4/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.4372 - accuracy: 0.8549
-Epoch 5/5
-1500/1500 [==============================] - 2s 2ms/step - loss: 0.4318 - accuracy: 0.8575
-
-
-
-
-
-&lt;keras.callbacks.History at 0x7fb1c0b7f450&gt;
-</code></pre>
-<ul>
-<li>갈수록 정확도가 증가함을 알 수 있다.</li>
-<li>검증 세트(val_scaled, val_target)에서 모델의 성능을 확인한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>375/375 [==============================] - 1s 1ms/step - loss: 0.4530 - accuracy: 0.8463
-
-
-
-
-
-[0.4530307352542877, 0.8463333249092102]
-</code></pre>
-<ul>
-<li>Reference : 혼자 공부하는 머신러닝 + 딥러닝</li>
-</ul>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">Previous</a></div><div class="pagination-next"><a href="/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><a class="pagination-link" href="/page/4/">4</a></li><li><a class="pagination-link" href="/page/5/">5</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">47</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">33</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">20</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">30</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">10</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-24T00:00:00.000Z">2022-04-24</time></p><p class="title"><a href="/2022/04/24/PSQL_practice_2/">PSQL practice 02</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/postgreSQL/">postgreSQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-23T00:00:00.000Z">2022-04-23</time></p><p class="title"><a href="/2022/04/23/PSQL_practice0/">PSQL practice 01</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/postgreSQL/">postgreSQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-22T00:00:00.000Z">2022-04-22</time></p><p class="title"><a href="/2022/04/22/Airfow_practice_3/">Airflow 실습03</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/airflow/">airflow</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-21T00:00:00.000Z">2022-04-21</time></p><p class="title"><a href="/2022/04/21/Airflow_practice_2/">Airflow 실습02</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/airflow/">airflow</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-20T00:00:00.000Z">2022-04-20</time></p><p class="title"><a href="/2022/04/20/Airflow_pipeline0/">Airflow 재설치 및 데이터 파이프라인 구축</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/airflow/">airflow</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">29</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">Previous</a></div><div class="pagination-next"><a href="/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><a class="pagination-link" href="/page/4/">4</a></li><li><a class="pagination-link" href="/page/5/">5</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">48</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">33</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">20</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">30</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">10</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-25T11:05:54.512Z">2022-04-25</time></p><p class="title"><a href="/2022/04/25/Spark_on_Windows/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-24T00:00:00.000Z">2022-04-24</time></p><p class="title"><a href="/2022/04/24/PSQL_practice_2/">PSQL practice 02</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/postgreSQL/">postgreSQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-23T00:00:00.000Z">2022-04-23</time></p><p class="title"><a href="/2022/04/23/PSQL_practice0/">PSQL practice 01</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/postgreSQL/">postgreSQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-22T00:00:00.000Z">2022-04-22</time></p><p class="title"><a href="/2022/04/22/Airfow_practice_3/">Airflow 실습03</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/airflow/">airflow</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-21T00:00:00.000Z">2022-04-21</time></p><p class="title"><a href="/2022/04/21/Airflow_practice_2/">Airflow 실습02</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/airflow/">airflow</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
