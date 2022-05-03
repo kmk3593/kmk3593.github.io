@@ -1,5 +1,448 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: python - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li class="is-active"><a href="#" aria-current="page">python</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-03-31T00:00:00.000Z" title="2022. 3. 31. 오전 9:00:00">2022-03-31</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.270Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">31 minutes read (About 4662 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/03/31/chapter3_3_%EA%B9%80%EB%AF%BC%EA%B7%A0/">chapter3_3</a></h1><div class="content"><h1 id="특성-공학과-규제"><a href="#특성-공학과-규제" class="headerlink" title="특성 공학과 규제"></a>특성 공학과 규제</h1><ul>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: python - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li class="is-active"><a href="#" aria-current="page">python</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-02T00:00:00.000Z" title="2022. 4. 2. 오전 9:00:00">2022-04-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.205Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">14 minutes read (About 2162 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/02/chapter_4_1_%EA%B9%80%EB%AF%BC%EA%B7%A0/">chapter4_1</a></h1><div class="content"><h1 id="로지스틱-회귀"><a href="#로지스틱-회귀" class="headerlink" title="로지스틱 회귀"></a>로지스틱 회귀</h1><ul>
+<li>대상이 어떤 타깃에 속할 확률을 구한다.</li>
+</ul>
+<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><ul>
+<li>컬럼 설명 177p 그림</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">fish = pd.read_csv(<span class="string">&#x27;https://bit.ly/fish_csv_data&#x27;</span>)</span><br><span class="line">fish.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-3c5195bb-ad65-485c-8b95-563887f303f2">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Species</th>
+      <th>Weight</th>
+      <th>Length</th>
+      <th>Diagonal</th>
+      <th>Height</th>
+      <th>Width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bream</td>
+      <td>242.0</td>
+      <td>25.4</td>
+      <td>30.0</td>
+      <td>11.5200</td>
+      <td>4.0200</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bream</td>
+      <td>290.0</td>
+      <td>26.3</td>
+      <td>31.2</td>
+      <td>12.4800</td>
+      <td>4.3056</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bream</td>
+      <td>340.0</td>
+      <td>26.5</td>
+      <td>31.1</td>
+      <td>12.3778</td>
+      <td>4.6961</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bream</td>
+      <td>363.0</td>
+      <td>29.0</td>
+      <td>33.5</td>
+      <td>12.7300</td>
+      <td>4.4555</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bream</td>
+      <td>430.0</td>
+      <td>29.0</td>
+      <td>34.0</td>
+      <td>12.4440</td>
+      <td>5.1340</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-3c5195bb-ad65-485c-8b95-563887f303f2')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-3c5195bb-ad65-485c-8b95-563887f303f2 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-3c5195bb-ad65-485c-8b95-563887f303f2&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<ul>
+<li>unique()<ul>
+<li>어떤 종류의 생선이 있는지 species 열에서 고유한 값을 추출한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(pd.unique(fish[<span class="string">&#x27;Species&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[&#39;Bream&#39; &#39;Roach&#39; &#39;Whitefish&#39; &#39;Parkki&#39; &#39;Perch&#39; &#39;Pike&#39; &#39;Smelt&#39;]
+</code></pre>
+<h3 id="데이터-변환"><a href="#데이터-변환" class="headerlink" title="데이터 변환"></a>데이터 변환</h3><ul>
+<li>배열로 변환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fish_input = fish[[<span class="string">&#x27;Weight&#x27;</span>, <span class="string">&#x27;Length&#x27;</span>, <span class="string">&#x27;Diagonal&#x27;</span>, <span class="string">&#x27;Height&#x27;</span>, <span class="string">&#x27;Width&#x27;</span>]]  <span class="comment"># Diagonal = 대각선</span></span><br><span class="line">fish_input.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(159, 5)
+</code></pre>
+<ul>
+<li>target 배열로 변환</li>
+<li>종속변수</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fish_target = fish[<span class="string">&#x27;Species&#x27;</span>].to_numpy()</span><br></pre></td></tr></table></figure>
+
+<h3 id="훈련-데이터와-테스트-데이터"><a href="#훈련-데이터와-테스트-데이터" class="headerlink" title="훈련 데이터와 테스트 데이터"></a>훈련 데이터와 테스트 데이터</h3><ul>
+<li>이제 데이터를 훈련 세트와 테스트 세트로 나눈다.</li>
+<li>외워야 할 정도로 중요. 자주 쓰다보면 외워진다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(</span><br><span class="line">    fish_input, fish_target, random_state = <span class="number">42</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>표준화 전처리<ul>
+<li>이유가 중요하다</li>
+<li>사이킷런의 StandardScaler 클래스를 사용해 훈련 세트와 테스트 세트를 표준화 전처리한다.</li>
+<li>반드시 훈련 세트의 통계값으로 테스트 세트를 변환해야 한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">ss = StandardScaler()</span><br><span class="line">ss.fit(train_input)</span><br><span class="line"></span><br><span class="line">train_scaled = ss.transform(train_input)</span><br><span class="line">test_scaled = ss.transform(test_input)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_input[:<span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(train_scaled[:<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>     Weight  Length  Diagonal   Height   Width
+26    720.0    35.0      40.6  16.3618  6.0900
+137   500.0    45.0      48.0   6.9600  4.8960
+146     7.5    10.5      11.6   1.9720  1.1600
+90    110.0    22.0      23.5   5.5225  3.9950
+66    140.0    20.7      23.2   8.5376  3.2944
+[[ 0.91965782  0.60943175  0.81041221  1.85194896  1.00075672]
+ [ 0.30041219  1.54653445  1.45316551 -0.46981663  0.27291745]
+ [-1.0858536  -1.68646987 -1.70848587 -1.70159849 -2.0044758 ]
+ [-0.79734143 -0.60880176 -0.67486907 -0.82480589 -0.27631471]
+ [-0.71289885 -0.73062511 -0.70092664 -0.0802298  -0.7033869 ]]
+</code></pre>
+<h3 id="k-최근접-이웃-분류기의-확률-예측"><a href="#k-최근접-이웃-분류기의-확률-예측" class="headerlink" title="k-최근접 이웃 분류기의 확률 예측"></a>k-최근접 이웃 분류기의 확률 예측</h3><ul>
+<li>필요한 데이터를 모두 준비했다.</li>
+<li>이제 k-최근접 이웃 분류기로 테스트 세트에 들어 있느 확률을 예측한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line">kn = KNeighborsClassifier(n_neighbors=<span class="number">3</span>)  <span class="comment"># 최근접 이웃 개수를 3으로 지정</span></span><br><span class="line">kn.fit(train_scaled, train_target)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(kn.score(train_scaled, train_target))</span><br><span class="line"><span class="built_in">print</span>(kn.score(test_scaled, test_target))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8907563025210085
+0.85
+</code></pre>
+<ul>
+<li><p>182p</p>
+</li>
+<li><p>다중 분류( multi-class classification)</p>
+<ul>
+<li>앞서 fish  데이터프레임에서 7종류의 생선이 있었다.</li>
+<li>fish[‘Species’]를 사용해 타깃 데이터를 만들었기에 두 세트의 타깃 데이터에도 7개의 생선 종류가 들어가 있다.</li>
+<li>이렇게 타깃 데이터에 2개 이상의 클래스가 포함된 문제를 ‘다중 분류’라 부른다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># predict_proba() 메서드로 클래스별 확률 값을 반환한다.</span></span><br><span class="line">proba = kn.predict_proba(test_scaled[:<span class="number">5</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># round()함수. 소수점 네번째 자리로 반올림</span></span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">round</span>(proba, decimals = <span class="number">4</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 타깃값을 그대로 사이킷런 모델에 전달하면 순서가 알파벨 순으로 매겨진다.</span></span><br><span class="line"><span class="built_in">print</span>(kn.classes_)   </span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0.     0.     1.     0.     0.     0.     0.    ]
+ [0.     0.     0.     0.     0.     1.     0.    ]
+ [0.     0.     0.     1.     0.     0.     0.    ]
+ [0.     0.     0.6667 0.     0.3333 0.     0.    ]
+ [0.     0.     0.6667 0.     0.3333 0.     0.    ]]
+[&#39;Bream&#39; &#39;Parkki&#39; &#39;Perch&#39; &#39;Pike&#39; &#39;Roach&#39; &#39;Smelt&#39; &#39;Whitefish&#39;]
+</code></pre>
+<ul>
+<li>위 코드의 결과는 어떤 물고기일지에 대한 확률이다.<ul>
+<li>예를 들어, 1번째 샘플은 100% 확률로 perch이다.</li>
+<li>에를 들어, 4번째 샘플은 66% 확률로 perch이고, 33% 확률로 Roach이다.</li>
+</ul>
+</li>
+</ul>
+<h1 id="로지스틱-회귀-1"><a href="#로지스틱-회귀-1" class="headerlink" title="로지스틱 회귀"></a>로지스틱 회귀</h1><ul>
+<li><p>중요도 : 최상</p>
+</li>
+<li><p>오늘 유튜브 영상 반드시 시청</p>
+<ul>
+<li>개념 재복습 반드시 필요</li>
+</ul>
+</li>
+<li><p>Why?</p>
+<ul>
+<li>로지스틱 회귀<ul>
+<li>기초 통계로도 활용 (의학통계)</li>
+<li>머신러닝 부류모형의 기초 모형인데, 성능이 생각보다 나쁘지 않음<ul>
+<li>데이터셋, 수치 테이터 기반</li>
+</ul>
+</li>
+<li>딥러닝 : 초기모형에 해당됨.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>이름은 회귀이지만 분류 모델이다.</p>
+</li>
+<li><p>선형 회귀와 동일하게 선형 방정식을 학습한다.</p>
+<ul>
+<li>예를 들어 다음과 같다.<ul>
+<li>z &#x3D; a x (weight) + b x (length) + c x (Diagonal) + d x (Height) + e x (width) + f</li>
+<li>여기에서 a, b, c, d, e는 가중치 혹은 계수이다.</li>
+<li>z 가 확률이 되려면 0~1 사이의 값이어야 한다.</li>
+<li>이를 위해 사용하는 것이 시그모이드 함수( 또는 로지스틱 함수)이다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>1 &#x2F; ( 1 + e^(-z) ) </p>
+<ul>
+<li>이 식이 로지스틱 함수( 시그모이드 함수) 이다.</li>
+</ul>
+</li>
+<li><p>넘파이를 사용하여 z의 그래프를 그려보자.</p>
+<ul>
+<li>-5와 5 사이에서 0.1 간격으로 배열 z를 만든 다음 z 위치마다 로지스틱 함수를 계산한다.</li>
+<li>함수 계산은 np.exp() 함수를 사용한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">z = np.arange(-<span class="number">5</span>, <span class="number">5</span>, <span class="number">0.1</span>)</span><br><span class="line">phi = <span class="number">1</span> / (<span class="number">1</span> + np.exp(-z))  <span class="comment"># exp는 거듭제곱, z는 범위 표시</span></span><br><span class="line"><span class="comment"># print(z)</span></span><br><span class="line"><span class="comment"># print(phi)</span></span><br><span class="line"></span><br><span class="line">plt.plot(z, phi)  <span class="comment"># 문서를 봐야 함</span></span><br><span class="line">plt.xlabel(<span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;phi&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_4_1_%EA%B9%80%EB%AF%BC%EA%B7%A0/output_23_0.png" alt="png"></p>
+<ul>
+<li><p>개발자 취업을 원한다면</p>
+<ul>
+<li>공부 별도로 하지 않는다!</li>
+<li>다만 알고리즘의 컨셉은 이해해야 한다.</li>
+<li>얘기가 서로 통해야 하기 때문에</li>
+</ul>
+</li>
+<li><p>데이터 분석 관련 지망이라면</p>
+<ul>
+<li>공부해야 한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="로지스틱-회귀로-이진-분류-수행하기"><a href="#로지스틱-회귀로-이진-분류-수행하기" class="headerlink" title="로지스틱 회귀로 이진 분류 수행하기"></a>로지스틱 회귀로 이진 분류 수행하기</h3><ul>
+<li><p>사이킷런에는 로지스틱 회귀모델인 LogisticRegression 클래스가 준비되어 있다.</p>
+</li>
+<li><p>이진 분류이 경우</p>
+<ul>
+<li>로지스틱 함수의 출력이 0.5보다 크면 양성 클래스</li>
+<li>로지스틱 함수의 출력이 0.5보다 작으면 음성 클래스</li>
+</ul>
+</li>
+<li><p>불리언 인덱싱 (boolean indexing)</p>
+<ul>
+<li>넘파일 배열은 True, False 값을 전달하여 행을 선택할 수 있다.</li>
+<li>이를 불리언 인덱싱이라고 부른다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char_arr = np.array([<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(char_arr[[<span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[&#39;A&#39; &#39;C&#39;]
+</code></pre>
+<ul>
+<li>A 와 C만 True이므로 위 결과가 나온다.</li>
+<li>이와 같은 방식으로 훈련 세트에서 도미(bream)와 빙어(smelt)의 행만 골라낸다.</li>
+<li>비교 연산자를  사용하면 도미와 빙어의 행을 True로 만들 수 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OR 연산자(|) 를 사용하여 비교 결과를 합친다.</span></span><br><span class="line">bream_smelt_indexes = (train_target == <span class="string">&#x27;Bream&#x27;</span>) | (train_target == <span class="string">&#x27;Smelt&#x27;</span>)</span><br><span class="line">train_bream_smelt = train_scaled[bream_smelt_indexes]</span><br><span class="line">target_bream_smelt = train_target[bream_smelt_indexes]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>위에서 bream_smelt_indexes 배열은 도미와 빙어일 경우만 True값이 들어간다.</p>
+</li>
+<li><p>이 배열을 사용해 train_scaled와 train_targt 배열에 불리언 인덱싱을 적용하여 도미와 빙어 데이터만 골라낼 수 있다.</p>
+</li>
+<li><p>186p</p>
+</li>
+<li><p>모형 만들고 예측하기!</p>
+</li>
+<li><p>이제 이 데이터로 로지스틱 회귀 모델을 훈련한다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line">lr = LogisticRegression()</span><br><span class="line"><span class="comment">#         독립변수             종속변수</span></span><br><span class="line">lr.fit(train_bream_smelt, target_bream_smelt)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>LogisticRegression()
+</code></pre>
+<ul>
+<li>훈련한 모델을 사용해 train_bream_smelt에 있는 처음 5개 샘플을 예측한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 예측하기</span></span><br><span class="line"><span class="comment"># 클래스로 분류</span></span><br><span class="line"><span class="comment"># 확률값 -&gt; 0.5</span></span><br><span class="line"><span class="built_in">print</span>(lr.predict(train_bream_smelt[:<span class="number">5</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[&#39;Bream&#39; &#39;Smelt&#39; &#39;Bream&#39; &#39;Bream&#39; &#39;Bream&#39;]
+</code></pre>
+<ul>
+<li>2 번째 샘플을 제외하고 모두 도미로 예측했다.</li>
+<li>예측 확률은 predict_proba() 메서드에서 제공한다.</li>
+<li>처음 5개 샘플의 예측 확률을 출력해 본다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lr.predict_proba(train_bream_smelt[:<span class="number">5</span>]))  <span class="comment"># predict_proba에서 예측 확률 제공</span></span><br><span class="line"><span class="built_in">print</span>(lr.classes_)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0.99759855 0.00240145]
+ [0.02735183 0.97264817]
+ [0.99486072 0.00513928]
+ [0.98584202 0.01415798]
+ [0.99767269 0.00232731]]
+[&#39;Bream&#39; &#39;Smelt&#39;]
+</code></pre>
+<ul>
+<li><p>위에서 첫번째 열이 음성 클래스(0)에 대한 확률이다.</p>
+</li>
+<li><p>위에서 두번째 열이 양성 클래스(1)에 대한 확률이다.</p>
+</li>
+<li><p>bream이 음성이고, smelt가 양성 클래스이다.  </p>
+</li>
+<li><p>이진 분류를 수행 완료했다.</p>
+</li>
+<li><p>이제 선형 회귀에서터럼 로지스틱 회귀가 학습한 계수를 확인한다.</p>
+</li>
+<li><p>방정식의 각 기울기와 상수를 구하는 코드</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lr.coef_, lr.intercept_)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[-0.4037798  -0.57620209 -0.66280298 -1.01290277 -0.73168947]] [-2.16155132]
+</code></pre>
+<ul>
+<li><p>이 로지스틱 회귀 모델이 학습한 방정식은 다음과 같다.</p>
+<ul>
+<li>z &#x3D; -0.404 x (weight) -0.576 x (length) -0.663 x (Diagonal) -1.103 x (Height) -0.732 x (width) -2.161</li>
+<li>확실히 로지스틱 회귀는 선형 회귀와 비슷하다.</li>
+</ul>
+</li>
+<li><p>LogistricRegression 모델로 z값을 계산해 보자.</p>
+</li>
+<li><p>z식</p>
+</li>
+<li><p>z값을 출력하자.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">decisions = lr.decision_function(train_bream_smelt[:<span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(decisions)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[-6.02927744  3.57123907 -5.26568906 -4.24321775 -6.0607117 ]
+</code></pre>
+<ul>
+<li>이 z값을 로지스틱 함수에 통과시키면 확률을 얻을 수 있다.</li>
+<li>expit() 함수를 이용해 편하게 계산 가능하다.</li>
+<li>이 함수를 이용해 decisions 배열의 값을 확률로 변환한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.special <span class="keyword">import</span> expit</span><br><span class="line"><span class="built_in">print</span>(expit(decisions))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0.00240145 0.97264817 0.00513928 0.01415798 0.00232731]
+</code></pre>
+<ul>
+<li><p>양성 클래스에 대한 z값을 반환했다.</p>
+</li>
+<li><p>지금까지 이진 분류를 통해 2종류의 생선 샘플을 골라냈고 이를 이용해 로지스틱 회귀 모델을 훈련했다.</p>
+</li>
+<li><p>188p</p>
+</li>
+<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-03-31T00:00:00.000Z" title="2022. 3. 31. 오전 9:00:00">2022-03-31</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.270Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">31 minutes read (About 4662 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/03/31/chapter3_3_%EA%B9%80%EB%AF%BC%EA%B7%A0/">chapter3_3</a></h1><div class="content"><h1 id="특성-공학과-규제"><a href="#특성-공학과-규제" class="headerlink" title="특성 공학과 규제"></a>특성 공학과 규제</h1><ul>
 <li>선형 회귀는 특성이 많을수록 효과가 좋아진다.<ul>
 <li>무게와 길이뿐만 아니라 높이와 두께도 활용해보자.</li>
 <li>사이킷런의 PolynomialFeatures  클래스를 사용한다.</li>
@@ -15696,207 +16139,7 @@ Wall time: 1.62 ms
 
 
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-03-23T00:00:00.000Z" title="2022. 3. 23. 오전 9:00:00">2022-03-23</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-03-23T13:41:41.149Z" title="2022. 3. 23. 오후 10:41:41">2022-03-23</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a><span> / </span><a class="link-muted" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/">클래스</a></span><span class="level-item">11 minutes read (About 1577 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/03/23/python_03/">파이썬_기초문법_3</a></h1><div class="content"><h1 id="클래스를-만드는-목적"><a href="#클래스를-만드는-목적" class="headerlink" title="클래스를 만드는 목적!"></a>클래스를 만드는 목적!</h1><ul>
-<li>코드의 간결화!<ul>
-<li>코드를 재사용!</li>
-</ul>
-</li>
-<li>여러 라이브러리 –&gt; 클래스로 구현이 됨<ul>
-<li>list 클래스, str 클래스</li>
-<li>객체로 사용</li>
-<li>변수명으로 정의!</li>
-</ul>
-</li>
-<li>여러 클래스들이 모여서 하나의 라이브러리가 됨.<ul>
-<li>장고 &#x2F; 웹개발 &#x2F; 머신러닝 &#x2F; 시각화 &#x2F; 데이터 전처리</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:     <span class="comment"># 클래스 이름 첫문자는 대문자로 설정</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#class attribute</span></span><br><span class="line">  country = <span class="string">&quot;korean&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">#instance attribute         </span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):    <span class="comment"># def __init__(self, ) 는 디폴트로 정해진 부분이다</span></span><br><span class="line">    self.name = name</span><br><span class="line">    self.age = age</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">  kim = Person(<span class="string">&quot;Kim&quot;</span>, <span class="number">100</span>)</span><br><span class="line">  Lee = Person(<span class="string">&quot;lee&quot;</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># access class attribute</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;kim은 &#123;&#125;&quot;</span>.<span class="built_in">format</span>(kim.__class__.country))</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Lee는 &#123;&#125;&quot;</span>.<span class="built_in">format</span>(Lee.__class__.country))</span><br></pre></td></tr></table></figure>
-
-<pre><code>kim은 korean
-Lee은 korean
-</code></pre>
-<h2 id="instance-메서드-생성"><a href="#instance-메서드-생성" class="headerlink" title="instance 메서드 생성"></a>instance 메서드 생성</h2><ul>
-<li>list.append(), list.extend()</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:     </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  country = <span class="string">&quot;korean&quot;</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):    </span><br><span class="line">    self.name = name</span><br><span class="line">    self.age = age</span><br><span class="line"></span><br><span class="line">  <span class="comment"># instance method 정의</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">singing</span>(<span class="params">self, songtitle, sales</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&#123;&#125;판매량 &#123;&#125;된 &#123;&#125;을 노래합니다.&quot;</span>.<span class="built_in">format</span>(self.name, sales, songtitle)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">  kim = Person(<span class="string">&quot;Kim&quot;</span>, <span class="number">100</span>)</span><br><span class="line">  Lee = Person(<span class="string">&quot;lee&quot;</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># access class attribute</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;kim은 &#123;&#125;&quot;</span>.<span class="built_in">format</span>(kim.country))</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Lee는 &#123;&#125;&quot;</span>.<span class="built_in">format</span>(Lee.__class__.country))</span><br><span class="line"></span><br><span class="line">  <span class="comment"># call instance method</span></span><br><span class="line">  <span class="built_in">print</span>(kim.singing(<span class="string">&quot;A&quot;</span>, <span class="number">10</span>))</span><br><span class="line">  <span class="built_in">print</span>(Lee.singing(<span class="string">&quot;B&quot;</span>, <span class="number">200</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>kim은 korean
-Lee는 korean
-Kim판매량 10된 A을 노래합니다.
-lee판매량 200된 B을 노래합니다.
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;lee&quot;</span></span><br><span class="line">songtitle = <span class="string">&quot;B&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#123;&#125; &#123;&#125;을 노래합니다.&quot;</span>.<span class="built_in">format</span>(name, songtitle))</span><br></pre></td></tr></table></figure>
-
-<pre><code>lee B을 노래합니다.
-</code></pre>
-<h2 id="클래스-상속"><a href="#클래스-상속" class="headerlink" title="클래스 상속"></a>클래스 상속</h2><ul>
-<li>부모님 유산…<ul>
-<li>부모님 집 (냉장고, 세탁기, TV, etc)</li>
-<li>사용은 같이 함</li>
-</ul>
-</li>
-<li>본인, 돈을 모음<ul>
-<li>개인 노트북 구매 ( 여러분 각자 방에 비치 )</li>
-<li>노트분은 본인 것이지만 추가 가전 제품을 구매해서 확장!</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span>:</span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span>(<span class="title class_ inherited__">Parent</span>):</span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">  kim_child = Child()</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span>:</span><br><span class="line"></span><br><span class="line">  <span class="comment"># instance attribute</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):    </span><br><span class="line">    self.name = name</span><br><span class="line">    self.age = age</span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">whoAmI</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am Parent!!&quot;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">singing</span>(<span class="params">self, songtitle</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&#123;&#125;된 &#123;&#125;을 노래합니다.&quot;</span>.<span class="built_in">format</span>(self.name, songtitle)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">dancing</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&#123;&#125; 현재 춤을 춥니다.&quot;</span>.<span class="built_in">format</span>(self.name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span>(<span class="title class_ inherited__">Parent</span>):              <span class="comment"># 상속</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">    <span class="comment">#super() function             # 상속 기능</span></span><br><span class="line">    <span class="built_in">super</span>().__init__(name, age)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Child Class is ON&quot;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">whoAmI</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am child&quot;</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">studying</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am Fast Runner&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">  child_kim = Child(<span class="string">&quot;kim&quot;</span>, <span class="number">15</span>)</span><br><span class="line">  parent_kim = Parent(<span class="string">&quot;kim&quot;</span>, <span class="number">45</span>)</span><br><span class="line">  <span class="built_in">print</span>(child_kim.dancing())</span><br><span class="line">  <span class="built_in">print</span>(child_kim.singing(<span class="string">&quot;연애&quot;</span>))</span><br><span class="line"> <span class="comment"># print(child_kim.studying())</span></span><br><span class="line">  child_kim.whoAmI()</span><br><span class="line">  parent_kim.whoAmI()</span><br></pre></td></tr></table></figure>
-
-<pre><code>Child Class is ON
-kim 현재 춤을 춥니다.
-kim된 연애을 노래합니다.
-I am Fast Runner
-None
-I am child
-I am Parent!!
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TV</span>:</span><br><span class="line"></span><br><span class="line">  <span class="comment">#init constructor  ( 생성자 )</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">    self.__maxprice = <span class="number">500</span>  <span class="comment"># 클래스 내부에서 쓸 수 있게끔 private variable</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">sell</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;selling Price : &#123;&#125;&quot;</span>.<span class="built_in">format</span>(self.__maxprice))</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">setMaxPrice</span>(<span class="params">self, price</span>):</span><br><span class="line">    self.__maxprice = price</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">  tv = TV()</span><br><span class="line">  tv.sell()</span><br><span class="line"></span><br><span class="line">  <span class="comment"># change price</span></span><br><span class="line">  <span class="comment"># 안 바뀌는 코드의 예시</span></span><br><span class="line">  tv.__maxprice = <span class="number">1000</span></span><br><span class="line">  tv.sell()</span><br><span class="line"></span><br><span class="line">  <span class="comment"># setMaxPrice</span></span><br><span class="line">  <span class="comment"># 값을 바꿀 수 있다?? 외부의 입력값을 업데이트 할 수 있다.</span></span><br><span class="line">  tv.setMaxPrice(<span class="number">1000</span>)</span><br><span class="line">  tv.sell()</span><br></pre></td></tr></table></figure>
-
-<pre><code>selling Price : 500
-selling Price : 500
-selling Price : 1000
-</code></pre>
-<p>자식 클래스가 많이 있는 라이브러리는 사용자가 스기 까다로울 것 같은데, 많이 써주는 이유는 자식클래스 이름마다 의미를 주려고 그런건가요?</p>
-<ul>
-<li>특수 목적을 해결하기 위해서 라이브러리를 만듦</li>
-<li>초기 버전은 3개 클래스 정도 만들면 해결이 되겠지?<ul>
-<li>버그 나오고, 이슈 터지고 –&gt; 개발자들이 해결</li>
-</ul>
-</li>
-<li>2개 더 만들고 다시 배포<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-<h2 id="클래스-내부에-조건문"><a href="#클래스-내부에-조건문" class="headerlink" title="클래스 내부에 조건문"></a>클래스 내부에 조건문</h2><ul>
-<li>init contsructor에 조건문을 써보자!</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span>:</span><br><span class="line"></span><br><span class="line">  <span class="comment">#init constructor</span></span><br><span class="line">  <span class="comment">#name, salary</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, salary = <span class="number">0</span></span>):    </span><br><span class="line">    self.name = name</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#조건문 추가</span></span><br><span class="line">    <span class="keyword">if</span> salary &gt; <span class="number">0</span>:</span><br><span class="line">      self.salary = salary</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      self.salary = <span class="number">0</span></span><br><span class="line">      <span class="built_in">print</span>(<span class="string">&quot;급여는 0원이 될 수 없습니다. 다시 입력해십시오!!&quot;</span>)</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">update_salary</span>(<span class="params">self, amount</span>):</span><br><span class="line">    self.salary += amount</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">weekly_salary</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="keyword">return</span> self.salary / <span class="number">7</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">  emp01 = Employee(<span class="string">&quot;Evan&quot;</span>, -<span class="number">5000</span>)</span><br><span class="line">  <span class="built_in">print</span>(emp01.name)</span><br><span class="line">  <span class="built_in">print</span>(emp01.salary)</span><br><span class="line"></span><br><span class="line">  emp01.salary = emp01.salary + <span class="number">1500</span></span><br><span class="line">  <span class="built_in">print</span>(emp01.salary)</span><br><span class="line"></span><br><span class="line">  emp01.update_salary(<span class="number">3000</span>)</span><br><span class="line">  <span class="built_in">print</span>(emp01.salary)</span><br><span class="line"></span><br><span class="line">  week_salary = emp01.weekly_salary()</span><br><span class="line">  <span class="built_in">print</span>(week_salary)</span><br></pre></td></tr></table></figure>
-
-<pre><code>급여는 0원이 될 수 없습니다. 다시 입력해십시오!!
-Evan
-0
-1500
-4500
-642.8571428571429
-</code></pre>
-<h3 id="클래스-Doctring"><a href="#클래스-Doctring" class="headerlink" title="클래스 Doctring"></a>클래스 Doctring</h3><ul>
-<li>문서화</li>
-<li>문서화의 일반적인 과정</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">  <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">  사람을 표현하는 클래스</span></span><br><span class="line"><span class="string">  ...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  Attributes</span></span><br><span class="line"><span class="string">  ----------</span></span><br><span class="line"><span class="string">  name : str</span></span><br><span class="line"><span class="string">    name of the person</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  age : int</span></span><br><span class="line"><span class="string">    age of the person</span></span><br><span class="line"><span class="string">  ...</span></span><br><span class="line"><span class="string">  ...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  Methods</span></span><br><span class="line"><span class="string">  ----------</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  info(additional=&quot;&quot;):</span></span><br><span class="line"><span class="string">    prints the person&#x27;s name and age</span></span><br><span class="line"><span class="string">  &quot;&quot;&quot;</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Constructs all the neccessary attributes for the person object</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Parameters</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    name : str</span></span><br><span class="line"><span class="string">      name of the person</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">    age : int</span></span><br><span class="line"><span class="string">      age of the person</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    self.name = name</span><br><span class="line">    self.age = age</span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">info</span>(<span class="params">self, additional=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    귀찮음...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Parameters</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">      additional : str, optional</span></span><br><span class="line"><span class="string">        more info to be displayed (Default is None)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns</span></span><br><span class="line"><span class="string">    -------</span></span><br><span class="line"><span class="string">      None</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;My name is <span class="subst">&#123;self.name&#125;</span>. i am <span class="subst">&#123;self.age&#125;</span> years old.&#x27;</span> + additional)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    person = Person(<span class="string">&quot;Evan&quot;</span>, age = <span class="number">20</span>)</span><br><span class="line">    person.info(<span class="string">&quot;나의 직장은 00이야&quot;</span>)</span><br><span class="line">    <span class="built_in">help</span>(Person)</span><br></pre></td></tr></table></figure>
-
-<pre><code>My name is Evan. i am 20 years old.나의 직장은 00이야
-Help on class Person in module __main__:
-
-class Person(builtins.object)
- |  Person(name, age)
- |  
- |  사람을 표현하는 클래스
- |  ...
- |  
- |  Attributes
- |  ----------
- |  name : str
- |    name of the person
- |  
- |  age : int
- |    age of the person
- |  ...
- |  ...
- |  
- |  Methods
- |  ----------
- |  
- |  info(additional=&quot;&quot;):
- |    prints the person&#39;s name and age
- |  
- |  Methods defined here:
- |  
- |  __init__(self, name, age)
- |      Constructs all the neccessary attributes for the person object
- |      
- |      Parameters
- |      ----------
- |      name : str
- |        name of the person
- |      
- |      age : int
- |        age of the person
- |  
- |  info(self, additional=None)
- |      귀찮음...
- |      
- |      Parameters
- |      ----------
- |        additional : str, optional
- |          more info to be displayed (Default is None)
- |      
- |      Returns
- |      -------
- |        None
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |  
- |  __dict__
- |      dictionary for instance variables (if defined)
- |  
- |  __weakref__
- |      list of weak references to the object (if defined)
- |  
- |  ----------------------------------------------------------------------
- |  Data and other attributes defined here:
- |  
- |  person = &lt;__main__.Person object&gt;
-</code></pre>
-<h1 id="클래스-실습"><a href="#클래스-실습" class="headerlink" title="클래스 실습"></a>클래스 실습</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 더하기, 빼기 기능이 있는 클래스</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Calculator</span>:</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">    self.result = <span class="number">0</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self,num</span>):</span><br><span class="line">    self.result += num</span><br><span class="line">    <span class="keyword">return</span> self.result</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">sub</span>(<span class="params">self,num</span>):</span><br><span class="line">    self.result -= num</span><br><span class="line">    <span class="keyword">return</span> self.result</span><br><span class="line"></span><br><span class="line">cal1 = Calculator()</span><br><span class="line">cal2 = Calculator()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(cal1.add(<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(cal1.add(<span class="number">4</span>))</span><br><span class="line"><span class="built_in">print</span>(cal2.add(<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(cal2.add(<span class="number">7</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>3
-7
-3
-10
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4칙연산 기능이 달린 클래스 정의</span></span><br><span class="line"><span class="comment"># 일단 더하기만 구현</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FourCal</span>:</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">setdata</span>(<span class="params">self, first, second</span>):</span><br><span class="line">    self.first = first</span><br><span class="line">    self.second = second</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first + self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">a = FourCal()</span><br><span class="line">a.setdata(<span class="number">4</span>,<span class="number">2</span>)</span><br><span class="line">a.add()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>6
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4칙연산 기능이 달린 클래스 정의</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FourCal</span>:</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">setdata</span>(<span class="params">self, first, second</span>):</span><br><span class="line">    self.first = first</span><br><span class="line">    self.second = second</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first + self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">mul</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first * self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">sub</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first - self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">div</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first / self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">a = FourCal()</span><br><span class="line">a.setdata(<span class="number">4</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a.mul())</span><br><span class="line"><span class="built_in">print</span>(a.sub())</span><br><span class="line"><span class="built_in">print</span>(a.div())</span><br></pre></td></tr></table></figure>
-
-<pre><code>8
-2
-2.0
-</code></pre>
-<h3 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h3><ul>
-<li>위 함수의 setdata는 생성자의 역할을 한다.</li>
-<li>setdata를 생성자 __init__으로 바꿔도 정상 작동한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># setdata를 생성자 __init__으로 변경</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FourCal</span>:</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, first, second</span>):</span><br><span class="line">    self.first = first</span><br><span class="line">    self.second = second</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first + self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">mul</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first * self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">sub</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first - self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">div</span>(<span class="params">self</span>):</span><br><span class="line">    result = self.first / self.second</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">a = FourCal(<span class="number">4</span>, <span class="number">2</span>) <span class="comment"># 이전과 달리 매개변수도 작성해야 작동.</span></span><br><span class="line"><span class="built_in">print</span>(a.mul())</span><br><span class="line"><span class="built_in">print</span>(a.sub())</span><br><span class="line"><span class="built_in">print</span>(a.div())</span><br></pre></td></tr></table></figure>
-
-<pre><code>8
-2
-2.0
-</code></pre>
-<h3 id="클래스의-상속"><a href="#클래스의-상속" class="headerlink" title="클래스의 상속"></a>클래스의 상속</h3><ul>
-<li>FourCal 클래스는 만들어 놓았으므로 FourCal 클래스를 상속하는 MoreFourCal 클래스는 다음과 같이 간단하게 만들 수 있다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 상속</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MoreFourCal</span>(<span class="title class_ inherited__">FourCal</span>):</span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">a = MoreFourCal(<span class="number">4</span>,<span class="number">2</span>)</span><br><span class="line">a.add()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>6
-</code></pre>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/categories/python/page/2/">Previous</a></div><div class="pagination-next"><a href="/categories/python/page/4/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/categories/python/">1</a></li><li><a class="pagination-link" href="/categories/python/page/2/">2</a></li><li><a class="pagination-link is-current" href="/categories/python/page/3/">3</a></li><li><a class="pagination-link" href="/categories/python/page/4/">4</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">53</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">35</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">21</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">33</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">13</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-30T00:00:00.000Z">2022-04-30</time></p><p class="title"><a href="/2022/04/30/Spark_UI/">Spark UI</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/spark/">spark</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-29T00:00:00.000Z">2022-04-29</time></p><p class="title"><a href="/2022/04/29/Spark_on_linux/">Spark on Linux</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/spark/">spark</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-28T00:00:00.000Z">2022-04-28</time></p><p class="title"><a href="/2022/04/28/pyspark_practice03/">pyspark 실습03</a></p><p class="categories"><a href="/categories/python/">python</a> / <a href="/categories/python/library/">library</a> / <a href="/categories/python/library/pyspark/">pyspark</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-27T00:00:00.000Z">2022-04-27</time></p><p class="title"><a href="/2022/04/27/pyspark_practice02/">pyspark 실습02</a></p><p class="categories"><a href="/categories/python/">python</a> / <a href="/categories/python/library/">library</a> / <a href="/categories/python/library/pyspark/">pyspark</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-26T00:00:00.000Z">2022-04-26</time></p><p class="title"><a href="/2022/04/26/pyspark_practice01/">pyspark 실습01</a></p><p class="categories"><a href="/categories/python/">python</a> / <a href="/categories/python/library/">library</a> / <a href="/categories/python/library/pyspark/">pyspark</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/categories/python/page/2/">Previous</a></div><div class="pagination-next"><a href="/categories/python/page/4/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/categories/python/">1</a></li><li><a class="pagination-link" href="/categories/python/page/2/">2</a></li><li><a class="pagination-link is-current" href="/categories/python/page/3/">3</a></li><li><a class="pagination-link" href="/categories/python/page/4/">4</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">54</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">35</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">21</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">34</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">13</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-01T00:00:00.000Z">2022-05-01</time></p><p class="title"><a href="/2022/05/01/Spark_ML/">Spark ML</a></p><p class="categories"><a href="/categories/python/">python</a> / <a href="/categories/python/library/">library</a> / <a href="/categories/python/library/pyspark/">pyspark</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-30T00:00:00.000Z">2022-04-30</time></p><p class="title"><a href="/2022/04/30/Spark_UI/">Spark UI</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/spark/">spark</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-29T00:00:00.000Z">2022-04-29</time></p><p class="title"><a href="/2022/04/29/Spark_on_linux/">Spark on Linux</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/spark/">spark</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-28T00:00:00.000Z">2022-04-28</time></p><p class="title"><a href="/2022/04/28/pyspark_practice03/">pyspark 실습03</a></p><p class="categories"><a href="/categories/python/">python</a> / <a href="/categories/python/library/">library</a> / <a href="/categories/python/library/pyspark/">pyspark</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-27T00:00:00.000Z">2022-04-27</time></p><p class="title"><a href="/2022/04/27/pyspark_practice02/">pyspark 실습02</a></p><p class="categories"><a href="/categories/python/">python</a> / <a href="/categories/python/library/">library</a> / <a href="/categories/python/library/pyspark/">pyspark</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
