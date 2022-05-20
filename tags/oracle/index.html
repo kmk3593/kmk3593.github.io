@@ -1,5 +1,1202 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Tag: oracle - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">oracle</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-05-14T00:00:00.000Z" title="2022. 5. 14. 오전 9:00:00">2022-05-14</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-05-19T11:42:02.994Z" title="2022. 5. 19. 오후 8:42:02">2022-05-19</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/SQL/">SQL</a><span> / </span><a class="link-muted" href="/categories/SQL/oracle/">oracle</a></span><span class="level-item">7 minutes read (About 1040 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/05/14/Oracle_ch07_0428/">Oracle_practice7</a></h1><div class="content"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- WINDOW Function</span><br><span class="line">- 분석 함수 : 특정 그룹별 집계를 담당함</span><br><span class="line">              함수의 종류</span><br><span class="line"></span><br><span class="line">- PARTITION BY : 분석 함수로 계산될 대상 row의 그룹(파티션)을 지정</span><br></pre></td></tr></table></figure>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Tag: oracle - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">oracle</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-05-15T00:00:00.000Z" title="2022. 5. 15. 오전 9:00:00">2022-05-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-05-20T11:37:12.116Z" title="2022. 5. 20. 오후 8:37:12">2022-05-20</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/SQL/">SQL</a><span> / </span><a class="link-muted" href="/categories/SQL/oracle/">oracle</a></span><span class="level-item">20 minutes read (About 2978 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/05/15/Oracle_ch07_0429/">Oracle_practice7_2</a></h1><div class="content"><ul>
+<li>분석함수 : RANK, DENSE_RANK, LAG, LEAD</li>
+<li>RANK() OVER (PARTITION BY 컬럼명 ORDER BY 컬럼명)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%load_ext sql</span><br></pre></td></tr></table></figure>
+
+<pre><code>The sql extension is already loaded. To reload it, use:
+  %reload_ext sql
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%sql oracle://ora_user:evan@<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">1521</span>/myoracle</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>분석 함수: 분석 함수 역시 특정 그룹별 집계를 담당하므로 집계 함수에 속한다. </p>
+</li>
+<li><p>PARTITION BY 절: 분석 함수로 계산될 대상 로우의 그룹(파티션)을 지정한다.</p>
+</li>
+<li><p>ORDER BY 절: 파티션 안에서의 순서를 지정한다.</p>
+</li>
+<li><p>WINDOW 절: 파티션으로 분할된 그룹에 대해서 더 상세한 그룹으로 분할할 때 사용된다. # Window 절 </p>
+</li>
+<li><p>ROWS: 로우 단위로 window 절을 지정한다.</p>
+</li>
+<li><p>RANGE: 로우가 아닌 논리적인 범위로 window 절을 지정한다.</p>
+</li>
+<li><p>BETWEEN~AND: window 절의 시작과 끝 지점을 명시한다.<br>         BETWEEN을 명시하지 않고 두 번째 옵션만 지정하면이 지점이 시작 지점이 되고 끝 지점은 현재 로우가 된다.</p>
+</li>
+<li><p>UNBOUNDED PRECEDING: 파티션으로 구분된 첫 번째 로우가 시작 지점이 된다.</p>
+</li>
+<li><p>UNBOUNDED FOLLOWING: 파티션으로 구분된 마지막 로우가 끝 지점이 된다.</p>
+</li>
+<li><p>CURRENT ROW: 시작 및 끝 지점이 현재 로우가된다.</p>
+</li>
+<li><p>value_expr PRECEDING: 끝 지점일 경우, 시작 지점은 value_expr PRECEDING.</p>
+</li>
+<li><p>value_expr FOLLOWING: 시작 지점일 경우, 끝 지점은 value_expr FOLLOWING.</p>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">%</span><span class="operator">%</span><span class="keyword">sql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    department_id</span><br><span class="line">    , emp_name</span><br><span class="line">    , hire_date</span><br><span class="line">    , salary</span><br><span class="line">    , <span class="built_in">SUM</span>(salary) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id</span><br><span class="line">                        <span class="keyword">ORDER</span> <span class="keyword">BY</span> hire_date</span><br><span class="line">                        <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> UNBOUNDED PRECEDING <span class="keyword">AND</span> UNBOUNDED FOLLOWING) <span class="keyword">AS</span> all_salary</span><br><span class="line">    , <span class="built_in">SUM</span>(salary) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id</span><br><span class="line">                        <span class="keyword">ORDER</span> <span class="keyword">BY</span> hire_date</span><br><span class="line">                        <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> UNBOUNDED PRECEDING <span class="keyword">AND</span> <span class="keyword">CURRENT</span> <span class="type">ROW</span>) <span class="keyword">AS</span> first_current_sal</span><br><span class="line">    , <span class="built_in">SUM</span>(salary) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id</span><br><span class="line">                        <span class="keyword">ORDER</span> <span class="keyword">BY</span> hire_date</span><br><span class="line">                        <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> <span class="keyword">CURRENT</span> <span class="type">ROW</span> <span class="keyword">AND</span> UNBOUNDED FOLLOWING) <span class="keyword">AS</span> current_end_sal</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">WHERE</span> department_id <span class="keyword">IN</span> (<span class="number">30</span>, <span class="number">90</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>department_id</th>
+        <th>emp_name</th>
+        <th>hire_date</th>
+        <th>salary</th>
+        <th>all_salary</th>
+        <th>first_current_sal</th>
+        <th>current_end_sal</th>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Den Raphaely</td>
+        <td>2002-12-07 00:00:00</td>
+        <td>11000</td>
+        <td>24900</td>
+        <td>11000</td>
+        <td>24900</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Alexander Khoo</td>
+        <td>2003-05-18 00:00:00</td>
+        <td>3100</td>
+        <td>24900</td>
+        <td>14100</td>
+        <td>13900</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Sigal Tobias</td>
+        <td>2005-07-24 00:00:00</td>
+        <td>2800</td>
+        <td>24900</td>
+        <td>16900</td>
+        <td>10800</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Shelli Baida</td>
+        <td>2005-12-24 00:00:00</td>
+        <td>2900</td>
+        <td>24900</td>
+        <td>19800</td>
+        <td>8000</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Guy Himuro</td>
+        <td>2006-11-15 00:00:00</td>
+        <td>2600</td>
+        <td>24900</td>
+        <td>22400</td>
+        <td>5100</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Karen Colmenares</td>
+        <td>2007-08-10 00:00:00</td>
+        <td>2500</td>
+        <td>24900</td>
+        <td>24900</td>
+        <td>2500</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>Lex De Haan</td>
+        <td>2001-01-13 00:00:00</td>
+        <td>17000</td>
+        <td>58000</td>
+        <td>17000</td>
+        <td>58000</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>Steven King</td>
+        <td>2003-06-17 00:00:00</td>
+        <td>24000</td>
+        <td>58000</td>
+        <td>41000</td>
+        <td>41000</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>Neena Kochhar</td>
+        <td>2005-09-21 00:00:00</td>
+        <td>17000</td>
+        <td>58000</td>
+        <td>58000</td>
+        <td>17000</td>
+    </tr>
+</table>
+
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">%</span><span class="operator">%</span><span class="keyword">sql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    department_id</span><br><span class="line">    , emp_name</span><br><span class="line">    , hire_date</span><br><span class="line">    , salary</span><br><span class="line">    , <span class="built_in">FIRST_VALUE</span>(salary) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id</span><br><span class="line">                        <span class="keyword">ORDER</span> <span class="keyword">BY</span> hire_date</span><br><span class="line">                        <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> UNBOUNDED PRECEDING <span class="keyword">AND</span> UNBOUNDED FOLLOWING) <span class="keyword">AS</span> all_salary</span><br><span class="line">    , <span class="built_in">FIRST_VALUE</span>(salary) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id</span><br><span class="line">                        <span class="keyword">ORDER</span> <span class="keyword">BY</span> hire_date</span><br><span class="line">                       <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> UNBOUNDED PRECEDING <span class="keyword">AND</span> <span class="keyword">CURRENT</span> <span class="type">ROW</span>) <span class="keyword">AS</span> first_current_sal</span><br><span class="line">    , <span class="built_in">FIRST_VALUE</span>(salary) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id</span><br><span class="line">                        <span class="keyword">ORDER</span> <span class="keyword">BY</span> hire_date</span><br><span class="line">                        <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> <span class="keyword">CURRENT</span> <span class="type">ROW</span> <span class="keyword">AND</span> UNBOUNDED FOLLOWING) <span class="keyword">AS</span> current_end_sal</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">WHERE</span> department_id <span class="keyword">IN</span> (<span class="number">30</span>, <span class="number">90</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>department_id</th>
+        <th>emp_name</th>
+        <th>hire_date</th>
+        <th>salary</th>
+        <th>all_salary</th>
+        <th>first_current_sal</th>
+        <th>current_end_sal</th>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Den Raphaely</td>
+        <td>2002-12-07 00:00:00</td>
+        <td>11000</td>
+        <td>11000</td>
+        <td>11000</td>
+        <td>11000</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Alexander Khoo</td>
+        <td>2003-05-18 00:00:00</td>
+        <td>3100</td>
+        <td>11000</td>
+        <td>11000</td>
+        <td>3100</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Sigal Tobias</td>
+        <td>2005-07-24 00:00:00</td>
+        <td>2800</td>
+        <td>11000</td>
+        <td>11000</td>
+        <td>2800</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Shelli Baida</td>
+        <td>2005-12-24 00:00:00</td>
+        <td>2900</td>
+        <td>11000</td>
+        <td>11000</td>
+        <td>2900</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Guy Himuro</td>
+        <td>2006-11-15 00:00:00</td>
+        <td>2600</td>
+        <td>11000</td>
+        <td>11000</td>
+        <td>2600</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Karen Colmenares</td>
+        <td>2007-08-10 00:00:00</td>
+        <td>2500</td>
+        <td>11000</td>
+        <td>11000</td>
+        <td>2500</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>Lex De Haan</td>
+        <td>2001-01-13 00:00:00</td>
+        <td>17000</td>
+        <td>17000</td>
+        <td>17000</td>
+        <td>17000</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>Steven King</td>
+        <td>2003-06-17 00:00:00</td>
+        <td>24000</td>
+        <td>17000</td>
+        <td>17000</td>
+        <td>24000</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>Neena Kochhar</td>
+        <td>2005-09-21 00:00:00</td>
+        <td>17000</td>
+        <td>17000</td>
+        <td>17000</td>
+        <td>17000</td>
+    </tr>
+</table>
+
+
+<ul>
+<li>p.211</li>
+<li>계층형 쿼리</li>
+<li>핵심 포인트 : CONNECT BY 조건문 정리- 계층형 쿼리의 구문은 다음과 같다.</li>
+</ul>
+<p>SELECT expr1, expr2, …<br>FROM 테이블<br>WHERE 조건<br>START WITH[최상위 조건]<br>CONNECT BY [NOCYCLE][PRIOR 계층형 구조 조건];       –&gt; 구조 :  CONNECT BY PRIOR 하위 &#x3D; 상위 </p>
+<ul>
+<li><p>START WITH 조건</p>
+<ul>
+<li>계층형 구조에서 최상위 계층의 로우를 식별하는 조건을 명시한다. </li>
+<li>START WITH가 시작한다는 의미이므로, 이 조건에 맞는 로우부터 시작해 계층형 구조를 풀어 나간다.</li>
+</ul>
+</li>
+<li><p>CONNECT BY 조건</p>
+<ul>
+<li>계층형 구조가 어떤 식으로 연결되는지를 기술하는 부분이다.</li>
+<li>부서 테이블은 parent_id에 상위 부서 정보를 갖고 있는데,<br>  이를 표현하려면 ‘CONNECT BY PRIOR department_id &#x3D; parent_id’로 기술해야 한다. </li>
+<li>PRIOR는 계층형 쿼리에서만 사용할 수 있는 연산자로 ‘앞서의, 직전의’란 뜻이 있으므로,<br>  “이전 department_id &#x3D; parent_id”라고 알아두면 이해하기 쉬울 것이다. </li>
+<li>또한 ‘CONNECT BY parent_id &#x3D; PRIOR department_id’처럼 PRIOR의 위치를 바꿀 수 있다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">%</span><span class="operator">%</span><span class="keyword">sql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    department_id</span><br><span class="line">    , LPAD(<span class="string">&#x27; &#x27;</span>, <span class="number">3</span><span class="operator">*</span>(LEVEL<span class="number">-1</span>)) <span class="operator">||</span> department_name</span><br><span class="line">    , LEVEL</span><br><span class="line"><span class="keyword">FROM</span> departments</span><br><span class="line"><span class="keyword">START</span> <span class="keyword">WITH</span> parent_id <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">CONNECT</span> <span class="keyword">BY</span> PRIOR department_id <span class="operator">=</span> parent_id </span><br></pre></td></tr></table></figure>
+
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>department_id</th>
+        <th>LPAD(&#x27;&#x27;,3*(LEVEL-1))||DEPARTMENT_NAME</th>
+        <th>LEVEL</th>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>총무기획부</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>&nbsp;&nbsp;&nbsp;마케팅</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>&nbsp;&nbsp;&nbsp;구매/생산부</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>170</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생산팀</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>180</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;건설팀</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>200</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;운영팀</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>210</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IT 지원</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>220</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOC</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>40</td>
+        <td>&nbsp;&nbsp;&nbsp;인사부</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>260</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;채용팀</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>&nbsp;&nbsp;&nbsp;배송부</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>&nbsp;&nbsp;&nbsp;영업부</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>190</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;계약팀</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>240</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공공 판매사업팀</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>250</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;판매팀</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>&nbsp;&nbsp;&nbsp;기획부</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IT</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>230</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IT 헬프데스크</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>70</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;홍보부</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자금부</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>130</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;세무팀</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신용관리팀</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>150</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주식관리팀</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>160</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;수익관리팀</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경리부</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>120</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;재무팀</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>270</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;급여팀</td>
+        <td>4</td>
+    </tr>
+</table>
+
+
+<ul>
+<li>manager_id는 해당 사원의 매니저 사번이 있다.</li>
+<li>각 매니저는 사원 ID가 있다.</li>
+<li>사원별 계층 구조를 만들고, 부서 테이블과 조인해서 부서명까지 조회한다.</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">%</span><span class="operator">%</span><span class="keyword">sql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    a.employee_id</span><br><span class="line">    , LPAD(<span class="string">&#x27; &#x27;</span>, <span class="number">3</span> <span class="operator">*</span> (LEVEL <span class="operator">-</span> <span class="number">1</span>)) <span class="operator">||</span> a.emp_name</span><br><span class="line">    , LEVEL</span><br><span class="line">    , b.department_name</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employees a</span><br><span class="line">    , departments b</span><br><span class="line"><span class="keyword">WHERE</span> a.department_id <span class="operator">=</span> b.department_id</span><br><span class="line"><span class="keyword">START</span> <span class="keyword">WITH</span> a.manager_id <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">CONNECT</span> <span class="keyword">BY</span> PRIOR a.employee_id <span class="operator">=</span> a.manager_id</span><br></pre></td></tr></table></figure>
+
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>employee_id</th>
+        <th>LPAD(&#x27;&#x27;,3*(LEVEL-1))||A.EMP_NAME</th>
+        <th>LEVEL</th>
+        <th>department_name</th>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>Steven King</td>
+        <td>1</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>&nbsp;&nbsp;&nbsp;Neena Kochhar</td>
+        <td>2</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>108</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nancy Greenberg</td>
+        <td>3</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>109</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daniel Faviet</td>
+        <td>4</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John Chen</td>
+        <td>4</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>111</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ismael Sciarra</td>
+        <td>4</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>112</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jose Manuel Urman</td>
+        <td>4</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>113</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Luis Popp</td>
+        <td>4</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>200</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jennifer Whalen</td>
+        <td>3</td>
+        <td>총무기획부</td>
+    </tr>
+    <tr>
+        <td>203</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Susan Mavris</td>
+        <td>3</td>
+        <td>인사부</td>
+    </tr>
+    <tr>
+        <td>204</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hermann Baer</td>
+        <td>3</td>
+        <td>홍보부</td>
+    </tr>
+    <tr>
+        <td>205</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shelley Higgins</td>
+        <td>3</td>
+        <td>경리부</td>
+    </tr>
+    <tr>
+        <td>206</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;William Gietz</td>
+        <td>4</td>
+        <td>경리부</td>
+    </tr>
+    <tr>
+        <td>102</td>
+        <td>&nbsp;&nbsp;&nbsp;Lex De Haan</td>
+        <td>2</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>103</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alexander Hunold</td>
+        <td>3</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>104</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bruce Ernst</td>
+        <td>4</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>105</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;David Austin</td>
+        <td>4</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>106</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valli Pataballa</td>
+        <td>4</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>107</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diana Lorentz</td>
+        <td>4</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>114</td>
+        <td>&nbsp;&nbsp;&nbsp;Den Raphaely</td>
+        <td>2</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>115</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alexander Khoo</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>116</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shelli Baida</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>117</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sigal Tobias</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>118</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guy Himuro</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>119</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Karen Colmenares</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>120</td>
+        <td>&nbsp;&nbsp;&nbsp;Matthew Weiss</td>
+        <td>2</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>125</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Julia Nayer</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>126</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Irene Mikkilineni</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>127</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;James Landry</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>128</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Steven Markle</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>180</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Winston Taylor</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>181</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jean Fleaur</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>182</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Martha Sullivan</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>183</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Girard Geoni</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>121</td>
+        <td>&nbsp;&nbsp;&nbsp;Adam Fripp</td>
+        <td>2</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>129</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Laura Bissot</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>130</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mozhe Atkinson</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>131</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;James Marlow</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>132</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TJ Olson</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>184</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nandita Sarchand</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>185</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alexis Bull</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>186</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Julia Dellinger</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>187</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anthony Cabrio</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>&nbsp;&nbsp;&nbsp;Payam Kaufling</td>
+        <td>2</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>133</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jason Mallin</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>134</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Michael Rogers</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>135</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ki Gee</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>136</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hazel Philtanker</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kelly Chung</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>189</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jennifer Dilly</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>190</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Timothy Gates</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>191</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Randall Perkins</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>&nbsp;&nbsp;&nbsp;Shanta Vollman</td>
+        <td>2</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>137</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Renske Ladwig</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>138</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stephen Stiles</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>139</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John Seo</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Joshua Patel</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>192</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sarah Bell</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>193</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Britney Everett</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>194</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Samuel McCain</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>195</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vance Jones</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>124</td>
+        <td>&nbsp;&nbsp;&nbsp;Kevin Mourgos</td>
+        <td>2</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>141</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trenna Rajs</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>142</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Curtis Davies</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>143</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Randall Matos</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>144</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peter Vargas</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>196</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alana Walsh</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>197</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kevin Feeney</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>198</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donald OConnell</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>199</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Douglas Grant</td>
+        <td>3</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>145</td>
+        <td>&nbsp;&nbsp;&nbsp;John Russell</td>
+        <td>2</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>150</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peter Tucker</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>151</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;David Bernstein</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>152</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peter Hall</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>153</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Christopher Olsen</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>154</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nanette Cambrault</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>155</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oliver Tuvault</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>146</td>
+        <td>&nbsp;&nbsp;&nbsp;Karen Partners</td>
+        <td>2</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>156</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Janette King</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>157</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patrick Sully</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>158</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allan McEwen</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>159</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lindsey Smith</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>160</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Louise Doran</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>161</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sarath Sewall</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>147</td>
+        <td>&nbsp;&nbsp;&nbsp;Alberto Errazuriz</td>
+        <td>2</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>162</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clara Vishney</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>163</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Danielle Greene</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>164</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mattea Marvins</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>165</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;David Lee</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>166</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sundar Ande</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>167</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amit Banda</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>148</td>
+        <td>&nbsp;&nbsp;&nbsp;Gerald Cambrault</td>
+        <td>2</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>168</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lisa Ozer</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>169</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harrison Bloom</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>170</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tayler Fox</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>171</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;William Smith</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>172</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elizabeth Bates</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>173</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sundita Kumar</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>149</td>
+        <td>&nbsp;&nbsp;&nbsp;Eleni Zlotkey</td>
+        <td>2</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>174</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ellen Abel</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>175</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alyssa Hutton</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>176</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jonathon Taylor</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>177</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jack Livingston</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>179</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Charles Johnson</td>
+        <td>3</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>201</td>
+        <td>&nbsp;&nbsp;&nbsp;Michael Hartstein</td>
+        <td>2</td>
+        <td>마케팅</td>
+    </tr>
+    <tr>
+        <td>202</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pat Fay</td>
+        <td>3</td>
+        <td>마케팅</td>
+    </tr>
+</table>
+
+
+<ul>
+<li>CONNECT BY ~ AND : AND를 통해 추가로 조건을 붙인다.</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">%</span><span class="operator">%</span><span class="keyword">sql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    a.employee_id</span><br><span class="line">    , LPAD(<span class="string">&#x27; &#x27;</span>, <span class="number">3</span> <span class="operator">*</span> (LEVEL <span class="operator">-</span> <span class="number">1</span>)) <span class="operator">||</span> a.emp_name</span><br><span class="line">    , LEVEL</span><br><span class="line">    , b.department_name</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employees a</span><br><span class="line">    , departments b</span><br><span class="line"><span class="keyword">WHERE</span> a.department_id <span class="operator">=</span> b.department_id</span><br><span class="line"><span class="keyword">START</span> <span class="keyword">WITH</span> a.manager_id <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">CONNECT</span> <span class="keyword">BY</span> PRIOR a.employee_id <span class="operator">=</span> a.manager_id</span><br><span class="line">    <span class="keyword">AND</span> a.department_id <span class="operator">=</span> <span class="number">30</span></span><br></pre></td></tr></table></figure>
+
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>employee_id</th>
+        <th>LPAD(&#x27;&#x27;,3*(LEVEL-1))||A.EMP_NAME</th>
+        <th>LEVEL</th>
+        <th>department_name</th>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>Steven King</td>
+        <td>1</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>114</td>
+        <td>&nbsp;&nbsp;&nbsp;Den Raphaely</td>
+        <td>2</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>115</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alexander Khoo</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>116</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shelli Baida</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>117</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sigal Tobias</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>118</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guy Himuro</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>119</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Karen Colmenares</td>
+        <td>3</td>
+        <td>구매/생산부</td>
+    </tr>
+</table>
+
+
+<ul>
+<li>CONNECT BY PRIOR 자식컬럼 &#x3D; 부모컬럼 : 부모에서 자식으로 트리 구성 (TOP DOWN) -&gt; 일반적인 구조</li>
+<li>CONNECT BY PRIOR 부모컬럼 &#x3D; 자식컬럼 : 자식에서 부모로 트리 구성 (Bottom UP)</li>
+<li>CONNECT BY NOCYCLE PRIOR &#x3D; 무한루프 방지- p.226 WITH 절</li>
+<li>kor_loan_status 테이블에서 연도별 최종월 기준 가장 대출이 많은 도시와 잔액을 구한다.</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">%</span><span class="operator">%</span><span class="keyword">sql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> b2.<span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> ( <span class="keyword">SELECT</span> <span class="keyword">period</span>, region, <span class="built_in">sum</span>(loan_jan_amt) jan_amt</span><br><span class="line">         <span class="keyword">FROM</span> kor_loan_status </span><br><span class="line">         <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">period</span>, region</span><br><span class="line">      ) b2,      </span><br><span class="line">      ( <span class="keyword">SELECT</span> b.period,  <span class="built_in">MAX</span>(b.jan_amt) max_jan_amt</span><br><span class="line">         <span class="keyword">FROM</span> ( <span class="keyword">SELECT</span> <span class="keyword">period</span>, region, <span class="built_in">sum</span>(loan_jan_amt) jan_amt</span><br><span class="line">                  <span class="keyword">FROM</span> kor_loan_status </span><br><span class="line">                 <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">period</span>, region</span><br><span class="line">              ) b,</span><br><span class="line">              ( <span class="keyword">SELECT</span> <span class="built_in">MAX</span>(<span class="keyword">PERIOD</span>) max_month</span><br><span class="line">                  <span class="keyword">FROM</span> kor_loan_status</span><br><span class="line">                 <span class="keyword">GROUP</span> <span class="keyword">BY</span> SUBSTR(<span class="keyword">PERIOD</span>, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">              ) a</span><br><span class="line">         <span class="keyword">WHERE</span> b.period <span class="operator">=</span> a.max_month</span><br><span class="line">         <span class="keyword">GROUP</span> <span class="keyword">BY</span> b.period</span><br><span class="line">      ) c   </span><br><span class="line"> <span class="keyword">WHERE</span> b2.period <span class="operator">=</span> c.period</span><br><span class="line">   <span class="keyword">AND</span> b2.jan_amt <span class="operator">=</span> c.max_jan_amt</span><br><span class="line"> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>period</th>
+        <th>region</th>
+        <th>jan_amt</th>
+    </tr>
+    <tr>
+        <td>201112</td>
+        <td>서울</td>
+        <td>334728.3</td>
+    </tr>
+    <tr>
+        <td>201212</td>
+        <td>서울</td>
+        <td>331572.3</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>서울</td>
+        <td>334062.7</td>
+    </tr>
+</table>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- WITH 절은 별칭으로 사용한 SELECT 문의 FROM 절에 다른 SELECT 구문의 별칭 참조가 가능하다.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>WITH 동일 구문 반복 사용 시</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">%</span><span class="operator">%</span><span class="keyword">sql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">WITH</span> b2 <span class="keyword">AS</span> (<span class="keyword">SELECT</span> <span class="keyword">period</span>, region, <span class="built_in">sum</span>(loan_jan_amt) jan_amt</span><br><span class="line">         <span class="keyword">FROM</span> kor_loan_status </span><br><span class="line">         <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">period</span>, region)</span><br><span class="line">     , c <span class="keyword">AS</span> (<span class="keyword">SELECT</span> b.period, <span class="built_in">MAX</span>(b.jan_amt) max_jan_amt</span><br><span class="line">             <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">period</span>, region, <span class="built_in">sum</span>(loan_jan_amt) jan_amt</span><br><span class="line">                 <span class="keyword">FROM</span> kor_loan_status </span><br><span class="line">                 <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">period</span>, region) b</span><br><span class="line">                 , (<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(<span class="keyword">PERIOD</span>) max_month</span><br><span class="line">                    <span class="keyword">FROM</span> kor_loan_status</span><br><span class="line">                    <span class="keyword">GROUP</span> <span class="keyword">BY</span> SUBSTR(<span class="keyword">PERIOD</span>, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">                 ) a</span><br><span class="line">             <span class="keyword">WHERE</span> b.period <span class="operator">=</span> a.max_month</span><br><span class="line">             <span class="keyword">GROUP</span> <span class="keyword">BY</span> b.period</span><br><span class="line">           ) <span class="comment">-- AS SELECT </span></span><br><span class="line"><span class="keyword">SELECT</span> b2.<span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> b2, c</span><br><span class="line"><span class="keyword">WHERE</span> b2.period <span class="operator">=</span> c.period</span><br><span class="line">    <span class="keyword">AND</span> b2.jan_amt <span class="operator">=</span> c.max_jan_amt</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>period</th>
+        <th>region</th>
+        <th>jan_amt</th>
+    </tr>
+    <tr>
+        <td>201112</td>
+        <td>서울</td>
+        <td>334728.3</td>
+    </tr>
+    <tr>
+        <td>201212</td>
+        <td>서울</td>
+        <td>331572.3</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>서울</td>
+        <td>334062.7</td>
+    </tr>
+</table>
+
+
+<ul>
+<li>Reference : 오라클 SQL과 PL&#x2F;SQK을 다루는 기술</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-05-14T00:00:00.000Z" title="2022. 5. 14. 오전 9:00:00">2022-05-14</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-05-19T11:42:02.994Z" title="2022. 5. 19. 오후 8:42:02">2022-05-19</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/SQL/">SQL</a><span> / </span><a class="link-muted" href="/categories/SQL/oracle/">oracle</a></span><span class="level-item">7 minutes read (About 1040 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/05/14/Oracle_ch07_0428/">Oracle_practice7</a></h1><div class="content"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- WINDOW Function</span><br><span class="line">- 분석 함수 : 특정 그룹별 집계를 담당함</span><br><span class="line">              함수의 종류</span><br><span class="line"></span><br><span class="line">- PARTITION BY : 분석 함수로 계산될 대상 row의 그룹(파티션)을 지정</span><br></pre></td></tr></table></figure>
 
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%load_ext sql</span><br></pre></td></tr></table></figure>
@@ -26457,44 +27654,7 @@
 <ul>
 <li>Reference :  오라클 SQL과 PL&#x2F;SQL을 다루는 기술</li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-05-05T00:00:00.000Z" title="2022. 5. 5. 오전 9:00:00">2022-05-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-05-08T06:03:32.464Z" title="2022. 5. 8. 오후 3:03:32">2022-05-08</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/SQL/">SQL</a><span> / </span><a class="link-muted" href="/categories/SQL/oracle/">oracle</a></span><span class="level-item">3 minutes read (About 473 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/05/05/Oracle_practice1/">Oracle_practice1</a></h1><div class="content"><h3 id="사전준비"><a href="#사전준비" class="headerlink" title="사전준비"></a>사전준비</h3><ul>
-<li>이전 글을 참고하여 Oracle 설치한다.</li>
-<li><a target="_blank" rel="noopener" href="https://www.notion.so/Oracle-setting-e380ad08eac048ebba97c7b90c69a132">https://www.notion.so/Oracle-setting-e380ad08eac048ebba97c7b90c69a132</a></li>
-</ul>
-<h3 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h3><ul>
-<li>SQL Developer 에서 실행</li>
-<li>테이블을 생성한다.<ul>
-<li>다음 코드를 작성해보자</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> ex2_1 (</span><br><span class="line">COLUMN1     <span class="type">CHAR</span>(<span class="number">10</span>)</span><br><span class="line">, COLUMN2     VARCHAR2(<span class="number">10</span>)</span><br><span class="line">, COLUMN3     NVARCHAR2(<span class="number">10</span>)</span><br><span class="line">, COLUMN4     NUMBER</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>저장(ctrl + s) 후 실행(ctrl + enter)<ul>
-<li>다음과 같이 테이블과 컬럼이 생성된다.</li>
-</ul>
-</li>
-</ul>
-<p><img src="/images/Oracle_practice1/Untitled.png" alt="Untitled"></p>
-<ul>
-<li>오라클 SQL과 PL&#x2F;SQL을 다루는 기술 52p</li>
-<li>교재를 따라 다음과 같이 작성하고 실행해 본다.<ul>
-<li>스크립트 실행 &#x3D; 전체 실행 &#x3D; F5</li>
-<li>명령문 실행 &#x3D; 일부 실행 &#x3D; ctrl + enter</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> ex2_1 (</span><br><span class="line">COLUMN1 <span class="type">CHAR</span>(<span class="number">10</span>)</span><br><span class="line">, COLUMN2 VARCHAR2(<span class="number">10</span>)</span><br><span class="line">, COLUMN3 NVARCHAR2(<span class="number">10</span>)</span><br><span class="line">, COLUMN4 NUMBER</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 데이터 추가</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ex2_1 (COLUMN1, COLUMN2) <span class="keyword">VALUES</span>(<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 데이터 확인</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">COLUMN1</span><br><span class="line">, LENGTH(COLUMN1) <span class="keyword">as</span> len1</span><br><span class="line">, COLUMN2</span><br><span class="line">, LENGTH(COLUMN2) <span class="keyword">as</span> len2</span><br><span class="line"><span class="keyword">FROM</span> ex2_1;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 새로운 테이블 생성</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> ex2_2(</span><br><span class="line">COLUMN1 VARCHAR2(<span class="number">3</span>)</span><br><span class="line">, COLUMN2 VARCHAR2(<span class="number">3</span> byte)</span><br><span class="line">, COLUMN3 VARCHAR2(<span class="number">3</span> <span class="type">char</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 데이터 추가</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ex2_2 <span class="keyword">VALUES</span>(<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 조회</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">COLUMN1</span><br><span class="line">, LENGTH(COLUMN1) <span class="keyword">As</span> len1</span><br><span class="line">, COLUMN2</span><br><span class="line">, LENGTH(COLUMN2) <span class="keyword">As</span> len2</span><br><span class="line">, COLUMN3</span><br><span class="line">, LENGTH(COLUMN3) <span class="keyword">As</span> len3</span><br><span class="line"><span class="keyword">FROM</span> ex2_2;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 한글 데이터 삽입</span></span><br><span class="line"><span class="comment">-- 에러 발생</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ex2_2 <span class="keyword">VALUES</span>(<span class="string">&#x27;홍길동&#x27;</span>, <span class="string">&#x27;홍길동&#x27;</span>, <span class="string">&#x27;홍길동&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="operator">-</span> 데이터 조회</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">COLUMN3</span><br><span class="line">, LENGTH(COLUMN3) <span class="keyword">As</span> len3</span><br><span class="line">, LENGTHB(COLUMN3) <span class="keyword">As</span> bytelen</span><br><span class="line"><span class="keyword">FROM</span> ex2_2;</span><br><span class="line"></span><br><span class="line"><span class="operator">-</span> 숫자 데이터 삽입</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> ex2_3(</span><br><span class="line">COL_INT <span class="type">INTEGER</span></span><br><span class="line">, COL_DEC <span class="type">DECIMAL</span></span><br><span class="line">, COL_NUM NUMBER</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">column_id</span><br><span class="line">, column_name</span><br><span class="line">, data_type</span><br><span class="line">, data_length</span><br><span class="line"><span class="keyword">FROM</span> user_tab_cols</span><br><span class="line"><span class="keyword">WHERE</span> table_name <span class="operator">=</span> <span class="string">&#x27;EX2_3&#x27;</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column_id;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- p57</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> ex2_4 (</span><br><span class="line">COL_FLOT1 <span class="type">FLOAT</span>(<span class="number">32</span>),</span><br><span class="line">COL_FLOT2 <span class="type">FLOAT</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ex2_4 (col_flot1, col_flot2) <span class="keyword">VALUES</span> (<span class="number">1234567891234</span>, <span class="number">1234567891234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 조회</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> ex2_4;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- p.58</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> ex2_5(</span><br><span class="line">COL_DATE <span class="type">DATE</span></span><br><span class="line">, COL_TIMESTAMP <span class="type">TIMESTAMP</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ex2_5 <span class="keyword">VALUES</span> (SYSDATE, SYSTIMESTAMP);</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> ex2_5;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- LOB 데이터 타입</span></span><br><span class="line"><span class="comment">-- Large object의 약자로 대용량 데이터 저장할 수 있는 데이터 타입</span></span><br><span class="line"><span class="comment">-- 비정형 데이터는 그 크기가 매우 큰데, 이런 데이터를 저장한다.</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Reference<ul>
-<li><a target="_blank" rel="noopener" href="https://dschloe.github.io/sql/oracle_basic_settings/">오라클 19c 기본 세팅 - Data Science | DSChloe</a></li>
-<li>오라클 SQL과 PL&#x2F;SQL을 다루는 기술</li>
-</ul>
-</li>
-</ul>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/tags/oracle/page/0/">Previous</a></div><div class="pagination-next"><a href="/tags/oracle/page/2/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/tags/oracle/">1</a></li><li><a class="pagination-link" href="/tags/oracle/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">67</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">23</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">11</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">34</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">17</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/crawling/"><span class="level-start"><span class="level-item">crawling</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-14T00:00:00.000Z">2022-05-14</time></p><p class="title"><a href="/2022/05/14/Oracle_ch07_0428/">Oracle_practice7</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-13T00:00:00.000Z">2022-05-13</time></p><p class="title"><a href="/2022/05/13/Oracle_ch06_0428_2/">Oracle_practice6_3</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-12T00:00:00.000Z">2022-05-12</time></p><p class="title"><a href="/2022/05/12/Oracle_ch06_0428/">Oracle_practice6_2</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-11T00:00:00.000Z">2022-05-11</time></p><p class="title"><a href="/2022/05/11/Oracle_on_Jupyter_Lab/">Oracle on Jupyter Lab</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-10T00:00:00.000Z">2022-05-10</time></p><p class="title"><a href="/2022/05/10/Oracle_practice_6/">Oracle_practice6</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crawling/"><span class="tag">crawling</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/oracle/"><span class="tag">oracle</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/tags/oracle/page/0/">Previous</a></div><div class="pagination-next"><a href="/tags/oracle/page/2/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/tags/oracle/">1</a></li><li><a class="pagination-link" href="/tags/oracle/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">68</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">23</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">12</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">34</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">17</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/crawling/"><span class="level-start"><span class="level-item">crawling</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-15T00:00:00.000Z">2022-05-15</time></p><p class="title"><a href="/2022/05/15/Oracle_ch07_0429/">Oracle_practice7_2</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-14T00:00:00.000Z">2022-05-14</time></p><p class="title"><a href="/2022/05/14/Oracle_ch07_0428/">Oracle_practice7</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-13T00:00:00.000Z">2022-05-13</time></p><p class="title"><a href="/2022/05/13/Oracle_ch06_0428_2/">Oracle_practice6_3</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-12T00:00:00.000Z">2022-05-12</time></p><p class="title"><a href="/2022/05/12/Oracle_ch06_0428/">Oracle_practice6_2</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-11T00:00:00.000Z">2022-05-11</time></p><p class="title"><a href="/2022/05/11/Oracle_on_Jupyter_Lab/">Oracle on Jupyter Lab</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/oracle/">oracle</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crawling/"><span class="tag">crawling</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/oracle/"><span class="tag">oracle</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
