@@ -1,5 +1,3743 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-03-23T00:00:00.000Z" title="2022. 3. 23. 오전 9:00:00">2022-03-23</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-03-23T13:41:41.149Z" title="2022. 3. 23. 오후 10:41:41">2022-03-23</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a><span> / </span><a class="link-muted" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/">클래스</a></span><span class="level-item">11 minutes read (About 1577 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/03/23/python_03/">파이썬_기초문법_3</a></h1><div class="content"><h1 id="클래스를-만드는-목적"><a href="#클래스를-만드는-목적" class="headerlink" title="클래스를 만드는 목적!"></a>클래스를 만드는 목적!</h1><ul>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-03-23T00:00:00.000Z" title="2022. 3. 23. 오전 9:00:00">2022-03-23</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-03-24T13:34:36.572Z" title="2022. 3. 24. 오후 10:34:36">2022-03-24</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/library/">library</a><span> / </span><a class="link-muted" href="/categories/python/library/pandas/">pandas</a></span><span class="level-item">33 minutes read (About 4975 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/03/23/pandas_tutorial_01/">pandas_tutorial_01</a></h1><div class="content"><h3 id="데이터-전처리"><a href="#데이터-전처리" class="headerlink" title="데이터 전처리"></a>데이터 전처리</h3><ul>
+<li>데이터 전처리의 기본<ul>
+<li>garbage Data —[ Great Model ]—&gt; Garbage Results</li>
+</ul>
+</li>
+</ul>
+<p>데이터 전처리의 주요 과정</p>
+<ul>
+<li>데이터 전처리 수행 프로세스***(중요)***<ul>
+<li>1.중복값 제거 및 결측치 처리  -&gt;  2.이상치 처리  -&gt;  3.Feature Engineering</li>
+<li>주요 목적 : 더 나은 분석 결과 도출 및 모형 성능 개선 실현</li>
+</ul>
+</li>
+</ul>
+<p>pandas 기본자료형</p>
+<ul>
+<li>숫자, 문자 모두 들어간다.</li>
+<li>중복이 불가능하다.</li>
+</ul>
+<h1 id="판다스"><a href="#판다스" class="headerlink" title="판다스"></a>판다스</h1><h3 id="라이브러리-불러오기"><a href="#라이브러리-불러오기" class="headerlink" title="라이브러리 불러오기"></a>라이브러리 불러오기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="built_in">print</span>(pd.__version__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1.3.5
+</code></pre>
+<h3 id="테스트"><a href="#테스트" class="headerlink" title="테스트"></a>테스트</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">temp_dic = &#123;<span class="string">&quot;col1&quot;</span>: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</span><br><span class="line">            <span class="string">&quot;col2&quot;</span>: [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(temp_dic) <span class="comment"># DataFrame() 사용</span></span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-5f12a67d-363f-495e-a8d6-e15402e0c5d6">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col1</th>
+      <th>col2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-5f12a67d-363f-495e-a8d6-e15402e0c5d6')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-5f12a67d-363f-495e-a8d6-e15402e0c5d6 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-5f12a67d-363f-495e-a8d6-e15402e0c5d6&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(df))</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">temp_dic = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>&#125;</span><br><span class="line">ser = pd.Series(temp_dic) <span class="comment"># Series() 사용</span></span><br><span class="line"><span class="built_in">print</span>(ser)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(ser))</span><br></pre></td></tr></table></figure>
+
+<pre><code>a    1
+b    2
+c    3
+dtype: int64
+&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</code></pre>
+<h3 id="구글-드라이브-연동"><a href="#구글-드라이브-연동" class="headerlink" title="구글 드라이브 연동"></a>구글 드라이브 연동</h3><ul>
+<li>구글 드라이브 → colab notebook → 새 폴더 생성 : data → 슬랙에서 다운 받은 lemonade.csv 파일을 올린다 -&gt; 다음 코드를 실행</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive</span><br><span class="line">drive.mount(<span class="string">&#x27;/content/drive&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Mounted at /content/drive
+</code></pre>
+<p>Mounted at ..drive 가 출력되었으므로 성공</p>
+<p>현재 좌측에 폴더 그림 -&gt; drive -&gt; mydrive -&gt; Colab Notebooks -&gt; data -&gt; Lemonade2016.csv를 찾아서 우클릭 -&gt; 경로 복사 -&gt; 다음 코드에 붙여넣어 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DATA_PATH = <span class="string">&#x27;/content/drive/MyDrive/Colab Notebooks/data/Lemonade2016.csv&#x27;</span></span><br><span class="line">juice = pd.read_csv(DATA_PATH)</span><br><span class="line">juice</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-e4ed5b94-20e7-42ba-9f65-459f54e1728a">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7/1/2016</td>
+      <td>Park</td>
+      <td>97</td>
+      <td>67</td>
+      <td>70</td>
+      <td>90.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7/2/2016</td>
+      <td>Park</td>
+      <td>98</td>
+      <td>67</td>
+      <td>72</td>
+      <td>90.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+      <td>110</td>
+      <td>77</td>
+      <td>71</td>
+      <td>104.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7/4/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>99</td>
+      <td>76</td>
+      <td>98.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7/5/2016</td>
+      <td>Beach</td>
+      <td>159</td>
+      <td>118</td>
+      <td>78</td>
+      <td>135.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7/6/2016</td>
+      <td>Beach</td>
+      <td>103</td>
+      <td>69</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7/6/2016</td>
+      <td>Beach</td>
+      <td>103</td>
+      <td>69</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7/7/2016</td>
+      <td>Beach</td>
+      <td>143</td>
+      <td>101</td>
+      <td>81</td>
+      <td>135.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>Beach</td>
+      <td>123</td>
+      <td>86</td>
+      <td>82</td>
+      <td>113.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7/9/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>95</td>
+      <td>80</td>
+      <td>126.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7/10/2016</td>
+      <td>Beach</td>
+      <td>140</td>
+      <td>98</td>
+      <td>82</td>
+      <td>131.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7/11/2016</td>
+      <td>Beach</td>
+      <td>162</td>
+      <td>120</td>
+      <td>83</td>
+      <td>135.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>7/12/2016</td>
+      <td>Beach</td>
+      <td>130</td>
+      <td>95</td>
+      <td>84</td>
+      <td>99.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>7/13/2016</td>
+      <td>Beach</td>
+      <td>109</td>
+      <td>75</td>
+      <td>77</td>
+      <td>99.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>7/14/2016</td>
+      <td>Beach</td>
+      <td>122</td>
+      <td>85</td>
+      <td>78</td>
+      <td>113.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>7/15/2016</td>
+      <td>Beach</td>
+      <td>98</td>
+      <td>62</td>
+      <td>75</td>
+      <td>108.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7/16/2016</td>
+      <td>Beach</td>
+      <td>81</td>
+      <td>50</td>
+      <td>74</td>
+      <td>90.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>7/17/2016</td>
+      <td>Beach</td>
+      <td>115</td>
+      <td>76</td>
+      <td>77</td>
+      <td>126.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>7/18/2016</td>
+      <td>Park</td>
+      <td>131</td>
+      <td>92</td>
+      <td>81</td>
+      <td>122.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7/19/2016</td>
+      <td>Park</td>
+      <td>122</td>
+      <td>85</td>
+      <td>78</td>
+      <td>113.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>7/20/2016</td>
+      <td>Park</td>
+      <td>71</td>
+      <td>42</td>
+      <td>70</td>
+      <td>NaN</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>7/21/2016</td>
+      <td>Park</td>
+      <td>83</td>
+      <td>50</td>
+      <td>77</td>
+      <td>90.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>7/22/2016</td>
+      <td>Park</td>
+      <td>112</td>
+      <td>75</td>
+      <td>80</td>
+      <td>108.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>7/23/2016</td>
+      <td>Park</td>
+      <td>120</td>
+      <td>82</td>
+      <td>81</td>
+      <td>117.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>7/24/2016</td>
+      <td>Park</td>
+      <td>121</td>
+      <td>82</td>
+      <td>82</td>
+      <td>117.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>7/25/2016</td>
+      <td>Park</td>
+      <td>156</td>
+      <td>113</td>
+      <td>84</td>
+      <td>135.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>7/26/2016</td>
+      <td>Park</td>
+      <td>176</td>
+      <td>129</td>
+      <td>83</td>
+      <td>158.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>7/27/2016</td>
+      <td>Park</td>
+      <td>104</td>
+      <td>68</td>
+      <td>80</td>
+      <td>99.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>7/28/2016</td>
+      <td>Park</td>
+      <td>96</td>
+      <td>63</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>7/29/2016</td>
+      <td>Park</td>
+      <td>100</td>
+      <td>66</td>
+      <td>81</td>
+      <td>95.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>7/30/2016</td>
+      <td>Beach</td>
+      <td>88</td>
+      <td>57</td>
+      <td>82</td>
+      <td>81.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>7/31/2016</td>
+      <td>Beach</td>
+      <td>76</td>
+      <td>47</td>
+      <td>82</td>
+      <td>68.0</td>
+      <td>0.35</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e4ed5b94-20e7-42ba-9f65-459f54e1728a')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-e4ed5b94-20e7-42ba-9f65-459f54e1728a button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-e4ed5b94-20e7-42ba-9f65-459f54e1728a&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<ul>
+<li>데이터를 불러왔다.</li>
+<li>첫번째 파악해야 하는 것!  <ul>
+<li>데이터 구조를 파악해보자</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice.info()  <span class="comment"># 데이터 구조 파악</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 32 entries, 0 to 31
+Data columns (total 7 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Date         31 non-null     object 
+ 1   Location     32 non-null     object 
+ 2   Lemon        32 non-null     int64  
+ 3   Orange       32 non-null     int64  
+ 4   Temperature  32 non-null     int64  
+ 5   Leaflets     31 non-null     float64
+ 6   Price        32 non-null     float64
+dtypes: float64(2), int64(3), object(2)
+memory usage: 1.9+ KB
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice.head()  <span class="comment"># 상위의 데이터를 여러개 불러온다. 디폴트 값이 5개.</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-c3238942-1033-4010-80b8-10e94c66dc23">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7/1/2016</td>
+      <td>Park</td>
+      <td>97</td>
+      <td>67</td>
+      <td>70</td>
+      <td>90.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7/2/2016</td>
+      <td>Park</td>
+      <td>98</td>
+      <td>67</td>
+      <td>72</td>
+      <td>90.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+      <td>110</td>
+      <td>77</td>
+      <td>71</td>
+      <td>104.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7/4/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>99</td>
+      <td>76</td>
+      <td>98.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7/5/2016</td>
+      <td>Beach</td>
+      <td>159</td>
+      <td>118</td>
+      <td>78</td>
+      <td>135.0</td>
+      <td>0.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c3238942-1033-4010-80b8-10e94c66dc23')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-c3238942-1033-4010-80b8-10e94c66dc23 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-c3238942-1033-4010-80b8-10e94c66dc23&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice.tail()  <span class="comment"># 하위의 데이터를 여러개 불러온다. 디폴트 값이 5개</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-cc60af2a-dd96-48c1-9398-546b4a947c77">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>27</th>
+      <td>7/27/2016</td>
+      <td>Park</td>
+      <td>104</td>
+      <td>68</td>
+      <td>80</td>
+      <td>99.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>7/28/2016</td>
+      <td>Park</td>
+      <td>96</td>
+      <td>63</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>7/29/2016</td>
+      <td>Park</td>
+      <td>100</td>
+      <td>66</td>
+      <td>81</td>
+      <td>95.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>7/30/2016</td>
+      <td>Beach</td>
+      <td>88</td>
+      <td>57</td>
+      <td>82</td>
+      <td>81.0</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>7/31/2016</td>
+      <td>Beach</td>
+      <td>76</td>
+      <td>47</td>
+      <td>82</td>
+      <td>68.0</td>
+      <td>0.35</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-cc60af2a-dd96-48c1-9398-546b4a947c77')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-cc60af2a-dd96-48c1-9398-546b4a947c77 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-cc60af2a-dd96-48c1-9398-546b4a947c77&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<ul>
+<li>Describe() 함수<ul>
+<li>기술통계량 확인해주는 함수</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice.describe()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-bfd69db7-f9d2-49ea-84ed-2989ca9e02a8">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>32.000000</td>
+      <td>32.000000</td>
+      <td>32.000000</td>
+      <td>31.000000</td>
+      <td>32.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>116.156250</td>
+      <td>80.000000</td>
+      <td>78.968750</td>
+      <td>108.548387</td>
+      <td>0.354687</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>25.823357</td>
+      <td>21.863211</td>
+      <td>4.067847</td>
+      <td>20.117718</td>
+      <td>0.113137</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>71.000000</td>
+      <td>42.000000</td>
+      <td>70.000000</td>
+      <td>68.000000</td>
+      <td>0.250000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>98.000000</td>
+      <td>66.750000</td>
+      <td>77.000000</td>
+      <td>90.000000</td>
+      <td>0.250000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>113.500000</td>
+      <td>76.500000</td>
+      <td>80.500000</td>
+      <td>108.000000</td>
+      <td>0.350000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>131.750000</td>
+      <td>95.000000</td>
+      <td>82.000000</td>
+      <td>124.000000</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>176.000000</td>
+      <td>129.000000</td>
+      <td>84.000000</td>
+      <td>158.000000</td>
+      <td>0.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-bfd69db7-f9d2-49ea-84ed-2989ca9e02a8')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-bfd69db7-f9d2-49ea-84ed-2989ca9e02a8 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-bfd69db7-f9d2-49ea-84ed-2989ca9e02a8&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(juice.describe())  <span class="comment"># Describe함수 결과물의 타입은 DataFrame 이다.</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>pandas.core.frame.DataFrame
+</code></pre>
+<ul>
+<li>value_counts()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(juice[<span class="string">&#x27;Location&#x27;</span>].value_counts())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(juice[<span class="string">&#x27;Location&#x27;</span>].value_counts()))</span><br></pre></td></tr></table></figure>
+
+<pre><code>Beach    17
+Park     15
+Name: Location, dtype: int64
+&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</code></pre>
+<h1 id="데이터-다뤄보기"><a href="#데이터-다뤄보기" class="headerlink" title="데이터 다뤄보기"></a>데이터 다뤄보기</h1><ul>
+<li>행과 열을 핸들링 해보자.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">juice[<span class="string">&#x27;Sold&#x27;</span>] = <span class="number">0</span>   <span class="comment"># sold 열 추가.</span></span><br><span class="line"><span class="built_in">print</span>(juice.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold
+0  7/1/2016     Park     97      67           70      90.0   0.25     0
+1  7/2/2016     Park     98      67           72      90.0   0.25     0
+2  7/3/2016     Park    110      77           71     104.0   0.25     0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">juice[<span class="string">&#x27;Sold&#x27;</span>] = juice[<span class="string">&#x27;Lemon&#x27;</span>] + juice[<span class="string">&#x27;Orange&#x27;</span>]  <span class="comment"># Sold에 값 설정</span></span><br><span class="line"><span class="built_in">print</span>(juice.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold
+0  7/1/2016     Park     97      67           70      90.0   0.25   164
+1  7/2/2016     Park     98      67           72      90.0   0.25   165
+2  7/3/2016     Park    110      77           71     104.0   0.25   187
+</code></pre>
+<ul>
+<li>매출액 &#x3D; 가격 x 판매량</li>
+<li>Revenue 로 만들어보자</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">juice[<span class="string">&#x27;Revenue&#x27;</span>] = juice[<span class="string">&#x27;Sold&#x27;</span>] * juice[<span class="string">&#x27;Price&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(juice.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+0  7/1/2016     Park     97      67           70      90.0   0.25   164   
+1  7/2/2016     Park     98      67           72      90.0   0.25   165   
+2  7/3/2016     Park    110      77           71     104.0   0.25   187   
+
+   Revenue  
+0    41.00  
+1    41.25  
+2    46.75  
+</code></pre>
+<ul>
+<li>drop(axis &#x3D; 0|1)<ul>
+<li>axis는 ‘축’을 의미한다. 한 축을 따라서 연산이 된다.</li>
+<li>axis를 0으로 설정 시, 행(&#x3D;index)방향으로 drop() 실행</li>
+<li>axis를 1로 설정 시, 열방향으로 drop 수행함.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">juice_column_drop = juice.drop(<span class="string">&#x27;Sold&#x27;</span>, axis = <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(juice_column_drop.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Revenue
+0  7/1/2016     Park     97      67           70      90.0   0.25    41.00
+1  7/2/2016     Park     98      67           72      90.0   0.25    41.25
+2  7/3/2016     Park    110      77           71     104.0   0.25    46.75
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">juice_row_drop = juice.drop(<span class="number">0</span>, axis = <span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(juice_row_drop.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>       Date Location  Lemon  Orange  Temperature  Leaflets  Price  Sold  \
+1  7/2/2016     Park     98      67           72      90.0   0.25   165   
+2  7/3/2016     Park    110      77           71     104.0   0.25   187   
+3  7/4/2016    Beach    134      99           76      98.0   0.25   233   
+
+   Revenue  
+1    41.25  
+2    46.75  
+3    58.25  
+</code></pre>
+<h3 id="데이터-인덱싱"><a href="#데이터-인덱싱" class="headerlink" title="데이터 인덱싱"></a>데이터 인덱싱</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice[<span class="number">0</span>:<span class="number">5</span>] </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-bfa3fabe-e933-4527-879f-12c188c0b8bd">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+      <th>Sold</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7/1/2016</td>
+      <td>Park</td>
+      <td>97</td>
+      <td>67</td>
+      <td>70</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>164</td>
+      <td>41.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7/2/2016</td>
+      <td>Park</td>
+      <td>98</td>
+      <td>67</td>
+      <td>72</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>165</td>
+      <td>41.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+      <td>110</td>
+      <td>77</td>
+      <td>71</td>
+      <td>104.0</td>
+      <td>0.25</td>
+      <td>187</td>
+      <td>46.75</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7/4/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>99</td>
+      <td>76</td>
+      <td>98.0</td>
+      <td>0.25</td>
+      <td>233</td>
+      <td>58.25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7/5/2016</td>
+      <td>Beach</td>
+      <td>159</td>
+      <td>118</td>
+      <td>78</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>277</td>
+      <td>69.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-bfa3fabe-e933-4527-879f-12c188c0b8bd')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-bfa3fabe-e933-4527-879f-12c188c0b8bd button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-bfa3fabe-e933-4527-879f-12c188c0b8bd&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<h3 id="boolean-값을-활용한-데이터-추출"><a href="#boolean-값을-활용한-데이터-추출" class="headerlink" title="boolean 값을 활용한 데이터 추출"></a>boolean 값을 활용한 데이터 추출</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># location이 Beach인 경우</span></span><br><span class="line"><span class="comment"># juice[&#x27;Location&#x27;].value_counts()</span></span><br><span class="line">juice[juice[<span class="string">&#x27;Location&#x27;</span>] == <span class="string">&quot;Beach&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-f23f5092-ba57-4126-bdd5-ecc3581c90cd">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+      <th>Sold</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>7/4/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>99</td>
+      <td>76</td>
+      <td>98.0</td>
+      <td>0.25</td>
+      <td>233</td>
+      <td>58.25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7/5/2016</td>
+      <td>Beach</td>
+      <td>159</td>
+      <td>118</td>
+      <td>78</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>277</td>
+      <td>69.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7/6/2016</td>
+      <td>Beach</td>
+      <td>103</td>
+      <td>69</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>172</td>
+      <td>43.00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7/6/2016</td>
+      <td>Beach</td>
+      <td>103</td>
+      <td>69</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>172</td>
+      <td>43.00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7/7/2016</td>
+      <td>Beach</td>
+      <td>143</td>
+      <td>101</td>
+      <td>81</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>244</td>
+      <td>61.00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>Beach</td>
+      <td>123</td>
+      <td>86</td>
+      <td>82</td>
+      <td>113.0</td>
+      <td>0.25</td>
+      <td>209</td>
+      <td>52.25</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7/9/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>95</td>
+      <td>80</td>
+      <td>126.0</td>
+      <td>0.25</td>
+      <td>229</td>
+      <td>57.25</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7/10/2016</td>
+      <td>Beach</td>
+      <td>140</td>
+      <td>98</td>
+      <td>82</td>
+      <td>131.0</td>
+      <td>0.25</td>
+      <td>238</td>
+      <td>59.50</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7/11/2016</td>
+      <td>Beach</td>
+      <td>162</td>
+      <td>120</td>
+      <td>83</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>282</td>
+      <td>70.50</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>7/12/2016</td>
+      <td>Beach</td>
+      <td>130</td>
+      <td>95</td>
+      <td>84</td>
+      <td>99.0</td>
+      <td>0.25</td>
+      <td>225</td>
+      <td>56.25</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>7/13/2016</td>
+      <td>Beach</td>
+      <td>109</td>
+      <td>75</td>
+      <td>77</td>
+      <td>99.0</td>
+      <td>0.25</td>
+      <td>184</td>
+      <td>46.00</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>7/14/2016</td>
+      <td>Beach</td>
+      <td>122</td>
+      <td>85</td>
+      <td>78</td>
+      <td>113.0</td>
+      <td>0.25</td>
+      <td>207</td>
+      <td>51.75</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>7/15/2016</td>
+      <td>Beach</td>
+      <td>98</td>
+      <td>62</td>
+      <td>75</td>
+      <td>108.0</td>
+      <td>0.50</td>
+      <td>160</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7/16/2016</td>
+      <td>Beach</td>
+      <td>81</td>
+      <td>50</td>
+      <td>74</td>
+      <td>90.0</td>
+      <td>0.50</td>
+      <td>131</td>
+      <td>65.50</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>7/17/2016</td>
+      <td>Beach</td>
+      <td>115</td>
+      <td>76</td>
+      <td>77</td>
+      <td>126.0</td>
+      <td>0.50</td>
+      <td>191</td>
+      <td>95.50</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>7/30/2016</td>
+      <td>Beach</td>
+      <td>88</td>
+      <td>57</td>
+      <td>82</td>
+      <td>81.0</td>
+      <td>0.35</td>
+      <td>145</td>
+      <td>50.75</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>7/31/2016</td>
+      <td>Beach</td>
+      <td>76</td>
+      <td>47</td>
+      <td>82</td>
+      <td>68.0</td>
+      <td>0.35</td>
+      <td>123</td>
+      <td>43.05</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f23f5092-ba57-4126-bdd5-ecc3581c90cd')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-f23f5092-ba57-4126-bdd5-ecc3581c90cd button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-f23f5092-ba57-4126-bdd5-ecc3581c90cd&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># location이 Beach인 경우</span></span><br><span class="line"><span class="comment"># juice[&#x27;Location&#x27;].value_counts()</span></span><br><span class="line">juice[juice[<span class="string">&#x27;Leaflets&#x27;</span>] &gt;= <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-080b31c4-9d87-4d46-a98d-5d6eec44b68f">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+      <th>Sold</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+      <td>110</td>
+      <td>77</td>
+      <td>71</td>
+      <td>104.0</td>
+      <td>0.25</td>
+      <td>187</td>
+      <td>46.75</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7/5/2016</td>
+      <td>Beach</td>
+      <td>159</td>
+      <td>118</td>
+      <td>78</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>277</td>
+      <td>69.25</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7/7/2016</td>
+      <td>Beach</td>
+      <td>143</td>
+      <td>101</td>
+      <td>81</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>244</td>
+      <td>61.00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>Beach</td>
+      <td>123</td>
+      <td>86</td>
+      <td>82</td>
+      <td>113.0</td>
+      <td>0.25</td>
+      <td>209</td>
+      <td>52.25</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7/9/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>95</td>
+      <td>80</td>
+      <td>126.0</td>
+      <td>0.25</td>
+      <td>229</td>
+      <td>57.25</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7/10/2016</td>
+      <td>Beach</td>
+      <td>140</td>
+      <td>98</td>
+      <td>82</td>
+      <td>131.0</td>
+      <td>0.25</td>
+      <td>238</td>
+      <td>59.50</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7/11/2016</td>
+      <td>Beach</td>
+      <td>162</td>
+      <td>120</td>
+      <td>83</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>282</td>
+      <td>70.50</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>7/14/2016</td>
+      <td>Beach</td>
+      <td>122</td>
+      <td>85</td>
+      <td>78</td>
+      <td>113.0</td>
+      <td>0.25</td>
+      <td>207</td>
+      <td>51.75</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>7/15/2016</td>
+      <td>Beach</td>
+      <td>98</td>
+      <td>62</td>
+      <td>75</td>
+      <td>108.0</td>
+      <td>0.50</td>
+      <td>160</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>7/17/2016</td>
+      <td>Beach</td>
+      <td>115</td>
+      <td>76</td>
+      <td>77</td>
+      <td>126.0</td>
+      <td>0.50</td>
+      <td>191</td>
+      <td>95.50</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>7/18/2016</td>
+      <td>Park</td>
+      <td>131</td>
+      <td>92</td>
+      <td>81</td>
+      <td>122.0</td>
+      <td>0.50</td>
+      <td>223</td>
+      <td>111.50</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7/19/2016</td>
+      <td>Park</td>
+      <td>122</td>
+      <td>85</td>
+      <td>78</td>
+      <td>113.0</td>
+      <td>0.50</td>
+      <td>207</td>
+      <td>103.50</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>7/22/2016</td>
+      <td>Park</td>
+      <td>112</td>
+      <td>75</td>
+      <td>80</td>
+      <td>108.0</td>
+      <td>0.50</td>
+      <td>187</td>
+      <td>93.50</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>7/23/2016</td>
+      <td>Park</td>
+      <td>120</td>
+      <td>82</td>
+      <td>81</td>
+      <td>117.0</td>
+      <td>0.50</td>
+      <td>202</td>
+      <td>101.00</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>7/24/2016</td>
+      <td>Park</td>
+      <td>121</td>
+      <td>82</td>
+      <td>82</td>
+      <td>117.0</td>
+      <td>0.50</td>
+      <td>203</td>
+      <td>101.50</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>7/25/2016</td>
+      <td>Park</td>
+      <td>156</td>
+      <td>113</td>
+      <td>84</td>
+      <td>135.0</td>
+      <td>0.50</td>
+      <td>269</td>
+      <td>134.50</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>7/26/2016</td>
+      <td>Park</td>
+      <td>176</td>
+      <td>129</td>
+      <td>83</td>
+      <td>158.0</td>
+      <td>0.35</td>
+      <td>305</td>
+      <td>106.75</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-080b31c4-9d87-4d46-a98d-5d6eec44b68f')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-080b31c4-9d87-4d46-a98d-5d6eec44b68f button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-080b31c4-9d87-4d46-a98d-5d6eec44b68f&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<h3 id="iloc-vs-loc"><a href="#iloc-vs-loc" class="headerlink" title="iloc vs loc"></a>iloc vs loc</h3><ul>
+<li>차이를 확인한다!</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">juice.head(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># index 번호는 다음 실행 결과에서</span></span><br><span class="line"><span class="comment">#     0      1        2       3         4            5          6       7      8</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-dadb1a11-c681-42a1-9b8b-85510d760ea0">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+      <th>Sold</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7/1/2016</td>
+      <td>Park</td>
+      <td>97</td>
+      <td>67</td>
+      <td>70</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>164</td>
+      <td>41.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7/2/2016</td>
+      <td>Park</td>
+      <td>98</td>
+      <td>67</td>
+      <td>72</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>165</td>
+      <td>41.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+      <td>110</td>
+      <td>77</td>
+      <td>71</td>
+      <td>104.0</td>
+      <td>0.25</td>
+      <td>187</td>
+      <td>46.75</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-dadb1a11-c681-42a1-9b8b-85510d760ea0')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-dadb1a11-c681-42a1-9b8b-85510d760ea0 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-dadb1a11-c681-42a1-9b8b-85510d760ea0&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<p>%%time </p>
+<ul>
+<li>실행 시간 측정</li>
+<li>코드의 효율을 살펴보자</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"></span><br><span class="line">juice.iloc[<span class="number">0</span>:<span class="number">3</span>, <span class="number">0</span>:<span class="number">2</span>]  <span class="comment"># 인덱스 기반</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>CPU times: user 2.14 ms, sys: 0 ns, total: 2.14 ms
+Wall time: 3.19 ms
+</code></pre>
+  <div id="df-dfd7fd78-f2b8-491f-a422-bd0e37bc0297">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7/1/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7/2/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-dfd7fd78-f2b8-491f-a422-bd0e37bc0297')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-dfd7fd78-f2b8-491f-a422-bd0e37bc0297 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-dfd7fd78-f2b8-491f-a422-bd0e37bc0297&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<ul>
+<li>loc</li>
+<li>-&gt; 라벨 기반</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%time</span><br><span class="line"></span><br><span class="line">juice.loc[<span class="number">0</span>:<span class="number">2</span>, [<span class="string">&#x27;Date&#x27;</span>, <span class="string">&#x27;Location&#x27;</span>]]  <span class="comment"># 라벨 기반이라 0:2로 실행 시, 3개 생성된다</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>CPU times: user 1.64 ms, sys: 0 ns, total: 1.64 ms
+Wall time: 1.62 ms
+</code></pre>
+  <div id="df-f63e27df-425e-4e52-acd7-6c213c3c886a">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7/1/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7/2/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f63e27df-425e-4e52-acd7-6c213c3c886a')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-f63e27df-425e-4e52-acd7-6c213c3c886a button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-f63e27df-425e-4e52-acd7-6c213c3c886a&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># juice[juice[&#x27;Leaflets&#x27;] &gt;= 100, 컬럼명 별도 추출]</span></span><br><span class="line"></span><br><span class="line">juice.loc[juice[<span class="string">&#x27;Leaflets&#x27;</span>] &gt;= <span class="number">100</span>, [<span class="string">&#x27;Date&#x27;</span>, <span class="string">&#x27;Location&#x27;</span>]] <span class="comment"># 컬럼은 컬럼별로 추출</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-80c7ea4c-f3b6-416c-90a6-935ca4d10c87">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7/5/2016</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7/7/2016</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7/9/2016</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7/10/2016</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7/11/2016</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>7/14/2016</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>7/15/2016</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>7/17/2016</td>
+      <td>Beach</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>7/18/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7/19/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>7/22/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>7/23/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>7/24/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>7/25/2016</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>7/26/2016</td>
+      <td>Park</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-80c7ea4c-f3b6-416c-90a6-935ca4d10c87')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-80c7ea4c-f3b6-416c-90a6-935ca4d10c87 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-80c7ea4c-f3b6-416c-90a6-935ca4d10c87&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice.iloc[juice[<span class="string">&#x27;Leaflets&#x27;</span>] &gt;= <span class="number">100</span>, <span class="number">0</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h2><ul>
+<li>sort_values()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 매출액 순서로 정렬</span></span><br><span class="line">juice.sort_values(by=[<span class="string">&#x27;Revenue&#x27;</span>], ascending=<span class="literal">False</span>).head(<span class="number">3</span>) </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-d4ef77c6-8bab-4eae-9f75-40bfaf70f3b7">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+      <th>Sold</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>25</th>
+      <td>7/25/2016</td>
+      <td>Park</td>
+      <td>156</td>
+      <td>113</td>
+      <td>84</td>
+      <td>135.0</td>
+      <td>0.50</td>
+      <td>269</td>
+      <td>134.50</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>7/18/2016</td>
+      <td>Park</td>
+      <td>131</td>
+      <td>92</td>
+      <td>81</td>
+      <td>122.0</td>
+      <td>0.50</td>
+      <td>223</td>
+      <td>111.50</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>7/26/2016</td>
+      <td>Park</td>
+      <td>176</td>
+      <td>129</td>
+      <td>83</td>
+      <td>158.0</td>
+      <td>0.35</td>
+      <td>305</td>
+      <td>106.75</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d4ef77c6-8bab-4eae-9f75-40bfaf70f3b7')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-d4ef77c6-8bab-4eae-9f75-40bfaf70f3b7 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-d4ef77c6-8bab-4eae-9f75-40bfaf70f3b7&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2개 이상 기준으로 할 경우, 그룹화하여 정렬됨</span></span><br><span class="line">juice.sort_values(by=[<span class="string">&#x27;Price&#x27;</span>, <span class="string">&#x27;Temperature&#x27;</span>], ascending=<span class="literal">False</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">#이것도 가능</span></span><br><span class="line"><span class="comment">#juice.sort_values(by=[&#x27;Price&#x27;, &#x27;Temperature&#x27;], ascending=[False, True]) -&gt; Price는 내림차순, Temparature는 오름차순</span></span><br><span class="line"><span class="comment">#juice.sort_values(by=[&#x27;Price&#x27;, &#x27;Temperature&#x27;], ascending=[False, True]).rest_index(drop=True)  -&gt; index 번호도 재정렬</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-14051fd5-627b-4ebe-ab05-3415f55cc7f3">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+      <th>Sold</th>
+      <th>Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>25</th>
+      <td>7/25/2016</td>
+      <td>Park</td>
+      <td>156</td>
+      <td>113</td>
+      <td>84</td>
+      <td>135.0</td>
+      <td>0.50</td>
+      <td>269</td>
+      <td>134.50</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>7/24/2016</td>
+      <td>Park</td>
+      <td>121</td>
+      <td>82</td>
+      <td>82</td>
+      <td>117.0</td>
+      <td>0.50</td>
+      <td>203</td>
+      <td>101.50</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>7/18/2016</td>
+      <td>Park</td>
+      <td>131</td>
+      <td>92</td>
+      <td>81</td>
+      <td>122.0</td>
+      <td>0.50</td>
+      <td>223</td>
+      <td>111.50</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>7/23/2016</td>
+      <td>Park</td>
+      <td>120</td>
+      <td>82</td>
+      <td>81</td>
+      <td>117.0</td>
+      <td>0.50</td>
+      <td>202</td>
+      <td>101.00</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>7/22/2016</td>
+      <td>Park</td>
+      <td>112</td>
+      <td>75</td>
+      <td>80</td>
+      <td>108.0</td>
+      <td>0.50</td>
+      <td>187</td>
+      <td>93.50</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7/19/2016</td>
+      <td>Park</td>
+      <td>122</td>
+      <td>85</td>
+      <td>78</td>
+      <td>113.0</td>
+      <td>0.50</td>
+      <td>207</td>
+      <td>103.50</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>7/17/2016</td>
+      <td>Beach</td>
+      <td>115</td>
+      <td>76</td>
+      <td>77</td>
+      <td>126.0</td>
+      <td>0.50</td>
+      <td>191</td>
+      <td>95.50</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>7/21/2016</td>
+      <td>Park</td>
+      <td>83</td>
+      <td>50</td>
+      <td>77</td>
+      <td>90.0</td>
+      <td>0.50</td>
+      <td>133</td>
+      <td>66.50</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>7/15/2016</td>
+      <td>Beach</td>
+      <td>98</td>
+      <td>62</td>
+      <td>75</td>
+      <td>108.0</td>
+      <td>0.50</td>
+      <td>160</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7/16/2016</td>
+      <td>Beach</td>
+      <td>81</td>
+      <td>50</td>
+      <td>74</td>
+      <td>90.0</td>
+      <td>0.50</td>
+      <td>131</td>
+      <td>65.50</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>7/20/2016</td>
+      <td>Park</td>
+      <td>71</td>
+      <td>42</td>
+      <td>70</td>
+      <td>NaN</td>
+      <td>0.50</td>
+      <td>113</td>
+      <td>56.50</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>7/26/2016</td>
+      <td>Park</td>
+      <td>176</td>
+      <td>129</td>
+      <td>83</td>
+      <td>158.0</td>
+      <td>0.35</td>
+      <td>305</td>
+      <td>106.75</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>7/28/2016</td>
+      <td>Park</td>
+      <td>96</td>
+      <td>63</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.35</td>
+      <td>159</td>
+      <td>55.65</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>7/30/2016</td>
+      <td>Beach</td>
+      <td>88</td>
+      <td>57</td>
+      <td>82</td>
+      <td>81.0</td>
+      <td>0.35</td>
+      <td>145</td>
+      <td>50.75</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>7/31/2016</td>
+      <td>Beach</td>
+      <td>76</td>
+      <td>47</td>
+      <td>82</td>
+      <td>68.0</td>
+      <td>0.35</td>
+      <td>123</td>
+      <td>43.05</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>7/29/2016</td>
+      <td>Park</td>
+      <td>100</td>
+      <td>66</td>
+      <td>81</td>
+      <td>95.0</td>
+      <td>0.35</td>
+      <td>166</td>
+      <td>58.10</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>7/27/2016</td>
+      <td>Park</td>
+      <td>104</td>
+      <td>68</td>
+      <td>80</td>
+      <td>99.0</td>
+      <td>0.35</td>
+      <td>172</td>
+      <td>60.20</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>7/12/2016</td>
+      <td>Beach</td>
+      <td>130</td>
+      <td>95</td>
+      <td>84</td>
+      <td>99.0</td>
+      <td>0.25</td>
+      <td>225</td>
+      <td>56.25</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7/11/2016</td>
+      <td>Beach</td>
+      <td>162</td>
+      <td>120</td>
+      <td>83</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>282</td>
+      <td>70.50</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7/6/2016</td>
+      <td>Beach</td>
+      <td>103</td>
+      <td>69</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>172</td>
+      <td>43.00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7/6/2016</td>
+      <td>Beach</td>
+      <td>103</td>
+      <td>69</td>
+      <td>82</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>172</td>
+      <td>43.00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>Beach</td>
+      <td>123</td>
+      <td>86</td>
+      <td>82</td>
+      <td>113.0</td>
+      <td>0.25</td>
+      <td>209</td>
+      <td>52.25</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7/10/2016</td>
+      <td>Beach</td>
+      <td>140</td>
+      <td>98</td>
+      <td>82</td>
+      <td>131.0</td>
+      <td>0.25</td>
+      <td>238</td>
+      <td>59.50</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7/7/2016</td>
+      <td>Beach</td>
+      <td>143</td>
+      <td>101</td>
+      <td>81</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>244</td>
+      <td>61.00</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7/9/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>95</td>
+      <td>80</td>
+      <td>126.0</td>
+      <td>0.25</td>
+      <td>229</td>
+      <td>57.25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7/5/2016</td>
+      <td>Beach</td>
+      <td>159</td>
+      <td>118</td>
+      <td>78</td>
+      <td>135.0</td>
+      <td>0.25</td>
+      <td>277</td>
+      <td>69.25</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>7/14/2016</td>
+      <td>Beach</td>
+      <td>122</td>
+      <td>85</td>
+      <td>78</td>
+      <td>113.0</td>
+      <td>0.25</td>
+      <td>207</td>
+      <td>51.75</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>7/13/2016</td>
+      <td>Beach</td>
+      <td>109</td>
+      <td>75</td>
+      <td>77</td>
+      <td>99.0</td>
+      <td>0.25</td>
+      <td>184</td>
+      <td>46.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7/4/2016</td>
+      <td>Beach</td>
+      <td>134</td>
+      <td>99</td>
+      <td>76</td>
+      <td>98.0</td>
+      <td>0.25</td>
+      <td>233</td>
+      <td>58.25</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7/2/2016</td>
+      <td>Park</td>
+      <td>98</td>
+      <td>67</td>
+      <td>72</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>165</td>
+      <td>41.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7/3/2016</td>
+      <td>Park</td>
+      <td>110</td>
+      <td>77</td>
+      <td>71</td>
+      <td>104.0</td>
+      <td>0.25</td>
+      <td>187</td>
+      <td>46.75</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>7/1/2016</td>
+      <td>Park</td>
+      <td>97</td>
+      <td>67</td>
+      <td>70</td>
+      <td>90.0</td>
+      <td>0.25</td>
+      <td>164</td>
+      <td>41.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-14051fd5-627b-4ebe-ab05-3415f55cc7f3')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-14051fd5-627b-4ebe-ab05-3415f55cc7f3 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-14051fd5-627b-4ebe-ab05-3415f55cc7f3&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<h3 id="Group-by"><a href="#Group-by" class="headerlink" title="Group by"></a>Group by</h3><ul>
+<li>R dplyr groupby() %&gt;% summarize()</li>
+<li>-&gt; 데이터 요약 -&gt; 엑셀로 피벗 테이블</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Location 항목을 카운트</span></span><br><span class="line">juice.groupby(by = <span class="string">&#x27;Location&#x27;</span>).count()  </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-26afeca1-6bb7-494f-ba2d-92aab015b058">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Lemon</th>
+      <th>Orange</th>
+      <th>Temperature</th>
+      <th>Leaflets</th>
+      <th>Price</th>
+      <th>Sold</th>
+      <th>Revenue</th>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Beach</th>
+      <td>16</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>Park</th>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>14</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-26afeca1-6bb7-494f-ba2d-92aab015b058')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-26afeca1-6bb7-494f-ba2d-92aab015b058 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-26afeca1-6bb7-494f-ba2d-92aab015b058&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 집계 함수</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">juice.groupby([<span class="string">&#x27;Location&#x27;</span>])[<span class="string">&#x27;Revenue&#x27;</span>].agg([<span class="built_in">max</span>, <span class="built_in">min</span>, <span class="built_in">sum</span>, np.mean])  </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-650575f1-c764-4097-b860-3fa1b26021c5">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>max</th>
+      <th>min</th>
+      <th>sum</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Beach</th>
+      <td>95.5</td>
+      <td>43.0</td>
+      <td>1002.8</td>
+      <td>58.988235</td>
+    </tr>
+    <tr>
+      <th>Park</th>
+      <td>134.5</td>
+      <td>41.0</td>
+      <td>1178.2</td>
+      <td>78.546667</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-650575f1-c764-4097-b860-3fa1b26021c5')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-650575f1-c764-4097-b860-3fa1b26021c5 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-650575f1-c764-4097-b860-3fa1b26021c5&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 집계 함수</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">juice.groupby([<span class="string">&#x27;Location&#x27;</span>])[<span class="string">&#x27;Revenue&#x27;</span>, <span class="string">&#x27;Lemon&#x27;</span>].agg([<span class="built_in">max</span>, <span class="built_in">min</span>, <span class="built_in">sum</span>, np.mean])  </span><br></pre></td></tr></table></figure>
+
+<pre><code>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:4: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
+  after removing the cwd from sys.path.
+</code></pre>
+  <div id="df-7a3b6989-de2d-4a76-8bd8-66538dc5863c">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead tr th &#123;
+    text-align: left;
+&#125;
+
+.dataframe thead tr:last-of-type th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="4" halign="left">Revenue</th>
+      <th colspan="4" halign="left">Lemon</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>max</th>
+      <th>min</th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>max</th>
+      <th>min</th>
+      <th>sum</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Beach</th>
+      <td>95.5</td>
+      <td>43.0</td>
+      <td>1002.8</td>
+      <td>58.988235</td>
+      <td>162</td>
+      <td>76</td>
+      <td>2020</td>
+      <td>118.823529</td>
+    </tr>
+    <tr>
+      <th>Park</th>
+      <td>134.5</td>
+      <td>41.0</td>
+      <td>1178.2</td>
+      <td>78.546667</td>
+      <td>176</td>
+      <td>71</td>
+      <td>1697</td>
+      <td>113.133333</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-7a3b6989-de2d-4a76-8bd8-66538dc5863c')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-7a3b6989-de2d-4a76-8bd8-66538dc5863c button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-7a3b6989-de2d-4a76-8bd8-66538dc5863c&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-03-23T00:00:00.000Z" title="2022. 3. 23. 오전 9:00:00">2022-03-23</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-03-23T13:41:41.149Z" title="2022. 3. 23. 오후 10:41:41">2022-03-23</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a><span> / </span><a class="link-muted" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/">클래스</a></span><span class="level-item">11 minutes read (About 1577 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/03/23/python_03/">파이썬_기초문법_3</a></h1><div class="content"><h1 id="클래스를-만드는-목적"><a href="#클래스를-만드는-목적" class="headerlink" title="클래스를 만드는 목적!"></a>클래스를 만드는 목적!</h1><ul>
 <li>코드의 간결화!<ul>
 <li>코드를 재사용!</li>
 </ul>
@@ -4006,7 +7744,7 @@ console.log('Hello world');  →>>> 개발자 도구의 콘솔에 hello world �
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 <h3 id="첫-번째-글입니다"><a href="#첫-번째-글입니다" class="headerlink" title="첫 번째 글입니다."></a>첫 번째 글입니다.</h3><p>안녕하세요.<br>반갑습니다.</p>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/6/">Previous</a></div><div class="pagination-next is-invisible is-hidden-mobile"><a href="/page/8/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/6/">6</a></li><li><a class="pagination-link is-current" href="/page/7/">7</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">69</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">23</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">13</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">34</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">17</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/crawling/"><span class="level-start"><span class="level-item">crawling</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-16T00:00:00.000Z">2022-05-16</time></p><p class="title"><a href="/2022/05/16/Oracle_practice0/">Oracle_practice0</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-15T00:00:00.000Z">2022-05-15</time></p><p class="title"><a href="/2022/05/15/Oracle_ch07_0429/">Oracle_practice7_2</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-14T00:00:00.000Z">2022-05-14</time></p><p class="title"><a href="/2022/05/14/Oracle_ch07_0428/">Oracle_practice7</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-13T00:00:00.000Z">2022-05-13</time></p><p class="title"><a href="/2022/05/13/Oracle_ch06_0428_2/">Oracle_practice6_3</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-12T00:00:00.000Z">2022-05-12</time></p><p class="title"><a href="/2022/05/12/Oracle_ch06_0428/">Oracle_practice6_2</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crawling/"><span class="tag">crawling</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/oracle/"><span class="tag">oracle</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/6/">Previous</a></div><div class="pagination-next is-invisible is-hidden-mobile"><a href="/page/8/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/6/">6</a></li><li><a class="pagination-link is-current" href="/page/7/">7</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">70</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">23</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">13</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">34</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">18</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/crawling/"><span class="level-start"><span class="level-item">crawling</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-17T00:00:00.000Z">2022-05-17</time></p><p class="title"><a href="/2022/05/17/db_data_import/">Data Import on SQL Developer</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-16T00:00:00.000Z">2022-05-16</time></p><p class="title"><a href="/2022/05/16/Oracle_practice0/">Oracle_practice0</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-15T00:00:00.000Z">2022-05-15</time></p><p class="title"><a href="/2022/05/15/Oracle_ch07_0429/">Oracle_practice7_2</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-14T00:00:00.000Z">2022-05-14</time></p><p class="title"><a href="/2022/05/14/Oracle_ch07_0428/">Oracle_practice7</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-13T00:00:00.000Z">2022-05-13</time></p><p class="title"><a href="/2022/05/13/Oracle_ch06_0428_2/">Oracle_practice6_3</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/oracle/">oracle</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crawling/"><span class="tag">crawling</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/oracle/"><span class="tag">oracle</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
