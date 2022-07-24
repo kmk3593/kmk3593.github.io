@@ -85,7 +85,7 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package variable;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">//		System.out.println(&quot;헬로 월드&quot;);</span><br><span class="line">		</span><br><span class="line">		int a = 5;</span><br><span class="line">		double b = 7.5;</span><br><span class="line"></span><br><span class="line">		System.out.println(a+b);</span><br><span class="line">		</span><br><span class="line">		// call by value. 기본형. 값에 의한 참조</span><br><span class="line">		char x = &#x27;a&#x27;;</span><br><span class="line">		String y = &quot;hello&quot;;</span><br><span class="line">		System.out.println(x+y);</span><br><span class="line">		</span><br><span class="line">		int myNum = a;</span><br><span class="line">		myNum = myNum + 10;</span><br><span class="line">		System.out.println(&quot;Mynum : &quot; + myNum);</span><br><span class="line">		System.out.println(&quot;a : &quot; + a);</span><br><span class="line">		</span><br><span class="line">		// call by reference. 참조형. 주소에 의한 참조</span><br><span class="line">		String[] imgArr = &#123;&quot;🍕&quot;, &quot;🍖&quot;&#125;;</span><br><span class="line">		String[] stringArr = &#123;&quot;피자&quot;, &quot;통닭&quot;, &quot;&quot;&#125;;</span><br><span class="line">		imgArr = stringArr;	// 한글이 들어감</span><br><span class="line">		stringArr[2] = &quot;아이스크림&quot;;</span><br><span class="line">		</span><br><span class="line">		int i=0;</span><br><span class="line">		System.out.println(imgArr[0]);</span><br><span class="line">		System.out.println(imgArr[1]);</span><br><span class="line">		System.out.println(imgArr[2]);</span><br><span class="line">		</span><br><span class="line">//		for(i=0; i&lt;imgArr.length; i++) &#123;</span><br><span class="line">//			System.out.println(imgArr[i]);		</span><br><span class="line">//		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package variable;</span><br><span class="line"></span><br><span class="line">public class 연산자 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	</span><br><span class="line">		int a = 100;</span><br><span class="line">		int b = 333;</span><br><span class="line">		</span><br><span class="line">		System.out.println(a++ + ++b); // 100 + 334 = 434</span><br><span class="line">		// ++ 이나 -- 증감연산자가</span><br><span class="line">		// 뒤에있으면 사용한뒤 값을 변경</span><br><span class="line">		// 앞에 있으면 변경한 뒤에 사용</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-07-05T00:00:00.000Z" title="2022. 7. 5. 오전 9:00:00">2022-07-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-07-19T13:01:54.317Z" title="2022. 7. 19. 오후 10:01:54">2022-07-19</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/Java/">Java</a><span> / </span><a class="link-muted" href="/categories/Java/setting/">setting</a></span><span class="level-item">9 minutes read (About 1309 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/07/05/JAVA_STS_setting/">JAVA Setting with STS</a></h1><div class="content"><h3 id="사전준비"><a href="#사전준비" class="headerlink" title="사전준비"></a>사전준비</h3><ul>
+<h3 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package variable;</span><br><span class="line"></span><br><span class="line">public class 연산자 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	</span><br><span class="line">		int a = 100;</span><br><span class="line">		int b = 333;</span><br><span class="line">		</span><br><span class="line">		System.out.println(a++ + ++b); // 100 + 334 = 434</span><br><span class="line">		// ++ 이나 -- 증감연산자가</span><br><span class="line">		// 뒤에있으면 사용한뒤 값을 변경</span><br><span class="line">		// 앞에 있으면 변경한 뒤에 사용</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-07-05T00:00:00.000Z" title="2022. 7. 5. 오전 9:00:00">2022-07-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-07-24T01:41:49.104Z" title="2022. 7. 24. 오전 10:41:49">2022-07-24</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/Java/">Java</a><span> / </span><a class="link-muted" href="/categories/Java/setting/">setting</a></span><span class="level-item">9 minutes read (About 1319 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/07/05/JAVA_STS_setting/">JAVA Setting with STS</a></h1><div class="content"><h3 id="사전준비"><a href="#사전준비" class="headerlink" title="사전준비"></a>사전준비</h3><ul>
 <li>VSCord 설치</li>
 </ul>
 <h3 id="visual-studio-추가-설치"><a href="#visual-studio-추가-설치" class="headerlink" title="visual studio 추가 설치"></a>visual studio 추가 설치</h3><ul>
@@ -149,7 +149,7 @@
 </ul>
 <p><img src="/images/JAVA_STS_setting/Untitled%208.png" alt="Untitled"></p>
 <h3 id="버전-확인"><a href="#버전-확인" class="headerlink" title="버전 확인"></a>버전 확인</h3><ul>
-<li>버전 확인으로 11버전이 출력되어야 한다</li>
+<li>다음 코드로 버전을 확인했을 때 11버전이 출력되어야 한다</li>
 <li><code>java -version</code></li>
 <li><code>javac -version</code><ul>
 <li>javac &#x3D; java 컴파일러</li>
@@ -167,7 +167,7 @@
 <li>다시 버전 확인한다</li>
 </ul>
 <h3 id="STS-설치-1"><a href="#STS-설치-1" class="headerlink" title="STS 설치"></a>STS 설치</h3><ul>
-<li>파일 이름 길이가 너무 길기에 줄인다<ul>
+<li>파일 이름 길이가 너무 길기 때문에 줄인다<ul>
 <li>예시) spring-tool-suite-4.jar</li>
 </ul>
 </li>
@@ -178,7 +178,7 @@
 </li>
 <li><p>contents → sts-4.14.1.RELEASE 폴더를 안전한 경로에 복사 붙여넣기</p>
 </li>
-<li><p>string-tool-suite4를 복사하여 백업본 만들어둔다</p>
+<li><p>string-tool-suite4를 복사하여 백업본을 만들어둔다</p>
 </li>
 <li><p>우클릭 : string-tool-suite4 → 메모장으로 열기</p>
 </li>
@@ -233,7 +233,7 @@
 <li>2.다음과 같이 하단에 utf-8 적고 Update</li>
 </ul>
 <ol>
-<li>3개 모두 같은 방법으로 utf-8을 추가해준다.</li>
+<li>3개 모두 같은 방법으로 utf-8을 추가해준다</li>
 </ol>
 </li>
 </ul>
@@ -267,7 +267,7 @@
 <li>11버전이므로 아래 2개중에서 아래 것을 체크</li>
 <li>13버전 이상일 때만 다음 그림과 다르게 체크</li>
 <li>finish → 다음 페이지에서 위에 항목을 체크 → Apply and Close</li>
-<li>*이후에 코드 실행하여 Linkage… 에러가 생기면 이 설정을 변경해보자.</li>
+<li>*이후에 코드 실행하여 Linkage… 에러가 생기면 이 설정을 변경해보자</li>
 </ul>
 <p><img src="/images/JAVA_STS_setting/Untitled%2023.png" alt="Untitled"></p>
 <h3 id="프로젝트-생성"><a href="#프로젝트-생성" class="headerlink" title="프로젝트 생성"></a>프로젝트 생성</h3><ul>
@@ -280,8 +280,8 @@
 </ul>
 <p><img src="/images/JAVA_STS_setting/Untitled%2025.png" alt="Untitled"></p>
 <h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><ul>
-<li>JDK는 자바 개발도구(Java Development Kit)의 약자이다.</li>
-<li>JDK는 JRE + 개발을 위해 필요한 도구(javac, java등)들을 포함한다.</li>
+<li>JDK는 자바 개발도구(Java Development Kit)의 약자이다</li>
+<li>JDK는 JRE + 개발을 위해 필요한 도구(javac, java등)들을 포함한다</li>
 </ul>
 <p><img src="/images/JAVA_STS_setting/Untitled%2026.png" alt="Untitled"></p>
 <h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><ul>
