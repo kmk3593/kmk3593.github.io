@@ -1,5 +1,545 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-03T00:00:00.000Z" title="2022. 4. 3. 오전 9:00:00">2022-04-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.236Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">11 minutes read (About 1669 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/03/chapter_4_2_%EA%B9%80%EB%AF%BC%EA%B7%A0/">chapter4_2</a></h1><div class="content"><h1 id="확률적-경사-하강법"><a href="#확률적-경사-하강법" class="headerlink" title="확률적 경사 하강법"></a>확률적 경사 하강법</h1><ul>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-04T00:00:00.000Z" title="2022. 4. 4. 오전 9:00:00">2022-04-04</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.219Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">15 minutes read (About 2261 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/04/chapter_5_1/">chapter_5_1</a></h1><div class="content"><h1 id="결정-트리"><a href="#결정-트리" class="headerlink" title="결정 트리"></a>결정 트리</h1><ul>
+<li>결정 트리로 다음 문제를 해결해 보자<ul>
+<li>와인 캔에 인쇄된 알코올 도수, 당도, pH값으로 와인 종류를 구별해야 한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="로지스틱-회귀로-와인-분류하기"><a href="#로지스틱-회귀로-와인-분류하기" class="headerlink" title="로지스틱 회귀로 와인 분류하기"></a>로지스틱 회귀로 와인 분류하기</h3><ul>
+<li>우선 로지스틱 회귀로 문제 해결을 시도해본다.</li>
+</ul>
+<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><ul>
+<li>와인데이터<ul>
+<li>alcohol(알고올 도수), sugar(당도), pH(산도)</li>
+<li>클래스 0 &#x3D; 레드 와인</li>
+<li>클래스 1 &#x3D; 화이트 와인</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">wine = pd.read_csv(<span class="string">&#x27;https://bit.ly/wine_csv_data&#x27;</span>)</span><br><span class="line">wine.head(<span class="number">5</span>) <span class="comment"># 데이터 잘 들어왔는지 확인</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-ed50d596-f5ff-4ae2-a52f-cd3b0b3d75ad">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>alcohol</th>
+      <th>sugar</th>
+      <th>pH</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>9.4</td>
+      <td>1.9</td>
+      <td>3.51</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9.8</td>
+      <td>2.6</td>
+      <td>3.20</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9.8</td>
+      <td>2.3</td>
+      <td>3.26</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9.8</td>
+      <td>1.9</td>
+      <td>3.16</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9.4</td>
+      <td>1.9</td>
+      <td>3.51</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ed50d596-f5ff-4ae2-a52f-cd3b0b3d75ad')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-ed50d596-f5ff-4ae2-a52f-cd3b0b3d75ad button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-ed50d596-f5ff-4ae2-a52f-cd3b0b3d75ad&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;/images/chapter_5_1/output_type&#39;] = &#39;display_data&#39;;
+      await google.colab./images/chapter_5_1/output.render/images/chapter_5_1/output(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<ul>
+<li>info()<ul>
+<li>결측치 확인 &#x2F; 변수 타입</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 6497 entries, 0 to 6496
+Data columns (total 4 columns):
+ #   Column   Non-Null Count  Dtype  
+---  ------   --------------  -----  
+ 0   alcohol  6497 non-null   float64
+ 1   sugar    6497 non-null   float64
+ 2   pH       6497 non-null   float64
+ 3   class    6497 non-null   float64
+dtypes: float64(4)
+memory usage: 203.2 KB
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wine.describe()</span><br><span class="line"><span class="comment"># 표준화가 안되어 있음을 알 수 있다.</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  <div id="df-decc42d0-d914-4603-8cd7-d87f4c9e480a">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>alcohol</th>
+      <th>sugar</th>
+      <th>pH</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>6497.000000</td>
+      <td>6497.000000</td>
+      <td>6497.000000</td>
+      <td>6497.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>10.491801</td>
+      <td>5.443235</td>
+      <td>3.218501</td>
+      <td>0.753886</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.192712</td>
+      <td>4.757804</td>
+      <td>0.160787</td>
+      <td>0.430779</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>8.000000</td>
+      <td>0.600000</td>
+      <td>2.720000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>9.500000</td>
+      <td>1.800000</td>
+      <td>3.110000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>10.300000</td>
+      <td>3.000000</td>
+      <td>3.210000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>11.300000</td>
+      <td>8.100000</td>
+      <td>3.320000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>14.900000</td>
+      <td>65.800000</td>
+      <td>4.010000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-decc42d0-d914-4603-8cd7-d87f4c9e480a')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-decc42d0-d914-4603-8cd7-d87f4c9e480a button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-decc42d0-d914-4603-8cd7-d87f4c9e480a&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;/images/chapter_5_1/output_type&#39;] = &#39;display_data&#39;;
+      await google.colab./images/chapter_5_1/output.render/images/chapter_5_1/output(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<h3 id="표준화-작업"><a href="#표준화-작업" class="headerlink" title="표준화 작업"></a>표준화 작업</h3><ul>
+<li>배열로 바꿔서 진행</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = wine[[<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>]].to_numpy()  <span class="comment"># 참고할 데이터</span></span><br><span class="line">target = wine[<span class="string">&#x27;class&#x27;</span>].to_numpy()                   <span class="comment"># class = 타깃값 = 어떤 와인인지 구분하는 것이 목표 </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="훈련데이터와-테스트데이터로-분리"><a href="#훈련데이터와-테스트데이터로-분리" class="headerlink" title="훈련데이터와 테스트데이터로 분리"></a>훈련데이터와 테스트데이터로 분리</h3><ul>
+<li>train_test_split() 함수는 설정값을 지정하지 않으면 25%를 테스트 세트로 지정한다.</li>
+<li>이번엔 샘플 개수가 충분히 많으므로 20% 정도만 테스트 세트로 나눈다.</li>
+<li>test &#x3D; 0.2 에는 이러한 의도가 담겨 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(</span><br><span class="line">    data, target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>    <span class="comment"># test_size=0.2 는 20%를 테스트 세트로 한다는 뜻.</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(train_input.shape, test_input.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(5197, 3) (1300, 3)
+</code></pre>
+<ul>
+<li>이제 표준화 진행하자</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">ss = StandardScaler()</span><br><span class="line">ss.fit(train_input)</span><br><span class="line">train_scaled = ss.transform(train_input)</span><br><span class="line">test_scaled = ss.transform(test_input)</span><br></pre></td></tr></table></figure>
+
+<h3 id="모델-만들기"><a href="#모델-만들기" class="headerlink" title="모델 만들기"></a>모델 만들기</h3><h3 id="로지스틱-회귀"><a href="#로지스틱-회귀" class="headerlink" title="로지스틱 회귀"></a>로지스틱 회귀</h3><ul>
+<li>표준변환된 train_scaled와 test_scaled를 사용해 로지스틱 회귀 모델을 훈련한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">lr.fit(train_scaled, train_target)</span><br><span class="line"><span class="built_in">print</span>(lr.score(train_scaled, train_target))</span><br><span class="line"><span class="built_in">print</span>(lr.score(test_scaled, test_target))</span><br><span class="line"><span class="built_in">print</span>(lr.coef_, lr.intercept_)</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.7808350971714451
+0.7776923076923077
+[[ 0.51270274  1.6733911  -0.68767781]] [1.81777902]
+</code></pre>
+<ul>
+<li>점수가 높게 나오지 않았다.</li>
+<li>결정 트리를 이용하여 좀 더 쉽게 문제를 해결해보자</li>
+</ul>
+<p>로지스틱 회귀</p>
+<ul>
+<li>수식</li>
+</ul>
+<p>의사결정트리의 기본 알고리즘을 활용해서, MS, 구글 등 이런 회사들이 신규 알고리즘을 만듬</p>
+<ul>
+<li>XGBoost, lightGBM, CatBoost</li>
+<li>캐글 정형데이터</li>
+<li>lightGBM (지금 현재 실무에서 많이 쓰임)<ul>
+<li>4월 말까지는 코드에 집중. 대회 나감</li>
+<li>PPT (알고리즘 소개)</li>
+</ul>
+</li>
+</ul>
+<h3 id="결정-트리-Decision-Tree"><a href="#결정-트리-Decision-Tree" class="headerlink" title="결정 트리 (Decision Tree)"></a>결정 트리 (Decision Tree)</h3><ul>
+<li>스무 고개와 같다.</li>
+<li>질문을 하나씩 던져서 정답과 맞춰가는 것이다.</li>
+<li>표준화된 훈련 세트를 이용하여 결정트리를 사용해 본다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line">dt = DecisionTreeClassifier(random_state=<span class="number">42</span>)</span><br><span class="line">dt.fit(train_scaled, train_target)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dt.score(train_scaled, train_target)) <span class="comment"># 훈련 세트</span></span><br><span class="line"><span class="built_in">print</span>(dt.score(test_scaled, test_target))   <span class="comment"># 테스트 세트</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>0.996921300750433
+0.8592307692307692
+</code></pre>
+<ul>
+<li>위 코드의 두 결과는 차이가 있다.</li>
+<li>두 결과가 유사하게 나와야 한다.</li>
+<li>앞으로 ‘가지치기’에서 차이를 좁히는 과정을 진행한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 현재 트리의 형태를 출력해본다.</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> plot_tree</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">7</span>))</span><br><span class="line">plot_tree(dt)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_5_1/output_21_0.png" alt="png"></p>
+<ul>
+<li>과대적합이 나오는 이유 : 조건식을 걸기 때문</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># plot_tree()함수에서 트리의 깊이를 제한하여 출력해 본다.</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">7</span>))</span><br><span class="line">plot_tree(dt, max_depth=<span class="number">1</span>, filled=<span class="literal">True</span>, feature_names=[<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_5_1/output_23_0.png" alt="png"></p>
+<ul>
+<li>불순도 : 운동회 ox 퀴즈에서 정답을 맞힌 사람만 살아남는 것과 같은 원리</li>
+</ul>
+<h3 id="가지치기"><a href="#가지치기" class="headerlink" title="가지치기"></a>가지치기</h3><ul>
+<li>과대적합을 방지하기 위한 것</li>
+<li>가지치기를 통해 두 결과가 유사하게 출력된다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dt = DecisionTreeClassifier(max_depth = <span class="number">3</span>, random_state=<span class="number">42</span>) <span class="comment"># max_depth 매개변수 조절을 통해 가지치기 한다.</span></span><br><span class="line">dt.fit(train_scaled, train_target)</span><br><span class="line"><span class="built_in">print</span>(dt.score(train_scaled, train_target)) <span class="comment"># 훈련 세트</span></span><br><span class="line"><span class="built_in">print</span>(dt.score(test_scaled, test_target))   <span class="comment"># 데이터 세트</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8454877814123533
+0.8415384615384616
+</code></pre>
+<ul>
+<li>훈련 세트와 테스트 성능이 유사하게 출력되었다.</li>
+<li>이런 모델을 트리 그래프로 그린다면 훨씬 이해햐기 쉬울 것이다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">20</span>,<span class="number">15</span>))</span><br><span class="line">plot_tree(dt, filled=<span class="literal">True</span>, feature_names=[<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_5_1/output_28_0.png" alt="png"></p>
+<ul>
+<li><p>훨씬 보기 좋게 출력되었다.</p>
+</li>
+<li><p>루트 노트</p>
+<ul>
+<li>당도(sugar)를 기준으로 훈련세트를 나눈다.</li>
+</ul>
+</li>
+<li><p>깊이 1의 노드</p>
+<ul>
+<li>모두 당도(sugar)를 기준으로 훈련 세트를 나눈다.</li>
+</ul>
+</li>
+<li><p>깊이 2의 노드</p>
+<ul>
+<li>맨 왼쪽의 노드만 당도를 기준으로 나눈다.</li>
+<li>왼쪽에서 두 번째 노드는 알고올 도수(alcohol)를 기준으로 나눈다.</li>
+<li>오른쪽 두 노드는 pH를 기준으로 나눈다.</li>
+</ul>
+</li>
+<li><p>리프 노드</p>
+<ul>
+<li>왼쪽에서 3번째에 있는 노드만 음성 클래스가 더 많다.<ul>
+<li>이 노드에 도착해야만 레드 와인으로 예측한다.</li>
+<li>이 노드에 도달하려면 -0.802 &lt; sugar &lt; -0.239, alcohol &lt; -0.454 라는 조건을 만족해야 한다.</li>
+<li>즉, -0.802 &lt; sugar &lt; -0.239, alcohol &lt; -0.454 이면 레드와인이다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>그런데 -0.802라는 음수로 된 당도를 어떻게 설명해야할까?</p>
+<ul>
+<li>좀 더 설명하기 쉽게 바꿔보자.</li>
+</ul>
+</li>
+<li><p>특성값의 스케일은 결정 트리 알고리즘에 아무런 영향을 미치지 않는다.</p>
+</li>
+<li><p>따라서 표준화 전처리를 할 필요가 없다.</p>
+</li>
+<li><p>전처리하기 전의 훈련 세트(train_input)와 테스트 세트(test_input)로 결정 트리 모델을 다시 훈련해 본다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dt = DecisionTreeClassifier(max_depth=<span class="number">3</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 가지치기 때와 달리 train_scaled를 사용하지 않았다. 표준화 전처리 할 필요가 없기 때문인 듯.</span></span><br><span class="line">dt.fit(train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(dt.score(train_input, train_target))</span><br><span class="line"><span class="built_in">print</span>(dt.score(train_input, train_target))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8454877814123533
+0.8454877814123533
+</code></pre>
+<ul>
+<li>정확히 같은 결과가 나왔다.</li>
+<li>트리도 그려보자.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">20</span>, <span class="number">15</span>))</span><br><span class="line">plot_tree(dt, filled=<span class="literal">True</span>, feature_names=[<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_5_1/output_33_0.png" alt="png"></p>
+<ul>
+<li><p>같은 트리지만 특성값을 표준점수로 바꾸지 않았기에 이해하기 훨씬 쉽다.</p>
+<ul>
+<li>적어도 당도를 음수로 표기하는 것보단 보기 좋다.</li>
+</ul>
+</li>
+<li><p>다음 조건을 만족하는 것이 레드 와인이다.</p>
+<ul>
+<li>(1.625 &lt; sugar &lt; 4.325) AND (alcohol &lt; 11.025) &#x3D; 레드 와인</li>
+</ul>
+</li>
+<li><p>특성 중요도</p>
+<ul>
+<li>결정 트리는 어떤 특성이 가장 유용한지 나타내는 특성 중요도를 계산해준다.</li>
+<li>이 트리의 루트 노드와 깊이 1에서 sugar를 사용했기 때문에 아마 sugar가 가장 유용한 특성 중 하나일 것이다.</li>
+<li>특성 중요도는 결정 트리 모델의 feature_importances_ 속성에 저장되어 있다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(dt.feature_importances_)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0.12345626 0.86862934 0.0079144 ]
+</code></pre>
+<ul>
+<li><p>alcohol ,sugar, ph 순서이기 때문에 두 번째인 sugar의 중요도가 가장 높은 것을 알 수 있다.</p>
+</li>
+<li><p>번외</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> graphviz</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</span><br><span class="line"></span><br><span class="line"><span class="comment"># DOT data</span></span><br><span class="line">dot_data = tree.export_graphviz(dt, out_file=<span class="literal">None</span>, </span><br><span class="line">                                feature_names = [<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>],  </span><br><span class="line">                                filled=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Draw graph</span></span><br><span class="line">graph = graphviz.Source(dot_data, <span class="built_in">format</span>=<span class="string">&quot;png&quot;</span>) </span><br><span class="line">graph</span><br><span class="line">graph.render(<span class="string">&quot;decision_tree_graphivz&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;decision_tree_graphivz.png&#39;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap, to_rgb</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">20</span>, <span class="number">15</span>))</span><br><span class="line">artists = plot_tree(dt, filled = <span class="literal">True</span>, </span><br><span class="line">          feature_names = [<span class="string">&#x27;alcohol&#x27;</span>, <span class="string">&#x27;sugar&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>])</span><br><span class="line"></span><br><span class="line">colors = [<span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;red&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> artist, impurity, value <span class="keyword">in</span> <span class="built_in">zip</span>(artists, dt.tree_.impurity, dt.tree_.value):</span><br><span class="line">    r, g, b = to_rgb(colors[np.argmax(value)])</span><br><span class="line">    f = impurity * <span class="number">2</span></span><br><span class="line">    artist.get_bbox_patch().set_facecolor((f + (<span class="number">1</span>-f)*r, f + (<span class="number">1</span>-f)*g, f + (<span class="number">1</span>-f)*b))</span><br><span class="line">    artist.get_bbox_patch().set_edgecolor(<span class="string">&#x27;black&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_5_1/output_40_0.png" alt="png"></p>
+<ul>
+<li>Reference : 혼자 공부하는 머신러닝 + 딥러닝</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-03T00:00:00.000Z" title="2022. 4. 3. 오전 9:00:00">2022-04-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.236Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">11 minutes read (About 1669 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/03/chapter_4_2_%EA%B9%80%EB%AF%BC%EA%B7%A0/">chapter4_2</a></h1><div class="content"><h1 id="확률적-경사-하강법"><a href="#확률적-경사-하강법" class="headerlink" title="확률적 경사 하강법"></a>확률적 경사 하강법</h1><ul>
 <li><p>1차 가장 큰 차이 (기존 ML모형)</p>
 <ul>
 <li>샘플링 방식이 달라짐</li>
@@ -10355,2242 +10895,7 @@ ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.i
 
 <pre><code>I was not None
 </code></pre>
-<h3 id="End-of-document"><a href="#End-of-document" class="headerlink" title="End of document"></a>End of document</h3></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-03-24T00:00:00.000Z" title="2022. 3. 24. 오전 9:00:00">2022-03-24</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-03-24T13:34:36.581Z" title="2022. 3. 24. 오후 10:34:36">2022-03-24</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/library/">library</a><span> / </span><a class="link-muted" href="/categories/python/library/pandas/">pandas</a></span><span class="level-item">25 minutes read (About 3797 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/03/24/pandas_tutorial_02/">pandas_tutorial_02</a></h1><div class="content"><ul>
-<li>라이브러리 불러오기</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="built_in">print</span>(pd.__version__)</span><br></pre></td></tr></table></figure>
-
-<pre><code>1.3.5
-</code></pre>
-<h3 id="구글-드라이브-연동"><a href="#구글-드라이브-연동" class="headerlink" title="구글 드라이브 연동"></a>구글 드라이브 연동</h3><ul>
-<li>구글 드라이브 → colab notebook → 새 폴더 생성 : data → 슬랙에서 다운 받은 lemonade.csv 파일을 올린다 -&gt; 다음 코드를 실행</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive</span><br><span class="line">drive.mount(<span class="string">&#x27;/content/drive&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Mounted at /content/drive
-</code></pre>
-<p>Mounted at ..drive 가 출력되었으므로 성공</p>
-<p>현재 좌측에 폴더 그림 -&gt; drive -&gt; mydrive -&gt; Colab Notebooks -&gt; data -&gt; supermarket_sales.csv를 찾아서 우클릭 -&gt; 경로 복사 -&gt; 다음 코드에 붙여넣어 사용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DATA_PATH = <span class="string">&#x27;/content/drive/MyDrive/Colab Notebooks/data/supermarket_sales.csv&#x27;</span></span><br><span class="line">sales = pd.read_csv(DATA_PATH)</span><br><span class="line">sales</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-8a1e46d8-83ea-49d2-a98d-cf274f10b34d">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Invoice ID</th>
-      <th>Branch</th>
-      <th>City</th>
-      <th>Customer type</th>
-      <th>Gender</th>
-      <th>Product line</th>
-      <th>Unit price</th>
-      <th>Quantity</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Payment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>750-67-8428</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Member</td>
-      <td>Female</td>
-      <td>Health and beauty</td>
-      <td>74.69</td>
-      <td>7</td>
-      <td>1/5/2019</td>
-      <td>13:08</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>226-31-3081</td>
-      <td>C</td>
-      <td>Naypyitaw</td>
-      <td>Normal</td>
-      <td>Female</td>
-      <td>Electronic accessories</td>
-      <td>15.28</td>
-      <td>5</td>
-      <td>3/8/2019</td>
-      <td>10:29</td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>631-41-3108</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Normal</td>
-      <td>Male</td>
-      <td>Home and lifestyle</td>
-      <td>46.33</td>
-      <td>7</td>
-      <td>3/3/2019</td>
-      <td>13:23</td>
-      <td>Credit card</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>123-19-1176</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Member</td>
-      <td>Male</td>
-      <td>Health and beauty</td>
-      <td>58.22</td>
-      <td>8</td>
-      <td>1/27/2019</td>
-      <td>20:33</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>373-73-7910</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Normal</td>
-      <td>Male</td>
-      <td>Sports and travel</td>
-      <td>86.31</td>
-      <td>7</td>
-      <td>2/8/2019</td>
-      <td>10:37</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>995</th>
-      <td>233-67-5758</td>
-      <td>C</td>
-      <td>Naypyitaw</td>
-      <td>Normal</td>
-      <td>Male</td>
-      <td>Health and beauty</td>
-      <td>40.35</td>
-      <td>1</td>
-      <td>1/29/2019</td>
-      <td>13:46</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>996</th>
-      <td>303-96-2227</td>
-      <td>B</td>
-      <td>Mandalay</td>
-      <td>Normal</td>
-      <td>Female</td>
-      <td>Home and lifestyle</td>
-      <td>97.38</td>
-      <td>10</td>
-      <td>3/2/2019</td>
-      <td>17:16</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>997</th>
-      <td>727-02-1313</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Member</td>
-      <td>Male</td>
-      <td>Food and beverages</td>
-      <td>31.84</td>
-      <td>1</td>
-      <td>2/9/2019</td>
-      <td>13:22</td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <th>998</th>
-      <td>347-56-2442</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Normal</td>
-      <td>Male</td>
-      <td>Home and lifestyle</td>
-      <td>65.82</td>
-      <td>1</td>
-      <td>2/22/2019</td>
-      <td>15:33</td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <th>999</th>
-      <td>849-09-3807</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Member</td>
-      <td>Female</td>
-      <td>Fashion accessories</td>
-      <td>88.34</td>
-      <td>7</td>
-      <td>2/18/2019</td>
-      <td>13:28</td>
-      <td>Cash</td>
-    </tr>
-  </tbody>
-</table>
-<p>1000 rows × 11 columns</p>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8a1e46d8-83ea-49d2-a98d-cf274f10b34d')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-8a1e46d8-83ea-49d2-a98d-cf274f10b34d button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-8a1e46d8-83ea-49d2-a98d-cf274f10b34d&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.info()</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 1000 entries, 0 to 999
-Data columns (total 11 columns):
- #   Column         Non-Null Count  Dtype  
----  ------         --------------  -----  
- 0   Invoice ID     1000 non-null   object 
- 1   Branch         1000 non-null   object 
- 2   City           1000 non-null   object 
- 3   Customer type  1000 non-null   object 
- 4   Gender         1000 non-null   object 
- 5   Product line   1000 non-null   object 
- 6   Unit price     1000 non-null   float64
- 7   Quantity       1000 non-null   int64  
- 8   Date           1000 non-null   object 
- 9   Time           1000 non-null   object 
- 10  Payment        1000 non-null   object 
-dtypes: float64(1), int64(1), object(9)
-memory usage: 86.1+ KB
-</code></pre>
-<h3 id="Group-by"><a href="#Group-by" class="headerlink" title="Group by"></a>Group by</h3><ul>
-<li>(동의어) 집계함수를 배운다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 여러가지 시도해보면서 정보를 파악해보자</span></span><br><span class="line">sales[<span class="string">&#x27;Invoice ID&#x27;</span>].value_counts()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>750-67-8428    1
-642-61-4706    1
-816-72-8853    1
-491-38-3499    1
-322-02-2271    1
-              ..
-633-09-3463    1
-374-17-3652    1
-378-07-7001    1
-433-75-6987    1
-849-09-3807    1
-Name: Invoice ID, Length: 1000, dtype: int64
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 여러가지 시도해보면서 정보를 파악해보자</span></span><br><span class="line">sales.groupby(<span class="string">&#x27;Customer type&#x27;</span>)[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>Customer type
-Member    2785
-Normal    2725
-Name: Quantity, dtype: int64
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.groupby([<span class="string">&#x27;Customer type&#x27;</span>, <span class="string">&#x27;Branch&#x27;</span>, <span class="string">&#x27;Payment&#x27;</span>])[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>Customer type  Branch  Payment    
-Member         A       Cash           308
-                       Credit card    282
-                       Ewallet        374
-               B       Cash           284
-                       Credit card    371
-                       Ewallet        269
-               C       Cash           293
-                       Credit card    349
-                       Ewallet        255
-Normal         A       Cash           264
-                       Credit card    298
-                       Ewallet        333
-               B       Cash           344
-                       Credit card    228
-                       Ewallet        324
-               C       Cash           403
-                       Credit card    194
-                       Ewallet        337
-Name: Quantity, dtype: int64
-</code></pre>
-<ul>
-<li>data type은 Series 이다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby([<span class="string">&#x27;Customer type&#x27;</span>, <span class="string">&#x27;Branch&#x27;</span>, <span class="string">&#x27;Payment&#x27;</span>])[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>()))</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;class &#39;pandas.core.series.Series&#39;&gt;
-</code></pre>
-<ul>
-<li>검색 키워드를 잘 선택하는게 중요하다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.groupby([<span class="string">&#x27;Customer type&#x27;</span>, <span class="string">&#x27;Branch&#x27;</span>, <span class="string">&#x27;Payment&#x27;</span>])[<span class="string">&#x27;Quantity&#x27;</span>].agg([<span class="string">&#x27;sum&#x27;</span>, <span class="string">&#x27;mean&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-9f19e00c-ea81-404c-b289-c9ddb325aeaa">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>sum</th>
-      <th>mean</th>
-    </tr>
-    <tr>
-      <th>Customer type</th>
-      <th>Branch</th>
-      <th>Payment</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="9" valign="top">Member</th>
-      <th rowspan="3" valign="top">A</th>
-      <th>Cash</th>
-      <td>308</td>
-      <td>5.500000</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>282</td>
-      <td>5.755102</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>374</td>
-      <td>6.032258</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">B</th>
-      <th>Cash</th>
-      <td>284</td>
-      <td>5.358491</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>371</td>
-      <td>5.888889</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>269</td>
-      <td>5.489796</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">C</th>
-      <th>Cash</th>
-      <td>293</td>
-      <td>4.966102</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>349</td>
-      <td>5.816667</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>255</td>
-      <td>5.100000</td>
-    </tr>
-    <tr>
-      <th rowspan="9" valign="top">Normal</th>
-      <th rowspan="3" valign="top">A</th>
-      <th>Cash</th>
-      <td>264</td>
-      <td>4.888889</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>298</td>
-      <td>5.418182</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>333</td>
-      <td>5.203125</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">B</th>
-      <th>Cash</th>
-      <td>344</td>
-      <td>6.035088</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>228</td>
-      <td>4.956522</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>324</td>
-      <td>5.062500</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">C</th>
-      <th>Cash</th>
-      <td>403</td>
-      <td>6.200000</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>194</td>
-      <td>5.105263</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>337</td>
-      <td>6.017857</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-9f19e00c-ea81-404c-b289-c9ddb325aeaa')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-9f19e00c-ea81-404c-b289-c9ddb325aeaa button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-9f19e00c-ea81-404c-b289-c9ddb325aeaa&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby([<span class="string">&#x27;Customer type&#x27;</span>, <span class="string">&#x27;Branch&#x27;</span>, <span class="string">&#x27;Payment&#x27;</span>])[<span class="string">&#x27;Quantity&#x27;</span>].agg([<span class="string">&#x27;sum&#x27;</span>, <span class="string">&#x27;mean&#x27;</span>])))</span><br></pre></td></tr></table></figure>
-
-<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.groupby([<span class="string">&#x27;Customer type&#x27;</span>, <span class="string">&#x27;Branch&#x27;</span>, <span class="string">&#x27;Payment&#x27;</span>], as_index=<span class="literal">False</span>)[<span class="string">&#x27;Quantity&#x27;</span>].agg([<span class="string">&#x27;sum&#x27;</span>, <span class="string">&#x27;mean&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-f56f9b0d-43e2-4ba0-8abf-56fa96c5d20f">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>sum</th>
-      <th>mean</th>
-    </tr>
-    <tr>
-      <th>Customer type</th>
-      <th>Branch</th>
-      <th>Payment</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="9" valign="top">Member</th>
-      <th rowspan="3" valign="top">A</th>
-      <th>Cash</th>
-      <td>308</td>
-      <td>5.500000</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>282</td>
-      <td>5.755102</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>374</td>
-      <td>6.032258</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">B</th>
-      <th>Cash</th>
-      <td>284</td>
-      <td>5.358491</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>371</td>
-      <td>5.888889</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>269</td>
-      <td>5.489796</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">C</th>
-      <th>Cash</th>
-      <td>293</td>
-      <td>4.966102</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>349</td>
-      <td>5.816667</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>255</td>
-      <td>5.100000</td>
-    </tr>
-    <tr>
-      <th rowspan="9" valign="top">Normal</th>
-      <th rowspan="3" valign="top">A</th>
-      <th>Cash</th>
-      <td>264</td>
-      <td>4.888889</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>298</td>
-      <td>5.418182</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>333</td>
-      <td>5.203125</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">B</th>
-      <th>Cash</th>
-      <td>344</td>
-      <td>6.035088</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>228</td>
-      <td>4.956522</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>324</td>
-      <td>5.062500</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">C</th>
-      <th>Cash</th>
-      <td>403</td>
-      <td>6.200000</td>
-    </tr>
-    <tr>
-      <th>Credit card</th>
-      <td>194</td>
-      <td>5.105263</td>
-    </tr>
-    <tr>
-      <th>Ewallet</th>
-      <td>337</td>
-      <td>6.017857</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-f56f9b0d-43e2-4ba0-8abf-56fa96c5d20f')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-f56f9b0d-43e2-4ba0-8abf-56fa96c5d20f button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-f56f9b0d-43e2-4ba0-8abf-56fa96c5d20f&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-<h3 id="결측치-다루기"><a href="#결측치-다루기" class="headerlink" title="결측치 다루기"></a>결측치 다루기</h3><ul>
-<li>결측치 데이터 생성<ul>
-<li>임의로 여러가지 생성해보자 (숙달 과정)</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">dict_01 = &#123;</span><br><span class="line">    <span class="string">&#x27;Score_A&#x27;</span> : [<span class="number">80</span>, <span class="number">90</span>, np.nan, <span class="number">80</span>],</span><br><span class="line">    <span class="string">&#x27;Score_B&#x27;</span> : [<span class="number">30</span>, <span class="number">45</span>, np.nan, np.nan],</span><br><span class="line">    <span class="string">&#x27;Score_C&#x27;</span> : [np.nan, <span class="number">50</span>, <span class="number">80</span>, <span class="number">90</span>],</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_01)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-6c9ddc3e-23cb-46c2-bcca-8e0adaab788b">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Score_A</th>
-      <th>Score_B</th>
-      <th>Score_C</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>80.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>90.0</td>
-      <td>45.0</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>80.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>90.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6c9ddc3e-23cb-46c2-bcca-8e0adaab788b')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-6c9ddc3e-23cb-46c2-bcca-8e0adaab788b button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-6c9ddc3e-23cb-46c2-bcca-8e0adaab788b&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-<ul>
-<li><p>True &#x3D; 숫자 1로 인식</p>
-</li>
-<li><p>False &#x3D; 숫자 0으로 인식</p>
-</li>
-<li><p>결측치 (Nan) 개수 세기</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>Score_A    1
-Score_B    2
-Score_C    1
-dtype: int64
-</code></pre>
-<ul>
-<li>결측치를 다른 것으로 채우기</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.fillna(<span class="string">&quot;0&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-ce166771-c2da-430d-aa22-8b7cac811d94">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Score_A</th>
-      <th>Score_B</th>
-      <th>Score_C</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>80.0</td>
-      <td>30.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>90.0</td>
-      <td>45.0</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>80.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>80.0</td>
-      <td>0</td>
-      <td>90.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ce166771-c2da-430d-aa22-8b7cac811d94')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-ce166771-c2da-430d-aa22-8b7cac811d94 button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-ce166771-c2da-430d-aa22-8b7cac811d94&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 바로 윗칸의 데이터로 채우기</span></span><br><span class="line">df.fillna(method=<span class="string">&quot;pad&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-14c34a17-7745-4466-a779-62f00b5030de">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Score_A</th>
-      <th>Score_B</th>
-      <th>Score_C</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>80.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>90.0</td>
-      <td>45.0</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>90.0</td>
-      <td>45.0</td>
-      <td>80.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>80.0</td>
-      <td>45.0</td>
-      <td>90.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-14c34a17-7745-4466-a779-62f00b5030de')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-14c34a17-7745-4466-a779-62f00b5030de button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-14c34a17-7745-4466-a779-62f00b5030de&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_01 = &#123;</span><br><span class="line">    <span class="string">&quot;성별&quot;</span> : [<span class="string">&quot;남자&quot;</span>, <span class="string">&quot;여자&quot;</span>, np.nan, <span class="string">&quot;남자&quot;</span>],</span><br><span class="line">    <span class="string">&quot;Salary&quot;</span> : [<span class="number">30</span>, <span class="number">45</span>, <span class="number">90</span>, <span class="number">70</span>],</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_01)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-54d9e838-5824-4cb9-9f0f-8291411d9270">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>성별</th>
-      <th>Salary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>남자</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>여자</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NaN</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>남자</td>
-      <td>70</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-54d9e838-5824-4cb9-9f0f-8291411d9270')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-54d9e838-5824-4cb9-9f0f-8291411d9270 button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-54d9e838-5824-4cb9-9f0f-8291411d9270&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;성별&#x27;</span>].fillna(<span class="string">&quot;성별 없음&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>0       남자
-1       여자
-2    성별 없음
-3       남자
-Name: 성별, dtype: object
-</code></pre>
-<ul>
-<li>결측치</li>
-</ul>
-<p>–&gt; 문자열 타입이랑 &#x2F; 숫자 타입이랑 접근 방법이 다름<br>–&gt; 문자열(빈도 –&gt; 가장 많이 나타나는 문자열 넣어주기!, 최빈값)<br>–&gt; 숫자열(평균, 최대, 최소, 중간, 기타 등등..)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">dict_01 = &#123;</span><br><span class="line">    <span class="string">&#x27;Score_A&#x27;</span> : [<span class="number">80</span>, <span class="number">90</span>, np.nan, <span class="number">80</span>],</span><br><span class="line">    <span class="string">&#x27;Score_B&#x27;</span> : [<span class="number">30</span>, <span class="number">45</span>, np.nan, np.nan],</span><br><span class="line">    <span class="string">&#x27;Score_C&#x27;</span> : [np.nan, <span class="number">50</span>, <span class="number">80</span>, <span class="number">90</span>],</span><br><span class="line">    <span class="string">&#x27;Score_D&#x27;</span> : [<span class="number">50</span>, <span class="number">30</span>, <span class="number">80</span>, <span class="number">60</span>],</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_01)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-a1c2a0ad-c902-4c13-8d35-ae4931ac7c3d">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Score_A</th>
-      <th>Score_B</th>
-      <th>Score_C</th>
-      <th>Score_D</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>80.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>90.0</td>
-      <td>45.0</td>
-      <td>50.0</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>80.0</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>90.0</td>
-      <td>60</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a1c2a0ad-c902-4c13-8d35-ae4931ac7c3d')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-a1c2a0ad-c902-4c13-8d35-ae4931ac7c3d button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-a1c2a0ad-c902-4c13-8d35-ae4931ac7c3d&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-<ul>
-<li>결측치가 있을 때 열을 지운다.<ul>
-<li>axis &#x3D; 1 -&gt; columns</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.dropna(axis = <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-a9658aae-24a1-43bd-a6fe-73b30c752e90">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Score_D</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>50</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>60</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a9658aae-24a1-43bd-a6fe-73b30c752e90')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-a9658aae-24a1-43bd-a6fe-73b30c752e90 button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-a9658aae-24a1-43bd-a6fe-73b30c752e90&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-<ul>
-<li>결측치가 있을 때 행을 지운다.<ul>
-<li>axis &#x3D; 0 -&gt; index</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.dropna(axis = <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-1359a925-a759-4d30-9b57-10abcaf3af1a">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Score_A</th>
-      <th>Score_B</th>
-      <th>Score_C</th>
-      <th>Score_D</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>90.0</td>
-      <td>45.0</td>
-      <td>50.0</td>
-      <td>30</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-1359a925-a759-4d30-9b57-10abcaf3af1a')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-1359a925-a759-4d30-9b57-10abcaf3af1a button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-1359a925-a759-4d30-9b57-10abcaf3af1a&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-<h3 id="이상치"><a href="#이상치" class="headerlink" title="이상치"></a>이상치</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-04da7866-a736-4456-8d77-a7760df771c5">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Invoice ID</th>
-      <th>Branch</th>
-      <th>City</th>
-      <th>Customer type</th>
-      <th>Gender</th>
-      <th>Product line</th>
-      <th>Unit price</th>
-      <th>Quantity</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Payment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>750-67-8428</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Member</td>
-      <td>Female</td>
-      <td>Health and beauty</td>
-      <td>74.69</td>
-      <td>7</td>
-      <td>1/5/2019</td>
-      <td>13:08</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>226-31-3081</td>
-      <td>C</td>
-      <td>Naypyitaw</td>
-      <td>Normal</td>
-      <td>Female</td>
-      <td>Electronic accessories</td>
-      <td>15.28</td>
-      <td>5</td>
-      <td>3/8/2019</td>
-      <td>10:29</td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>631-41-3108</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Normal</td>
-      <td>Male</td>
-      <td>Home and lifestyle</td>
-      <td>46.33</td>
-      <td>7</td>
-      <td>3/3/2019</td>
-      <td>13:23</td>
-      <td>Credit card</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>123-19-1176</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Member</td>
-      <td>Male</td>
-      <td>Health and beauty</td>
-      <td>58.22</td>
-      <td>8</td>
-      <td>1/27/2019</td>
-      <td>20:33</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>373-73-7910</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Normal</td>
-      <td>Male</td>
-      <td>Sports and travel</td>
-      <td>86.31</td>
-      <td>7</td>
-      <td>2/8/2019</td>
-      <td>10:37</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>995</th>
-      <td>233-67-5758</td>
-      <td>C</td>
-      <td>Naypyitaw</td>
-      <td>Normal</td>
-      <td>Male</td>
-      <td>Health and beauty</td>
-      <td>40.35</td>
-      <td>1</td>
-      <td>1/29/2019</td>
-      <td>13:46</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>996</th>
-      <td>303-96-2227</td>
-      <td>B</td>
-      <td>Mandalay</td>
-      <td>Normal</td>
-      <td>Female</td>
-      <td>Home and lifestyle</td>
-      <td>97.38</td>
-      <td>10</td>
-      <td>3/2/2019</td>
-      <td>17:16</td>
-      <td>Ewallet</td>
-    </tr>
-    <tr>
-      <th>997</th>
-      <td>727-02-1313</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Member</td>
-      <td>Male</td>
-      <td>Food and beverages</td>
-      <td>31.84</td>
-      <td>1</td>
-      <td>2/9/2019</td>
-      <td>13:22</td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <th>998</th>
-      <td>347-56-2442</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Normal</td>
-      <td>Male</td>
-      <td>Home and lifestyle</td>
-      <td>65.82</td>
-      <td>1</td>
-      <td>2/22/2019</td>
-      <td>15:33</td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <th>999</th>
-      <td>849-09-3807</td>
-      <td>A</td>
-      <td>Yangon</td>
-      <td>Member</td>
-      <td>Female</td>
-      <td>Fashion accessories</td>
-      <td>88.34</td>
-      <td>7</td>
-      <td>2/18/2019</td>
-      <td>13:28</td>
-      <td>Cash</td>
-    </tr>
-  </tbody>
-</table>
-<p>1000 rows × 11 columns</p>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-04da7866-a736-4456-8d77-a7760df771c5')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-04da7866-a736-4456-8d77-a7760df771c5 button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-04da7866-a736-4456-8d77-a7760df771c5&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-<ul>
-<li><p>일반적인 통계적 공식</p>
-</li>
-<li><p>IQR - 박스플롯 - 사분위수</p>
-</li>
-<li><p>Q0(0), Q1(25%), Q2(50%), Q3(75%), Q4(100%)</p>
-</li>
-<li><p>이상치의 하한 경계값 : Q1 - 1.5 * (Q3-Q1)</p>
-</li>
-<li><p>이상치의  상한 경계값 : Q3 + 1.5 * (Q3-Q1)</p>
-</li>
-<li><p>도메인 (각 비즈니스 영역, 미래 일자리) 에서 바라보는 이상치 기준 (관습)</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales[[<span class="string">&#x27;Unit price&#x27;</span>]]. describe()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-  <div id="df-6bdae016-4a2d-4f55-9e51-5f68e6af7217">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
-
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unit price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>1000.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>55.672130</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>26.494628</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>10.080000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>32.875000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>55.230000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>77.935000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>99.960000</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6bdae016-4a2d-4f55-9e51-5f68e6af7217')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-<pre><code>  &lt;script&gt;
-    const buttonEl =
-      document.querySelector(&#39;#df-6bdae016-4a2d-4f55-9e51-5f68e6af7217 button.colab-df-convert&#39;);
-    buttonEl.style.display =
-      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
-
-    async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-6bdae016-4a2d-4f55-9e51-5f68e6af7217&#39;);
-      const dataTable =
-        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
-                                                 [key], &#123;&#125;);
-      if (!dataTable) return;
-
-      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
-        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
-        + &#39; to learn more about interactive tables.&#39;;
-      element.innerHTML = &#39;&#39;;
-      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
-      await google.colab.output.renderOutput(dataTable, element);
-      const docLink = document.createElement(&#39;div&#39;);
-      docLink.innerHTML = docLinkHtml;
-      element.appendChild(docLink);
-    &#125;
-  &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-  </div>
-
-
-
-
-<ul>
-<li>이상치의 하한 경계값 : Q1 - 1.5 * (Q3-Q1)</li>
-<li>이런 공식은 통계적으로 타당하지만 그 외에도 이상치인지 판단할 방법이 있다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Q1 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.25</span>)</span><br><span class="line">Q3 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.75</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Q1보다 낮은 값을 이상치로 간주</span></span><br><span class="line">outliers_q1 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &lt; Q1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Q1보다 높은 값을 이상치로 간주</span></span><br><span class="line">outliers_q3 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &gt; Q3)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>이 코드는 특히 중요하다</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales[<span class="string">&#x27;Unit price&#x27;</span>][~(outliers_q1 | outliers_q3)])</span><br></pre></td></tr></table></figure>
-
-<pre><code>0      74.69
-2      46.33
-3      58.22
-6      68.84
-7      73.56
-       ...  
-991    76.60
-992    58.03
-994    60.95
-995    40.35
-998    65.82
-Name: Unit price, Length: 500, dtype: float64
-</code></pre>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/9/">Previous</a></div><div class="pagination-next"><a href="/page/11/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/9/">9</a></li><li><a class="pagination-link is-current" href="/page/10/">10</a></li><li><a class="pagination-link" href="/page/11/">11</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">110</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">47</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Java/"><span class="level-start"><span class="level-item">Java</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/Java/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">18</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/PL-SQL/"><span class="level-start"><span class="level-item">PL/SQL</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/chatbot/"><span class="level-start"><span class="level-item">chatbot</span></span><span class="level-end"><span class="level-item tag">11</span></span></a><ul><li><a class="level is-mobile" href="/categories/chatbot/kakao-chatbot/"><span class="level-start"><span class="level-item">kakao_chatbot</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">16</span></span></a><ul><li><a class="level is-mobile" href="/categories/frontEnd/html-css/"><span class="level-start"><span class="level-item">html &amp; css</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/frontEnd/javascript/"><span class="level-start"><span class="level-item">javascript</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">34</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">18</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/crawling/"><span class="level-start"><span class="level-item">crawling</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T00:00:00.000Z">2022-09-17</time></p><p class="title"><a href="/2022/09/17/Java_runnable_file/">JAVA exception</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-27T00:00:00.000Z">2022-08-27</time></p><p class="title"><a href="/2022/08/27/try_catch/">JAVA exception</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-20T00:00:00.000Z">2022-08-20</time></p><p class="title"><a href="/2022/08/20/class_practice/">JAVA OOP practice</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-20T00:00:00.000Z">2022-07-20</time></p><p class="title"><a href="/2022/07/20/Java_OOP/">JAVA OOP</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-12T00:00:00.000Z">2022-07-12</time></p><p class="title"><a href="/2022/07/12/Java_practice_01/">JAVA base</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">September 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/08/"><span class="level-start"><span class="level-item">August 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">July 2022</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">June 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PL-SQL/"><span class="tag">PL/SQL</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/chatbot/"><span class="tag">chatbot</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crawling/"><span class="tag">crawling</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/heroku/"><span class="tag">heroku</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/javascript/"><span class="tag">javascript</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kakao-chatbot/"><span class="tag">kakao_chatbot</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/oracle/"><span class="tag">oracle</span><span class="tag">15</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<h3 id="End-of-document"><a href="#End-of-document" class="headerlink" title="End of document"></a>End of document</h3></div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/9/">Previous</a></div><div class="pagination-next"><a href="/page/11/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/9/">9</a></li><li><a class="pagination-link is-current" href="/page/10/">10</a></li><li><a class="pagination-link" href="/page/11/">11</a></li><li><a class="pagination-link" href="/page/12/">12</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">111</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">47</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Java/"><span class="level-start"><span class="level-item">Java</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/Java/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">18</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/PL-SQL/"><span class="level-start"><span class="level-item">PL/SQL</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/chatbot/"><span class="level-start"><span class="level-item">chatbot</span></span><span class="level-end"><span class="level-item tag">11</span></span></a><ul><li><a class="level is-mobile" href="/categories/chatbot/kakao-chatbot/"><span class="level-start"><span class="level-item">kakao_chatbot</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">16</span></span></a><ul><li><a class="level is-mobile" href="/categories/frontEnd/html-css/"><span class="level-start"><span class="level-item">html &amp; css</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/frontEnd/javascript/"><span class="level-start"><span class="level-item">javascript</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">34</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">18</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/crawling/"><span class="level-start"><span class="level-item">crawling</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-18T00:00:00.000Z">2022-09-18</time></p><p class="title"><a href="/2022/09/18/Java_thread/">JAVA thread</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-17T00:00:00.000Z">2022-09-17</time></p><p class="title"><a href="/2022/09/17/Java_runnable_file/">JAVA exception</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-27T00:00:00.000Z">2022-08-27</time></p><p class="title"><a href="/2022/08/27/try_catch/">JAVA exception</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-20T00:00:00.000Z">2022-08-20</time></p><p class="title"><a href="/2022/08/20/class_practice/">JAVA OOP practice</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-20T00:00:00.000Z">2022-07-20</time></p><p class="title"><a href="/2022/07/20/Java_OOP/">JAVA OOP</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/">기초문법</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">September 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/08/"><span class="level-start"><span class="level-item">August 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">July 2022</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">June 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PL-SQL/"><span class="tag">PL/SQL</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/chatbot/"><span class="tag">chatbot</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crawling/"><span class="tag">crawling</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/heroku/"><span class="tag">heroku</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/javascript/"><span class="tag">javascript</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kakao-chatbot/"><span class="tag">kakao_chatbot</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/oracle/"><span class="tag">oracle</span><span class="tag">15</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
