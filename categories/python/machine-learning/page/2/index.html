@@ -1,176 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: machine learning - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li><a href="/categories/python/">python</a></li><li class="is-active"><a href="#" aria-current="page">machine learning</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-06T00:00:00.000Z" title="2022. 4. 6. 오전 9:00:00">2022-04-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T11:19:17.406Z" title="2022. 4. 9. 오후 8:19:17">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/">비지도학습</a></span><span class="level-item">6 minutes read (About 972 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/06/chapter_6_1/">chapter_6_1</a></h1><div class="content"><h1 id="비지도-학습"><a href="#비지도-학습" class="headerlink" title="비지도 학습"></a>비지도 학습</h1><ul>
-<li>vs 지도 학습<ul>
-<li>종속 변수가 있다 &#x3D; 타겟이 있다</li>
-</ul>
-</li>
-<li>비지도 학습은 종속변수 및 타겟이 없다.</li>
-<li>분류<ul>
-<li>다중분류</li>
-<li>전제조건 : (다양한 유형) 데이터가 많아야 함</li>
-<li>딥러닝과 연관이 됨(자연어 처리, 이미지)</li>
-</ul>
-</li>
-</ul>
-<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><ul>
-<li>과일가게 문제 : 많은 과일 사진을 각 과일 별로 분류해야 한다.</li>
-<li>다음을 참고하라 : <a target="_blank" rel="noopener" href="http://bit.ly/hg-06-1">http://bit.ly/hg-06-1</a></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!wget https://bit.ly/fruits_300_data -O fruits_300.npy</span><br></pre></td></tr></table></figure>
-
-<pre><code>--2022-03-31 03:09:03--  https://bit.ly/fruits_300_data
-Resolving bit.ly (bit.ly)... 67.199.248.11, 67.199.248.10
-Connecting to bit.ly (bit.ly)|67.199.248.11|:443... connected.
-HTTP request sent, awaiting response... 301 Moved Permanently
-Location: https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy [following]
---2022-03-31 03:09:03--  https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy
-Resolving github.com (github.com)... 140.82.121.4
-Connecting to github.com (github.com)|140.82.121.4|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy [following]
---2022-03-31 03:09:03--  https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 3000128 (2.9M) [application/octet-stream]
-Saving to: ‘fruits_300.npy’
-
-fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s   
-
-2022-03-31 03:09:03 (107 MB/s) - ‘fruits_300.npy’ saved [3000128/3000128]
-</code></pre>
-<ul>
-<li>numpy 파일을 불러옴</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">fruits = np.load(<span class="string">&#x27;fruits_300.npy&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(fruits.shape) </span><br><span class="line"><span class="built_in">print</span>(fruits.ndim)  <span class="comment"># 차원 수 확인</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>(300, 100, 100)
-3
-</code></pre>
-<ul>
-<li>첫 번째 차원(300) &#x3D; 샘플의 개수</li>
-<li>두 번째 차원(100) &#x3D; 이미지 높이</li>
-<li>세 번째 차원(100) &#x3D; 이미지 너비</li>
-<li>이미지 크기 100 x 100</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 첫 번째 행에 있는 픽셀 100개에 들어있는 값을 출력</span></span><br><span class="line">fruits[<span class="number">0</span>, <span class="number">0</span>, :]</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>array([  1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
-         1,   1,   1,   2,   1,   2,   2,   2,   2,   2,   2,   1,   1,
-         1,   1,   1,   1,   1,   1,   2,   3,   2,   1,   2,   1,   1,
-         1,   1,   2,   1,   3,   2,   1,   3,   1,   4,   1,   2,   5,
-         5,   5,  19, 148, 192, 117,  28,   1,   1,   2,   1,   4,   1,
-         1,   3,   1,   1,   1,   1,   1,   2,   2,   1,   1,   1,   1,
-         1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
-         1,   1,   1,   1,   1,   1,   1,   1,   1], dtype=uint8)
-</code></pre>
-<ul>
-<li>이미지 시각화<ul>
-<li>흑백 사진을 담고 있다.</li>
-<li>0~255까지의 정숫값을 가진다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.imshow(fruits[<span class="number">0</span>], cmap=<span class="string">&#x27;gray&#x27;</span>)  <span class="comment"># cmap 은 옵션</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_8_0.png" alt="png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.imshow(fruits[<span class="number">0</span>], cmap=<span class="string">&#x27;gray_r&#x27;</span>)  <span class="comment"># cmap 은 옵션</span></span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment"># 밝은 부분은 0에 가깝다</span></span><br><span class="line"><span class="comment"># 어두운 부분은 255에 가깝다</span></span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_9_0.png" alt="png"></p>
-<ul>
-<li>여러 이미지 시각화</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">axs[<span class="number">0</span>].imshow(fruits[<span class="number">100</span>], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">axs[<span class="number">1</span>].imshow(fruits[<span class="number">200</span>], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_11_0.png" alt="png"></p>
-<h3 id="픽셀값-분석"><a href="#픽셀값-분석" class="headerlink" title="픽셀값 분석"></a>픽셀값 분석</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">apple = fruits[<span class="number">0</span>:<span class="number">100</span>].reshape(-<span class="number">1</span>, <span class="number">100</span> * <span class="number">100</span>)  <span class="comment"># 두 번째와 세 번째 차원 크기가 100이므로.</span></span><br><span class="line">pineapple = fruits[<span class="number">100</span>:<span class="number">200</span>].reshape(-<span class="number">1</span>, <span class="number">100</span> * <span class="number">100</span>)</span><br><span class="line">banana = fruits[<span class="number">200</span>:<span class="number">300</span>].reshape(-<span class="number">1</span>, <span class="number">100</span> * <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(apple.shape)</span><br><span class="line"><span class="built_in">print</span>(pineapple.shape)</span><br><span class="line"><span class="built_in">print</span>(banana.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(100, 10000)
-(100, 10000)
-(100, 10000)
-</code></pre>
-<ul>
-<li><p>axis &#x3D; 0 vs axis &#x3D; 1 차이 확인 (p.293)</p>
-</li>
-<li><p>각 이미지에 대한 픽셀 평균값 비교</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># axis = 1 = 열</span></span><br><span class="line"><span class="built_in">print</span>(apple.mean(axis = <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>[ 88.3346  97.9249  87.3709  98.3703  92.8705  82.6439  94.4244  95.5999
-  90.681   81.6226  87.0578  95.0745  93.8416  87.017   97.5078  87.2019
-  88.9827 100.9158  92.7823 100.9184 104.9854  88.674   99.5643  97.2495
-  94.1179  92.1935  95.1671  93.3322 102.8967  94.6695  90.5285  89.0744
-  97.7641  97.2938 100.7564  90.5236 100.2542  85.8452  96.4615  97.1492
-  90.711  102.3193  87.1629  89.8751  86.7327  86.3991  95.2865  89.1709
-  96.8163  91.6604  96.1065  99.6829  94.9718  87.4812  89.2596  89.5268
-  93.799   97.3983  87.151   97.825  103.22    94.4239  83.6657  83.5159
- 102.8453  87.0379  91.2742 100.4848  93.8388  90.8568  97.4616  97.5022
-  82.446   87.1789  96.9206  90.3135  90.565   97.6538  98.0919  93.6252
-  87.3867  84.7073  89.1135  86.7646  88.7301  86.643   96.7323  97.2604
-  81.9424  87.1687  97.2066  83.4712  95.9781  91.8096  98.4086 100.7823
- 101.556  100.7027  91.6098  88.8976]
-</code></pre>
-<ul>
-<li>각 과일에 대한 히스토그램 작성<ul>
-<li>히스토그램은 값이 발생하는 빈도를 그래프로 표시한 것.</li>
-<li>보통 x축은 값의 구간이고, y축은 발생 빈도이다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plt.hist(np.mean(apple, axis = <span class="number">1</span>), alpha = <span class="number">0.8</span>)     <span class="comment"># alpha 는 투명도 조절하는 매개변수</span></span><br><span class="line">plt.hist(np.mean(pineapple, axis = <span class="number">1</span>), alpha = <span class="number">0.8</span>)</span><br><span class="line">plt.hist(np.mean(banana, axis = <span class="number">1</span>), alpha = <span class="number">0.8</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;pineapple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;pixel average&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;prequency&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_18_0.png" alt="png"></p>
-<ul>
-<li><p>위 결과에서 banana는 픽셀 평균값이 다른 두 과일과 확연히 다르다.</p>
-<ul>
-<li>banana는 픽셀 평균값으로 구분하기 쉽다.</li>
-</ul>
-</li>
-<li><p>이번에는 샘플의 평균값이 아니라 픽셀별 평균값을 비교해 본다.</p>
-</li>
-<li><p>즉, 전체 샘플에 대해 각 픽셀의 평균을 조사한다.</p>
-</li>
-<li><p>axis&#x3D;0으로 지정하여 픽셀의 평균을 계산하면 된다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">axs[<span class="number">0</span>].bar(<span class="built_in">range</span>(<span class="number">10000</span>), np.mean(apple, axis=<span class="number">0</span>))</span><br><span class="line">axs[<span class="number">1</span>].bar(<span class="built_in">range</span>(<span class="number">10000</span>), np.mean(pineapple, axis=<span class="number">0</span>))</span><br><span class="line">axs[<span class="number">2</span>].bar(<span class="built_in">range</span>(<span class="number">10000</span>), np.mean(banana, axis=<span class="number">0</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_21_0.png" alt="png"></p>
-<ul>
-<li>대표 이미지</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apple_mean = np.mean(apple, axis=<span class="number">0</span>).reshape(<span class="number">100</span>, <span class="number">100</span>)</span><br><span class="line">pineapple_mean = np.mean(pineapple, axis=<span class="number">0</span>).reshape(<span class="number">100</span>, <span class="number">100</span>)</span><br><span class="line">banana_mean = np.mean(banana, axis=<span class="number">0</span>).reshape(<span class="number">100</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">axs[<span class="number">0</span>].imshow(apple_mean, cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">axs[<span class="number">1</span>].imshow(pineapple_mean, cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">axs[<span class="number">2</span>].imshow(banana_mean, cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_23_0.png" alt="png"></p>
-<h3 id="평균값과-가까운-사진-고르기"><a href="#평균값과-가까운-사진-고르기" class="headerlink" title="평균값과 가까운 사진 고르기"></a>평균값과 가까운 사진 고르기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abs_diff = np.<span class="built_in">abs</span>(fruits - apple_mean)</span><br><span class="line">abs_mean = np.mean(abs_diff, axis=(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(abs_mean.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(300,)
-</code></pre>
-<ul>
-<li>오차의 값이 가장 작은 순서대로 100개를 골라본다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apple_index = np.argsort(abs_mean)[:<span class="number">100</span>]</span><br><span class="line">fig, axs = plt.subplots(<span class="number">10</span>, <span class="number">10</span>, figsize=(<span class="number">10</span>,<span class="number">10</span>))  </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_27_0.png" alt="png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">apple_index = np.argsort(abs_mean)[:<span class="number">100</span>]</span><br><span class="line">fig, axs = plt.subplots(<span class="number">10</span>, <span class="number">10</span>, figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):     <span class="comment"># 2중 for문</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        axs[i, j].imshow(fruits[apple_index[i*<span class="number">10</span> + j]], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">        axs[i, j].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_28_0.png" alt="png"></p>
-<ul>
-<li>Reference : 혼자 공부하는 머신러닝 + 딥러닝</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-06T00:00:00.000Z" title="2022. 4. 6. 오전 9:00:00">2022-04-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T11:22:58.975Z" title="2022. 4. 9. 오후 8:22:58">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/">비지도학습</a></span><span class="level-item">11 minutes read (About 1634 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/06/chapter_6_3/">chapter_6_3</a></h1><div class="content"><h1 id="주성분-분석-PCA"><a href="#주성분-분석-PCA" class="headerlink" title="주성분 분석 (PCA)"></a>주성분 분석 (PCA)</h1><h3 id="PCA-주성분-분석"><a href="#PCA-주성분-분석" class="headerlink" title="PCA (주성분 분석)"></a>PCA (주성분 분석)</h3><ul>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: machine learning - kmk3593 blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="kmk3593 blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="kmk3593 blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="kmk3593 blog"><meta property="og:url" content="https://kmk3593.github.io/"><meta property="og:site_name" content="kmk3593 blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kmk3593.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kmk3593.github.io"},"headline":"kmk3593 blog","image":["https://kmk3593.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"kmk3593 blog","logo":{"@type":"ImageObject","url":"https://kmk3593.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">Categories</a></li><li><a href="/categories/python/">python</a></li><li class="is-active"><a href="#" aria-current="page">machine learning</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-06T00:00:00.000Z" title="2022. 4. 6. 오전 9:00:00">2022-04-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T11:22:58.975Z" title="2022. 4. 9. 오후 8:22:58">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/">비지도학습</a></span><span class="level-item">11 minutes read (About 1634 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/06/chapter_6_3/">chapter_6_3</a></h1><div class="content"><h1 id="주성분-분석-PCA"><a href="#주성분-분석-PCA" class="headerlink" title="주성분 분석 (PCA)"></a>주성분 분석 (PCA)</h1><h3 id="PCA-주성분-분석"><a href="#PCA-주성분-분석" class="headerlink" title="PCA (주성분 분석)"></a>PCA (주성분 분석)</h3><ul>
 <li><p>차원축소의 개념</p>
 </li>
 <li><p>PCA 개념</p>
@@ -432,6 +261,129 @@ Please also refer to the documentation for alternative solver options:
 <p><img src="/images/chapter_6_3/output_44_0.png" alt="png"></p>
 <ul>
 <li>Reference : 혼자 공부하는 머신러닝 + 딥러닝</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-06T00:00:00.000Z" title="2022. 4. 6. 오전 9:00:00">2022-04-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T11:19:17.417Z" title="2022. 4. 9. 오후 8:19:17">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/">비지도학습</a></span><span class="level-item">4 minutes read (About 656 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/06/chapter_6_2/">chapter_6_2</a></h1><div class="content"><h1 id="k-평균"><a href="#k-평균" class="headerlink" title="k-평균"></a>k-평균</h1><ul>
+<li><p>각각의 픽셀값 (3차원 -&gt; 1차원 배열) 평균 구함</p>
+<ul>
+<li>픽셀의 평균값은 활용해서 사과, 바나나, 파인애플에 근사한 이미지를 추출한 것</li>
+</ul>
+</li>
+<li><p>어떻게 평균값을 구할 수 있을까?</p>
+<ul>
+<li>k-평균 알고리즘 (k-Means) 알고리즘</li>
+<li>평균값 &#x3D; Cluster Center &#x3D; Centroid</li>
+</ul>
+</li>
+</ul>
+<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><p>다음을 참고하라 : <a target="_blank" rel="noopener" href="http://bit.ly/hg-06-2">http://bit.ly/hg-06-2</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!wget https://bit.ly/fruits_300_data -O fruits_300.npy</span><br></pre></td></tr></table></figure>
+
+<pre><code>--2022-03-31 02:17:17--  https://bit.ly/fruits_300_data
+Resolving bit.ly (bit.ly)... 67.199.248.11, 67.199.248.10
+Connecting to bit.ly (bit.ly)|67.199.248.11|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy [following]
+--2022-03-31 02:17:17--  https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy
+Resolving github.com (github.com)... 192.30.255.112
+Connecting to github.com (github.com)|192.30.255.112|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy [following]
+--2022-03-31 02:17:17--  https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3000128 (2.9M) [application/octet-stream]
+Saving to: ‘fruits_300.npy’
+
+fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.05s   
+
+2022-03-31 02:17:17 (56.9 MB/s) - ‘fruits_300.npy’ saved [3000128/3000128]
+</code></pre>
+<ul>
+<li>넘파이 파일을 불러옴</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">fruits = np.load(<span class="string">&#x27;fruits_300.npy&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(fruits.shape)</span><br><span class="line"><span class="built_in">print</span>(fruits.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(300, 100, 100)
+3
+</code></pre>
+<ul>
+<li>3차원 (샘플개수, 너비, 높이)</li>
+<li>2차원 (샘플개수, 너비 x 높이)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fruits_2d = fruits.reshape(-<span class="number">1</span>, <span class="number">100</span>*<span class="number">100</span>)</span><br><span class="line">fruits_2d.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(300, 10000)
+</code></pre>
+<ul>
+<li>k-평균 알고리즘 활용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line">km = KMeans(n_clusters=<span class="number">3</span>, random_state = <span class="number">42</span>)</span><br><span class="line">km.fit(fruits_2d)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>KMeans(n_clusters=3, random_state=42)
+</code></pre>
+<ul>
+<li>모형학습 후, labels</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(km.labels_)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+ 2 2 2 2 2 0 2 0 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 0 0 2 2 2 2 2 2 2 2 0 2
+ 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1]
+</code></pre>
+<ul>
+<li>직접 샘플의 개수 확인</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.unique(km.labels_, return_counts=<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>(array([0, 1, 2], dtype=int32), array([111,  98,  91]))
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_fruits</span>(<span class="params">arr, ratio=<span class="number">1</span></span>):</span><br><span class="line">    n = <span class="built_in">len</span>(arr)    <span class="comment"># n은 샘플 개수입니다</span></span><br><span class="line">    <span class="comment"># 한 줄에 10개씩 이미지를 그립니다. 샘플 개수를 10으로 나누어 전체 행 개수를 계산합니다. </span></span><br><span class="line">    rows = <span class="built_in">int</span>(np.ceil(n/<span class="number">10</span>))</span><br><span class="line">    <span class="comment"># 행이 1개 이면 열 개수는 샘플 개수입니다. 그렇지 않으면 10개입니다.</span></span><br><span class="line">    cols = n <span class="keyword">if</span> rows &lt; <span class="number">2</span> <span class="keyword">else</span> <span class="number">10</span></span><br><span class="line">    fig, axs = plt.subplots(rows, cols, </span><br><span class="line">                            figsize=(cols*ratio, rows*ratio), squeeze=<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(rows):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(cols):</span><br><span class="line">            <span class="keyword">if</span> i*<span class="number">10</span> + j &lt; n:    <span class="comment"># n 개까지만 그립니다.</span></span><br><span class="line">                axs[i, j].imshow(arr[i*<span class="number">10</span> + j], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">            axs[i, j].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">draw_fruits(fruits[km.labels_==<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_6_2/output_15_0.png" alt="png"></p>
+<h3 id="클러스터-중심"><a href="#클러스터-중심" class="headerlink" title="클러스터 중심"></a>클러스터 중심</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">draw_fruits(km.cluster_centers_.reshape(-<span class="number">1</span>, <span class="number">100</span>, <span class="number">100</span>), ratio=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_6_2/output_17_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(km.transform(fruits_2d[<span class="number">100</span>:<span class="number">101</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[3393.8136117  8837.37750892 5267.70439881]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(km.predict(fruits_2d[<span class="number">100</span>:<span class="number">101</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">draw_fruits(fruits[<span class="number">100</span>:<span class="number">101</span>])</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_6_2/output_20_0.png" alt="png"></p>
+<h3 id="최적의-k-평균-찾기"><a href="#최적의-k-평균-찾기" class="headerlink" title="최적의 k-평균 찾기"></a>최적의 k-평균 찾기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">inertia = []</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">7</span>):</span><br><span class="line">  km = KMeans(n_clusters = k, random_state=<span class="number">42</span>)</span><br><span class="line">  km.fit(fruits_2d)</span><br><span class="line">  inertia.append(km.inertia_)</span><br><span class="line">plt.plot(<span class="built_in">range</span>(<span class="number">2</span>, <span class="number">7</span>), inertia)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_6_2/output_22_0.png" alt="png"></p>
+<ul>
+<li><p>위 결과 최적의 k-평균은 3.0 정도 된다.</p>
+</li>
+<li><p>chapter6. 비지도학습은 잘 안 쓰인다. 시각화 문법만 유의해서 살펴보자.</p>
+</li>
+<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
+</li>
 </ul>
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-05T00:00:00.000Z" title="2022. 4. 5. 오전 9:00:00">2022-04-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T10:58:13.262Z" title="2022. 4. 9. 오후 7:58:13">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></span><span class="level-item">6 minutes read (About 916 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/05/chapter_5_3/">chapter_5_3</a></h1><div class="content"><h1 id="트리의-앙상블"><a href="#트리의-앙상블" class="headerlink" title="트리의 앙상블"></a>트리의 앙상블</h1><ul>
 <li>lightGBM 기억!<ul>
