@@ -991,378 +991,314 @@ Epoch 9/10
 <li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
 </li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.766Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">18 minutes read (About 2756 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_3/">chapter_7_3</a></h1><div class="content"><h1 id="7-3-신경망-모델-훈련"><a href="#7-3-신경망-모델-훈련" class="headerlink" title="7-3. 신경망 모델 훈련"></a>7-3. 신경망 모델 훈련</h1><ul>
-<li>케라스 API를 사용해 모델을 훈련하는데 필요한 다양한 도구들을 알아본다.</li>
-</ul>
-<h3 id="손실곡선"><a href="#손실곡선" class="headerlink" title="손실곡선"></a>손실곡선</h3><ul>
-<li>패션 MNIST 데이터셋을 적재하고 훈련 세트와 검증 세트로 나눈다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">(train_input, train_target), (test_input, test_target) = \</span><br><span class="line">    keras.datasets.fashion_mnist.load_data()</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
-
-<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
-32768/29515 [=================================] - 0s 0us/step
-40960/29515 [=========================================] - 0s 0us/step
-Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
-26427392/26421880 [==============================] - 1s 0us/step
-26435584/26421880 [==============================] - 1s 0us/step
-Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
-16384/5148 [===============================================================================================] - 0s 0us/step
-Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
-4423680/4422102 [==============================] - 0s 0us/step
-4431872/4422102 [==============================] - 0s 0us/step
-</code></pre>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.752Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">12 minutes read (About 1794 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_1/">chapter_7_1</a></h1><div class="content"><h3 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝"></a>딥러닝</h3><p>인공신경망 1943년 즈음 등장</p>
+<p>1차 융성기 ~ 1960 후반</p>
 <ul>
-<li>모델을 만든다.<ul>
-<li>사용자 정의함수를 작성함</li>
-<li>if 구문을 제외하면 7-2의 코드와 동일하다.</li>
-<li>if 구문의 역할은 model_fn() 함수에 케라스 층을 추가하면 은닉층 뒤어 또 하나의 층을 추가하는 것이다.</li>
+<li><p>로봇이 인간들과 함께 살 것이다 예언</p>
+</li>
+<li><p>XOR 문제 해결 못함</p>
+</li>
+<li><p>AI 연구 겨울 찾아옴</p>
+</li>
+<li><p>대안 : 최근접이웃, 결정트리, 서포트벡터머신 등</p>
+</li>
+<li><p>토론토 대학 AI 연구소 (역전파 알고리즘 개발)</p>
+</li>
+<li><p>CNN 알고리즘 (1980년대 후반)</p>
+</li>
+</ul>
+<p>-2차 융성시기 ~ 1990년대 후반</p>
+<ul>
+<li><p>CNN, RNN 알고리즘 등장</p>
+</li>
+<li><p>연산 속도 문제&#x2F;정확도 문제</p>
+</li>
+<li><p>산업계 즉시 활용 어려움</p>
+</li>
+</ul>
+<p>-3차 융성시기 2012 ~ 현재까지</p>
+<ul>
+<li><p>GPU 세팅 (그래픽카드)</p>
+</li>
+<li><p>연산속도문제가 해결</p>
+</li>
+<li><p>세돌 vs 알파고 바둑 대회(2017년)</p>
+</li>
+<li><p>정부에서도 본격적으로 투자</p>
+</li>
+<li><p>교육쪽으로 먼저 투자 시작</p>
+</li>
+<li><p>대학교육 + 국비교육</p>
+</li>
+<li><p>데이터과학</p>
+</li>
+</ul>
+<p>2012년</p>
+<ul>
+<li><p>CNN 알고리즘 논문 다수 출현</p>
+</li>
+<li><p>이미지 기본데이터셋</p>
+</li>
+<li><ol>
+<li>기존대비 성능이 좋아야 함</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>개존대비 연산속도가 좋아야 함</li>
+</ol>
+</li>
+</ul>
+<p>→ 각자 딥러닝 관심 생김</p>
+<p>→ 공부하는 패턴 : 최운선순위는 가장 최근 나온 알고리즘</p>
+<p>분야가 정말 많음</p>
+<ul>
+<li><p>지도학습 : 분류&#x2F;수치 예측(회귀)&#x2F;비지도학습</p>
+</li>
+<li><p>엑셀데이터(정형데이터)</p>
+</li>
+<li><p>기초 통계가 중요(리포트 형태가 더 중요)</p>
+</li>
+<li><p>개발의 상대적 중요성 떨어짐(성과 측면)</p>
+</li>
+</ul>
+<p>딥러닝:비정형데이터</p>
+<ul>
+<li><p>텍스트,음성,이미지,영상</p>
+</li>
+<li><p>주로 쓰이는 알고리즘 탐색 (최신 알고리즘)</p>
+</li>
+<li><p>계속 업그레이드 되고 있음</p>
+</li>
+<li><p>이세돌 vs 알파고 바둑 대회 (2017년)</p>
+</li>
+<li><p>데이터과학</p>
+</li>
+</ul>
+<p>지도 학습 vs 딥러닝 </p>
+<p>→ 개발자라면 딥러닝 알고리즘을 가져다가 빠르게 개발하는 기술을 습득.</p>
+<h3 id="딥러닝-라이브러리"><a href="#딥러닝-라이브러리" class="headerlink" title="딥러닝 라이브러리"></a>딥러닝 라이브러리</h3><ul>
+<li>텐서플로 : <a target="_blank" rel="noopener" href="https://www.tensorflow.org/">https://www.tensorflow.org/</a><ul>
+<li>2016년 텐서플로 1 버전 vs 텐서플로 2 버전</li>
+<li>문법적으로 매우 다름</li>
+<li>산업용</li>
 </ul>
 </li>
-<li>모델 구조를 출력해본다.</li>
+<li>파이토치 : <a target="_blank" rel="noopener" href="https://pytorch.org/">https://pytorch.org/</a><ul>
+<li>연구용</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">model_fn</span>(<span class="params">a_layer=<span class="literal">None</span></span>):</span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    model.add(keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>)))</span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;relu&#x27;</span>))</span><br><span class="line">    <span class="keyword">if</span> a_layer:</span><br><span class="line">      model.add(a_layer)</span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line">model = model_fn()</span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow</span><br><span class="line"><span class="built_in">print</span>(tensorflow.__version__)</span><br></pre></td></tr></table></figure>
 
-<pre><code>Model: &quot;sequential&quot;
-_________________________________________________________________
- Layer (type)                /images/chapter_7_3/output Shape              Param #   
-=================================================================
- flatten (Flatten)           (None, 784)               0         
-                                                                 
- dense (Dense)               (None, 100)               78500     
-                                                                 
- dense_1 (Dense)             (None, 100)               10100     
-                                                                 
-=================================================================
-Total params: 88,600
-Trainable params: 88,600
-Non-trainable params: 0
-_________________________________________________________________
+<pre><code>2.8.0
+</code></pre>
+<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><h3 id="패션-MNIST"><a href="#패션-MNIST" class="headerlink" title="패션 MNIST"></a>패션 MNIST</h3><ul>
+<li>10종류의 패션 아이템으로 구성된 데이터셋</li>
+<li>텐서프로를 사용해 이 데이터를 불러온다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line">(train_input, train_target), (test_input, test_target)= keras.datasets.fashion_mnist.load_data()  </span><br><span class="line"><span class="comment"># load.data()함수는 훈련 데이터와 테스트 데이터를 나누어 반환한다.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>데이터 확인</p>
+</li>
+<li><p>훈련 데이터</p>
+<ul>
+<li>60,000개 이미지, 이미지 크기는 28x28</li>
+<li>타깃은 60,000개 원소가 있는 1차원 배열</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_input.shape, train_target.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(60000, 28, 28) (60000,)
 </code></pre>
 <ul>
-<li>모델 정의 후, 학습</li>
-<li>fit() 메서드의 결과를 history 변수에 담아본다.</li>
+<li>테스트 세트<ul>
+<li>10,000개의 이미지로 이루어짐</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics = <span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">history = model.fit(train_scaled, train_target, epochs = <span class="number">5</span>, verbose = <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(test_input.shape, test_target.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(10000, 28, 28) (10000,)
+</code></pre>
+<ul>
+<li>이미지 시각화</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">10</span>, figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">  axs[i].imshow(train_input[i], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">  axs[i].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_7_1/output_12_0.png" alt="png"></p>
+<ul>
+<li>타겟 값 리스트<ul>
+<li>패션 MNIST의 타깃은 0~9까지의 숫자 레이블로 구성된다.</li>
+<li>같은 숫자가 나온다면 타깃이 같은 두 샘플은 같은 종류의 옷이다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([train_target[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[9, 0, 0, 3, 0, 2, 7, 2, 5, 5]
+</code></pre>
+<ul>
+<li>실제 타겟값의 값을 확인</li>
+<li>각 라벨당 6000개의 이미지 존재 60,000개</li>
+<li>즉, 각 의류마다 6,000개의 샘플이 들어있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(np.unique(train_target, return_counts = <span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=uint8), array([6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000]))
+</code></pre>
+<h3 id="로지스틱-회귀로-패션-아이템-분류하기"><a href="#로지스틱-회귀로-패션-아이템-분류하기" class="headerlink" title="로지스틱 회귀로 패션 아이템 분류하기"></a>로지스틱 회귀로 패션 아이템 분류하기</h3><ul>
+<li>경사하강법 (기울기)<ul>
+<li>샘플이 60,000개나 되기에 샘플을 하나씩 꺼내서 모델을 훈련하는 게 더 효율적</li>
+<li>해당 상황에 맞는 것이 강사하강법이다.</li>
+</ul>
+</li>
+<li>전제 조건 : 각 컬럼의 데이터셋 동일 (표준화)</li>
+<li>why 255? 각 픽셀의 값 0~255 사이의 정수값을 가진다.</li>
+<li>255로 나누어 0~1 사이의 값으로 정규화 시킴<ul>
+<li>표준화는 아니지만 양수 값으로 이루어진 이미지를 전처리할 때 사용하는 방벙</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 경사하강법 사용을 위해 1차원 배열로 만들기</span></span><br><span class="line">train_scaled = train_scaled.reshape(-<span class="number">1</span>, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line"><span class="built_in">print</span>(train_scaled.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(60000, 784)
+</code></pre>
+<h3 id="모델-만들기"><a href="#모델-만들기" class="headerlink" title="모델 만들기"></a>모델 만들기</h3><ul>
+<li><p>비정형데이터에 선형모델 또는 비선형모델을 적용시키는 것이 합리적인가?</p>
+<ul>
+<li>결론은 아니다!</li>
+<li>다른 대안이 있는냐? 인공신경망!</li>
+</ul>
+</li>
+<li><p>정형데이터에 인공신경망 및 딥러닝 모델을 적용시키는 것이 합리적인가?</p>
+<ul>
+<li>결론은 아니다!</li>
+</ul>
+</li>
+<li><p>SGDClassifier 클래스와 cross_validate 함수로 이 데이터에서 교차 검증으로 성능을 확인한다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_validate</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDClassifier</span><br><span class="line"></span><br><span class="line">sc = SGDClassifier(loss=<span class="string">&#x27;log&#x27;</span>, max_iter=<span class="number">5</span>, random_state=<span class="number">42</span>)   <span class="comment"># 반복 횟수를 5번으로 지정</span></span><br><span class="line"></span><br><span class="line">scores = cross_validate(sc, train_scaled, train_target, n_jobs=-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>])) </span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8195666666666668
+</code></pre>
+<ul>
+<li>로지스틱 회귀 공식을 그림으로 나타내면 인공신경망의 그림과 같다.</li>
+<li>인동신경망을 만들어 패션 아이템 분류 문제의 성능을 높일 수 있는지 지켜보자.</li>
+</ul>
+<h3 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h3><ul>
+<li>355~356p</li>
+<li>인공신경망 : <a target="_blank" rel="noopener" href="http://alexlenail.me/NN-SVG/index.html">http://alexlenail.me/NN-SVG/index.html</a></li>
+<li>입력층, 출력층, 뉴런(유닛)에 대해 숙지하자.</li>
+</ul>
+<h3 id="인공신경망-모델-적용"><a href="#인공신경망-모델-적용" class="headerlink" title="인공신경망 모델 적용"></a>인공신경망 모델 적용</h3><ul>
+<li>이미지 분류에는 인공 신경망이 적합하다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>텐서플로 &#x3D; 케라스</li>
+<li>케라스 API를 사용해 패션 아이템을 분류하는 가장 간단한 인공 신경망을 만들어 보자.</li>
+<li>train_test_split()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>test_size&#x3D;0.2<ul>
+<li>훈련 세트에서 20%를 검증 세트로 덜어 내었다.</li>
+</ul>
+</li>
+<li>훈련 세트와 검증 세트의 크기를 알아보자.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_scaled.shape, train_target.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(48000, 784) (48000,)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(val_scaled.shape, val_target.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(12000, 784) (12000,)
+</code></pre>
+<ul>
+<li><p>60,000개 중에 12,000개가 검증 세트로 분리되었다.</p>
+</li>
+<li><p>먼저 훈련 세트로 모델을 만든다. 그 다음 검증 세트로 훈련한 모델을 평가해본다.</p>
+</li>
+<li><p>이미지 하나에 있는 픽셀은 784개. 뉴런은 10개. 이것을 모두 연결.</p>
+</li>
+<li><p>완전 연결층 &#x3D; 밀집층 &#x3D; 밀집하게 연결되어 있는 것</p>
+<ul>
+<li>fully connected layer &#x3D; dense layer</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_target[:<span class="number">10</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[7 3 5 8 6 9 3 3 9 9]
+</code></pre>
+<ul>
+<li>Dense 클래스를 통해 밀집층을 만들어보자</li>
+<li>활성화 함수<ul>
+<li>softmax와 같이 뉴런의 선형 방정직 계산 결과에 적용되는 함수.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 매개변수의 의미는 차례대로 뉴런개수, 뉴런의 출력에 적용할 함수, 입력의 크기다.</span></span><br><span class="line">dense = keras.layers.Dense(<span class="number">10</span>, activation = <span class="string">&#x27;softmax&#x27;</span>, input_shape=(<span class="number">784</span>, ))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>방금 만든 밀집층을 가진 신경망 모델을 만들자.</li>
+<li>Sequential 클래스를 사용한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential(dense)</span><br></pre></td></tr></table></figure>
+
+<h3 id="인공-신경망으로-패션-아이템-분류하기"><a href="#인공-신경망으로-패션-아이템-분류하기" class="headerlink" title="인공 신경망으로 패션 아이템 분류하기"></a>인공 신경망으로 패션 아이템 분류하기</h3><ul>
+<li>훈련하기 전의 설정 단계</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss = <span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics = <span class="string">&quot;accuracy&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>모델을 훈련한다.<ul>
+<li>반복할 에포크 횟수를 epochs 매개변수로 지정</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.fit(train_scaled, train_target, epochs = <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Epoch 1/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.5574 - accuracy: 0.8081
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.4782 - accuracy: 0.8383
 Epoch 2/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.3972 - accuracy: 0.8574
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.4574 - accuracy: 0.8484
 Epoch 3/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.3572 - accuracy: 0.8710
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.4450 - accuracy: 0.8525
 Epoch 4/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.3353 - accuracy: 0.8805
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.4372 - accuracy: 0.8549
 Epoch 5/5
-1500/1500 [==============================] - 4s 2ms/step - loss: 0.3187 - accuracy: 0.8855
+1500/1500 [==============================] - 2s 2ms/step - loss: 0.4318 - accuracy: 0.8575
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7fb1c0b7f450&gt;
 </code></pre>
 <ul>
-<li>history 객체 값은 무슨 값이 있냐?<ul>
-<li>history 객체에는 훈련 측정값이 담겨 있는 history 딕셔너리가 들어 있다.</li>
-<li>dictionary 값으로 출력되기 때문에 다음과 같이 작성</li>
+<li>갈수록 정확도가 증가함을 알 수 있다.</li>
+<li>검증 세트(val_scaled, val_target)에서 모델의 성능을 확인한다.</li>
 </ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(history.history.keys())</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
 
-<pre><code>dict_keys([&#39;loss&#39;, &#39;accuracy&#39;])
+<pre><code>375/375 [==============================] - 1s 1ms/step - loss: 0.4530 - accuracy: 0.8463
+
+
+
+
+
+[0.4530307352542877, 0.8463333249092102]
 </code></pre>
 <ul>
-<li><p>결과 : 손실과 정확도가 포함되어 있다.</p>
-</li>
-<li><p>손실 곡선</p>
-<ul>
-<li>history 속성에 포함된 손실과 정확도는 에포크마다 계산한 값이 순서대로 나열된 단순한 리스트이다.</li>
-<li>멧플롯립으로 간단히 그릴 수 있다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_7_3/output_12_0.png" alt="png"></p>
-<ul>
-<li>정확도 출력<ul>
-<li>이번에는 정확도를 출력해본다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(history.history[<span class="string">&#x27;accuracy&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_7_3/output_14_0.png" alt="png"></p>
-<ul>
-<li>확실히 에포크마다 손실이 감소하고 정확도가 향상됨을 알 수 있다.</li>
-<li>계속 손실이 감소하는지 확인해보자.<ul>
-<li>에포크를 20으로 늘려서 모델을 훈련하고 손실을 그려본다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>) <span class="comment"># 수치 조정</span></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_7_3/output_16_0.png" alt="png"></p>
-<ul>
-<li><p>예상대로 손실이 잘 감소한다.</p>
-</li>
-<li><p>검증손실</p>
-<ul>
-<li>다음과 같이 loss, accuracy, val_loss, val_accuracy 가 출력되도록 하는 것이 정석이다.</li>
-<li>에포크마다 검증 손실을 계산하기 위해 케라스 모델의 fit()메서드에 검증 데이터를 전달할 수 있다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">10</span>, verbose=<span class="number">1</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>Epoch 1/10
-1500/1500 [==============================] - 9s 6ms/step - loss: 0.5619 - accuracy: 0.8060 - val_loss: 0.4507 - val_accuracy: 0.8375
-Epoch 2/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.3984 - accuracy: 0.8571 - val_loss: 0.3923 - val_accuracy: 0.8600
-Epoch 3/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.3603 - accuracy: 0.8704 - val_loss: 0.3582 - val_accuracy: 0.8761
-Epoch 4/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.3351 - accuracy: 0.8792 - val_loss: 0.3619 - val_accuracy: 0.8770
-Epoch 5/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.3207 - accuracy: 0.8860 - val_loss: 0.3707 - val_accuracy: 0.8754
-Epoch 6/10
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.3084 - accuracy: 0.8907 - val_loss: 0.3775 - val_accuracy: 0.8703
-Epoch 7/10
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.2998 - accuracy: 0.8948 - val_loss: 0.3707 - val_accuracy: 0.8787
-Epoch 8/10
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.2901 - accuracy: 0.8981 - val_loss: 0.3494 - val_accuracy: 0.8805
-Epoch 9/10
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.2815 - accuracy: 0.9015 - val_loss: 0.3691 - val_accuracy: 0.8823
-Epoch 10/10
-1500/1500 [==============================] - 4s 3ms/step - loss: 0.2756 - accuracy: 0.9034 - val_loss: 0.4148 - val_accuracy: 0.8700
-</code></pre>
-<ul>
-<li>과대 &#x2F; 과소적합 문제를 조사하기 위해 훈련 손실과 검증 손실을 한 그래프에 그려서 비교해본다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_7_3/output_21_0.png" alt="png"></p>
-<ul>
-<li>검증 데이터 val이 갈수록 손실이 증가한다.</li>
-<li>더 나은 그래프를 위해 조정해본다.</li>
-<li>위 내용에서 optimizer &#x3D; adam을 추가</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer = <span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>) <span class="comment"># adam 추가</span></span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">10</span>, verbose=<span class="number">1</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<pre><code>Epoch 1/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.5635 - accuracy: 0.8080 - val_loss: 0.5627 - val_accuracy: 0.7847
-Epoch 2/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.4053 - accuracy: 0.8535 - val_loss: 0.3899 - val_accuracy: 0.8593
-Epoch 3/10
-1500/1500 [==============================] - 5s 3ms/step - loss: 0.3595 - accuracy: 0.8705 - val_loss: 0.3780 - val_accuracy: 0.8627
-Epoch 4/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.3311 - accuracy: 0.8785 - val_loss: 0.3409 - val_accuracy: 0.8767
-Epoch 5/10
-1500/1500 [==============================] - 5s 3ms/step - loss: 0.3130 - accuracy: 0.8855 - val_loss: 0.3361 - val_accuracy: 0.8784
-Epoch 6/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.2950 - accuracy: 0.8899 - val_loss: 0.3473 - val_accuracy: 0.8775
-Epoch 7/10
-1500/1500 [==============================] - 5s 4ms/step - loss: 0.2818 - accuracy: 0.8961 - val_loss: 0.3380 - val_accuracy: 0.8781
-Epoch 8/10
-1500/1500 [==============================] - 5s 3ms/step - loss: 0.2707 - accuracy: 0.9003 - val_loss: 0.3430 - val_accuracy: 0.8823
-Epoch 9/10
-1500/1500 [==============================] - 6s 4ms/step - loss: 0.2623 - accuracy: 0.9024 - val_loss: 0.3381 - val_accuracy: 0.8830
-Epoch 10/10
-1500/1500 [==============================] - 5s 3ms/step - loss: 0.2520 - accuracy: 0.9064 - val_loss: 0.3427 - val_accuracy: 0.8813
-</code></pre>
-<p><img src="/images/chapter_7_3/output_23_1.png" alt="png"></p>
-<ul>
-<li>val의 손실이 성공적으로 줄어들었다.</li>
-<li>구글링 : image classification django -&gt; 개발자라면 공부해봐라</li>
-<li>구글링 : image classification tensorflow -&gt; 이것도</li>
-</ul>
-<h3 id="드롭아웃"><a href="#드롭아웃" class="headerlink" title="드롭아웃"></a>드롭아웃</h3><ul>
-<li><p>훈련 과정에서 층에 있는 일부 뉴런을 랜덤하게 꺼서(뉴런의 출력을 0으로 만들어) 과대적합을 막는다.</p>
-</li>
-<li><p>기본적으로는 모든 파라미터를 연산하는 것이 원칙</p>
-<ul>
-<li>그런데, 일부 뉴런에서 출력이 없는 뉴런 발생</li>
-<li>기존 일부 뉴런은 계산에서 제외 시킴</li>
-</ul>
-</li>
-<li><p>인공신경망(뇌과학)</p>
-<ul>
-<li>값이 쏠림 현상 &#x3D; 뇌에 피가 고인 현상<br>&#x3D; 뇌출혈</li>
-</ul>
-</li>
-<li><p>앞서 정의한 model_fn() 함수에 드롭아웃 객체를 전달하여 층을 추가해본다.</p>
-</li>
-<li><p>여기에서 30% 정도를 드롭아웃한다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>)) <span class="comment"># 30% 드롭아웃</span></span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
-
-<pre><code>Model: &quot;sequential_4&quot;
-_________________________________________________________________
- Layer (type)                /images/chapter_7_3/output Shape              Param #   
-=================================================================
- flatten_4 (Flatten)         (None, 784)               0         
-                                                                 
- dense_8 (Dense)             (None, 100)               78500     
-                                                                 
- dropout (Dropout)           (None, 100)               0         
-                                                                 
- dense_9 (Dense)             (None, 100)               10100     
-                                                                 
-=================================================================
-Total params: 88,600
-Trainable params: 88,600
-Non-trainable params: 0
-_________________________________________________________________
-</code></pre>
-<ul>
-<li>결과. 은닉층 뒤에 추가된 드롭아웃 층(Dropout)은 훈련되는 모델 파라미터가 없다.</li>
-<li>일부 뉴런의 출력을 0으로 만들지만 전체 출력 배열의 크기를 바꾸지는 않는다.</li>
-<li>그래서 마음 편하게 검증 점수를 계산할 수 있다.</li>
-<li>드롭아웃한 상태에서 이전과 마찬가지로 훈련 손실과 검증 손실의 그래프를 그려 비교해본다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(optimizer = <span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>) <span class="comment"># adam 추가</span></span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>,   <span class="comment"># 수치 조정</span></span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_7_3/output_29_0.png" alt="png"></p>
-<ul>
-<li>과대적합이 확실히 줄었다.</li>
-<li>다만, 20번의 에포크 동안 훈련했기에 결국 다소 과대적합이 되었다.</li>
-<li>여기서 더 과대적합 하지 않게 하려면 에포크 횟수를 10으로 하고 다시 훈련하면 된다.</li>
-</ul>
-<h3 id="모델-저장과-복원"><a href="#모델-저장과-복원" class="headerlink" title="모델 저장과 복원"></a>모델 저장과 복원</h3><ul>
-<li><p>개발자 : 정확도는 중요하지 않음</p>
-<ul>
-<li>딥러닝 모델 활용해서 웹앱을 개발</li>
-</ul>
-</li>
-<li><p>분석가 &amp; 머신러닝 엔지니어 : 캐글대회(정확도 검증 필수)</p>
-</li>
-<li><p>에포크 횟수를 10으로 하고 다시 훈련한다.</p>
-</li>
-<li><p>그리고 나중에 사용하려면 이 모델을 저장해야 한다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))                                                    <span class="comment"># 30% 드롭아웃</span></span><br><span class="line">model.<span class="built_in">compile</span>(optimizer = <span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)  <span class="comment"># adam 추가</span></span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>,   <span class="comment"># 수치 조정</span></span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>save_weights()<ul>
-<li>훈련된 모델의 파라미터를 저장한다.</li>
-</ul>
-</li>
-<li>save()<ul>
-<li>모델 구조와 모델 파라미터를 함께 저장한다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.save_weights(<span class="string">&#x27;model-weights.h5&#x27;</span>)</span><br><span class="line">model.save(<span class="string">&#x27;model-whole.h5&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>두 가지 실험을 해본다.</p>
-<ul>
-<li>첫 번째는 훈련을 하지 않은 새로운 모델을 만들고 model-weights.h5 파일에서 훈련된 모델 파라미터를 읽어서 사용한다.</li>
-<li>두 번째는 아예 model-whole.h5 파일에서 새로운 모델을 만들어 바로 사용한다.</li>
-</ul>
-</li>
-<li><p>첫 번째 실험</p>
-<ul>
-<li>모델 불러오기</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.load_weights(<span class="string">&#x27;model-weights.h5&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>406p</li>
-<li>10개 확률 중에 가장 큰 값의 인덱스를 골라 타깃 레이블과 비교하여 정확도를 계산해 본다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">val_labels = np.argmax(model.predict(val_scaled), axis=-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(val_labels == val_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8840833333333333
-</code></pre>
-<ul>
-<li>모델 전체를 파일에서 읽은 다음 검증 세트의 정확도를 출력해 본다.</li>
-<li>load_model()을 이용하여 파일을 읽으면 된다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = keras.models.load_model(<span class="string">&#x27;model-whole.h5&#x27;</span>)</span><br><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>375/375 [==============================] - 1s 3ms/step - loss: 0.3263 - accuracy: 0.8841
-
-
-
-
-
-[0.326292484998703, 0.8840833306312561]
-</code></pre>
-<ul>
-<li>같은 모델을 저장하고 다시 불렀기에 이전 코드와 동일한 정확도를 얻었다.</li>
-</ul>
-<h3 id="콜백"><a href="#콜백" class="headerlink" title="콜백"></a>콜백</h3><ul>
-<li>408p</li>
-<li>지금까지 20번의 에포크 동안 모델을 훈련하여 검증 점수가 상승하는 지점을 확인했다.</li>
-<li>이전처럼 모델을 두 번씩 훈련하지 않고 한 번에 끝내기 위해 콜백을 사용할 수 있다.</li>
-<li>콜백 &#x3D; 훈련 과정 중간에 어떤 작업을 수행할 수 있게 하는 객체이다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, </span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">checkpoint_cb = keras.callbacks.ModelCheckpoint(<span class="string">&#x27;best-model.h5&#x27;</span>, </span><br><span class="line">                                                save_best_only=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>, </span><br><span class="line">          validation_data=(val_scaled, val_target),</span><br><span class="line">          callbacks=[checkpoint_cb])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>&lt;keras.callbacks.History at 0x7f3da939e310&gt;
-</code></pre>
-<ul>
-<li>model_fn()함수로 모델을 만들고 compile()을 호출한다.</li>
-<li>모델이 훈련한 후에 best-model.h5에 최상의 검증 점수를 낸 모델이 저장된다.</li>
-<li>이 모델을 load_model()함수로 다시 읽어서 예측을 수행한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = keras.models.load_model(<span class="string">&#x27;best-model.h5&#x27;</span>)</span><br><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>375/375 [==============================] - 1s 2ms/step - loss: 0.3197 - accuracy: 0.8858
-
-
-
-
-
-[0.31966158747673035, 0.8858333230018616]
-</code></pre>
-<ul>
-<li><p>EarlyStopping</p>
-<ul>
-<li>조기 종료</li>
-<li>에포크를 많이 주면 줄수록 성능(가중치 업데이트 &#x2F; 기울기가 계속 미분)이 좋아야 하는 것이 원리</li>
-<li>에포크 100 &#x2F; 50 에포크 시점과 90 에포크 시점 성능 차이 없음</li>
-<li>즉, 계속 진행해도 좋아질지 안 좋아질지 모르기에 조기 종료하는 것.</li>
-</ul>
-</li>
-<li><p>EarlyStopping 콜백을 ModelCheckpoint 콜백과 함께 사용하면 가장 낮은 검증 손실의 모델을 파일에 저장한다.</p>
-</li>
-<li><p>그리고 검증 손실이 다시 상승할 때 훈련을 중지할 수 있다.</p>
-</li>
-<li><p>훈련을 중지한 다음 현재 모델의 파라미터를 최상의 파라미터로 되돌린다.</p>
-</li>
-<li><p>두 콜백을 함께 사용해보자.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, </span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">checkpoint_cb = keras.callbacks.ModelCheckpoint(<span class="string">&#x27;best-model.h5&#x27;</span>, </span><br><span class="line">                                                save_best_only=<span class="literal">True</span>)</span><br><span class="line">early_stopping_cb = keras.callbacks.EarlyStopping(patience=<span class="number">2</span>,                 <span class="comment"># patience는 몇 개의 콜백을 리스트로 전달할지 결정한다.</span></span><br><span class="line">                                                  restore_best_weights=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target),</span><br><span class="line">                    callbacks=[checkpoint_cb, early_stopping_cb])</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>몇 번째 훈련에서 중지되는지 다음 코드로 확인할 수 있다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(early_stopping_cb.stopped_epoch)</span><br></pre></td></tr></table></figure>
-
-<pre><code>10
-</code></pre>
-<ul>
-<li>epoch 값이 10에 다다랐을 때, ‘조기종료’한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show() </span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_7_3/output_54_0.png" alt="png"></p>
-<ul>
-<li><p>이런 식으로 조기 종료 기법을 사용하면 안심하고 에포크 횟수를 크게 지정해도 괜찮다.</p>
-</li>
-<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
-</li>
+<li>Reference : 혼자 공부하는 머신러닝 + 딥러닝</li>
 </ul>
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.760Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">17 minutes read (About 2608 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_2/">chapter_7_2</a></h1><div class="content"><h1 id="심층-신경망"><a href="#심층-신경망" class="headerlink" title="심층 신경망"></a>심층 신경망</h1><ul>
 <li><p>인공신경망에 층을 여러 개 추가하여 패션 MNIST 데이터셋을 분류한다.</p>
@@ -1776,485 +1712,501 @@ Epoch 5/5
 <li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
 </li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.752Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">12 minutes read (About 1794 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_1/">chapter_7_1</a></h1><div class="content"><h3 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝"></a>딥러닝</h3><p>인공신경망 1943년 즈음 등장</p>
-<p>1차 융성기 ~ 1960 후반</p>
-<ul>
-<li><p>로봇이 인간들과 함께 살 것이다 예언</p>
-</li>
-<li><p>XOR 문제 해결 못함</p>
-</li>
-<li><p>AI 연구 겨울 찾아옴</p>
-</li>
-<li><p>대안 : 최근접이웃, 결정트리, 서포트벡터머신 등</p>
-</li>
-<li><p>토론토 대학 AI 연구소 (역전파 알고리즘 개발)</p>
-</li>
-<li><p>CNN 알고리즘 (1980년대 후반)</p>
-</li>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-07T00:00:00.000Z" title="2022. 4. 7. 오전 9:00:00">2022-04-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-10T08:50:04.766Z" title="2022. 4. 10. 오후 5:50:04">2022-04-10</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</a></span><span class="level-item">18 minutes read (About 2756 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/07/chapter_7_3/">chapter_7_3</a></h1><div class="content"><h1 id="7-3-신경망-모델-훈련"><a href="#7-3-신경망-모델-훈련" class="headerlink" title="7-3. 신경망 모델 훈련"></a>7-3. 신경망 모델 훈련</h1><ul>
+<li>케라스 API를 사용해 모델을 훈련하는데 필요한 다양한 도구들을 알아본다.</li>
 </ul>
-<p>-2차 융성시기 ~ 1990년대 후반</p>
-<ul>
-<li><p>CNN, RNN 알고리즘 등장</p>
-</li>
-<li><p>연산 속도 문제&#x2F;정확도 문제</p>
-</li>
-<li><p>산업계 즉시 활용 어려움</p>
-</li>
+<h3 id="손실곡선"><a href="#손실곡선" class="headerlink" title="손실곡선"></a>손실곡선</h3><ul>
+<li>패션 MNIST 데이터셋을 적재하고 훈련 세트와 검증 세트로 나눈다.</li>
 </ul>
-<p>-3차 융성시기 2012 ~ 현재까지</p>
-<ul>
-<li><p>GPU 세팅 (그래픽카드)</p>
-</li>
-<li><p>연산속도문제가 해결</p>
-</li>
-<li><p>세돌 vs 알파고 바둑 대회(2017년)</p>
-</li>
-<li><p>정부에서도 본격적으로 투자</p>
-</li>
-<li><p>교육쪽으로 먼저 투자 시작</p>
-</li>
-<li><p>대학교육 + 국비교육</p>
-</li>
-<li><p>데이터과학</p>
-</li>
-</ul>
-<p>2012년</p>
-<ul>
-<li><p>CNN 알고리즘 논문 다수 출현</p>
-</li>
-<li><p>이미지 기본데이터셋</p>
-</li>
-<li><ol>
-<li>기존대비 성능이 좋아야 함</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>개존대비 연산속도가 좋아야 함</li>
-</ol>
-</li>
-</ul>
-<p>→ 각자 딥러닝 관심 생김</p>
-<p>→ 공부하는 패턴 : 최운선순위는 가장 최근 나온 알고리즘</p>
-<p>분야가 정말 많음</p>
-<ul>
-<li><p>지도학습 : 분류&#x2F;수치 예측(회귀)&#x2F;비지도학습</p>
-</li>
-<li><p>엑셀데이터(정형데이터)</p>
-</li>
-<li><p>기초 통계가 중요(리포트 형태가 더 중요)</p>
-</li>
-<li><p>개발의 상대적 중요성 떨어짐(성과 측면)</p>
-</li>
-</ul>
-<p>딥러닝:비정형데이터</p>
-<ul>
-<li><p>텍스트,음성,이미지,영상</p>
-</li>
-<li><p>주로 쓰이는 알고리즘 탐색 (최신 알고리즘)</p>
-</li>
-<li><p>계속 업그레이드 되고 있음</p>
-</li>
-<li><p>이세돌 vs 알파고 바둑 대회 (2017년)</p>
-</li>
-<li><p>데이터과학</p>
-</li>
-</ul>
-<p>지도 학습 vs 딥러닝 </p>
-<p>→ 개발자라면 딥러닝 알고리즘을 가져다가 빠르게 개발하는 기술을 습득.</p>
-<h3 id="딥러닝-라이브러리"><a href="#딥러닝-라이브러리" class="headerlink" title="딥러닝 라이브러리"></a>딥러닝 라이브러리</h3><ul>
-<li>텐서플로 : <a target="_blank" rel="noopener" href="https://www.tensorflow.org/">https://www.tensorflow.org/</a><ul>
-<li>2016년 텐서플로 1 버전 vs 텐서플로 2 버전</li>
-<li>문법적으로 매우 다름</li>
-<li>산업용</li>
-</ul>
-</li>
-<li>파이토치 : <a target="_blank" rel="noopener" href="https://pytorch.org/">https://pytorch.org/</a><ul>
-<li>연구용</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow</span><br><span class="line"><span class="built_in">print</span>(tensorflow.__version__)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">(train_input, train_target), (test_input, test_target) = \</span><br><span class="line">    keras.datasets.fashion_mnist.load_data()</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
 
-<pre><code>2.8.0
-</code></pre>
-<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><h3 id="패션-MNIST"><a href="#패션-MNIST" class="headerlink" title="패션 MNIST"></a>패션 MNIST</h3><ul>
-<li>10종류의 패션 아이템으로 구성된 데이터셋</li>
-<li>텐서프로를 사용해 이 데이터를 불러온다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line">(train_input, train_target), (test_input, test_target)= keras.datasets.fashion_mnist.load_data()  </span><br><span class="line"><span class="comment"># load.data()함수는 훈련 데이터와 테스트 데이터를 나누어 반환한다.</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>데이터 확인</p>
-</li>
-<li><p>훈련 데이터</p>
-<ul>
-<li>60,000개 이미지, 이미지 크기는 28x28</li>
-<li>타깃은 60,000개 원소가 있는 1차원 배열</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_input.shape, train_target.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(60000, 28, 28) (60000,)
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+32768/29515 [=================================] - 0s 0us/step
+40960/29515 [=========================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26427392/26421880 [==============================] - 1s 0us/step
+26435584/26421880 [==============================] - 1s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+16384/5148 [===============================================================================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4423680/4422102 [==============================] - 0s 0us/step
+4431872/4422102 [==============================] - 0s 0us/step
 </code></pre>
 <ul>
-<li>테스트 세트<ul>
-<li>10,000개의 이미지로 이루어짐</li>
+<li>모델을 만든다.<ul>
+<li>사용자 정의함수를 작성함</li>
+<li>if 구문을 제외하면 7-2의 코드와 동일하다.</li>
+<li>if 구문의 역할은 model_fn() 함수에 케라스 층을 추가하면 은닉층 뒤어 또 하나의 층을 추가하는 것이다.</li>
 </ul>
 </li>
+<li>모델 구조를 출력해본다.</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(test_input.shape, test_target.shape)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">model_fn</span>(<span class="params">a_layer=<span class="literal">None</span></span>):</span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    model.add(keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>)))</span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;relu&#x27;</span>))</span><br><span class="line">    <span class="keyword">if</span> a_layer:</span><br><span class="line">      model.add(a_layer)</span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line">model = model_fn()</span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
 
-<pre><code>(10000, 28, 28) (10000,)
+<pre><code>Model: &quot;sequential&quot;
+_________________________________________________________________
+ Layer (type)                /images/chapter_7_3/output Shape              Param #   
+=================================================================
+ flatten (Flatten)           (None, 784)               0         
+                                                                 
+ dense (Dense)               (None, 100)               78500     
+                                                                 
+ dense_1 (Dense)             (None, 100)               10100     
+                                                                 
+=================================================================
+Total params: 88,600
+Trainable params: 88,600
+Non-trainable params: 0
+_________________________________________________________________
 </code></pre>
 <ul>
-<li>이미지 시각화</li>
+<li>모델 정의 후, 학습</li>
+<li>fit() 메서드의 결과를 history 변수에 담아본다.</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">10</span>, figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">  axs[i].imshow(train_input[i], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">  axs[i].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_7_1/output_12_0.png" alt="png"></p>
-<ul>
-<li>타겟 값 리스트<ul>
-<li>패션 MNIST의 타깃은 0~9까지의 숫자 레이블로 구성된다.</li>
-<li>같은 숫자가 나온다면 타깃이 같은 두 샘플은 같은 종류의 옷이다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>([train_target[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[9, 0, 0, 3, 0, 2, 7, 2, 5, 5]
-</code></pre>
-<ul>
-<li>실제 타겟값의 값을 확인</li>
-<li>각 라벨당 6000개의 이미지 존재 60,000개</li>
-<li>즉, 각 의류마다 6,000개의 샘플이 들어있다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(np.unique(train_target, return_counts = <span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
-
-<pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=uint8), array([6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000]))
-</code></pre>
-<h3 id="로지스틱-회귀로-패션-아이템-분류하기"><a href="#로지스틱-회귀로-패션-아이템-분류하기" class="headerlink" title="로지스틱 회귀로 패션 아이템 분류하기"></a>로지스틱 회귀로 패션 아이템 분류하기</h3><ul>
-<li>경사하강법 (기울기)<ul>
-<li>샘플이 60,000개나 되기에 샘플을 하나씩 꺼내서 모델을 훈련하는 게 더 효율적</li>
-<li>해당 상황에 맞는 것이 강사하강법이다.</li>
-</ul>
-</li>
-<li>전제 조건 : 각 컬럼의 데이터셋 동일 (표준화)</li>
-<li>why 255? 각 픽셀의 값 0~255 사이의 정수값을 가진다.</li>
-<li>255로 나누어 0~1 사이의 값으로 정규화 시킴<ul>
-<li>표준화는 아니지만 양수 값으로 이루어진 이미지를 전처리할 때 사용하는 방벙</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 경사하강법 사용을 위해 1차원 배열로 만들기</span></span><br><span class="line">train_scaled = train_scaled.reshape(-<span class="number">1</span>, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line"><span class="built_in">print</span>(train_scaled.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(60000, 784)
-</code></pre>
-<h3 id="모델-만들기"><a href="#모델-만들기" class="headerlink" title="모델 만들기"></a>모델 만들기</h3><ul>
-<li><p>비정형데이터에 선형모델 또는 비선형모델을 적용시키는 것이 합리적인가?</p>
-<ul>
-<li>결론은 아니다!</li>
-<li>다른 대안이 있는냐? 인공신경망!</li>
-</ul>
-</li>
-<li><p>정형데이터에 인공신경망 및 딥러닝 모델을 적용시키는 것이 합리적인가?</p>
-<ul>
-<li>결론은 아니다!</li>
-</ul>
-</li>
-<li><p>SGDClassifier 클래스와 cross_validate 함수로 이 데이터에서 교차 검증으로 성능을 확인한다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_validate</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDClassifier</span><br><span class="line"></span><br><span class="line">sc = SGDClassifier(loss=<span class="string">&#x27;log&#x27;</span>, max_iter=<span class="number">5</span>, random_state=<span class="number">42</span>)   <span class="comment"># 반복 횟수를 5번으로 지정</span></span><br><span class="line"></span><br><span class="line">scores = cross_validate(sc, train_scaled, train_target, n_jobs=-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>])) </span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8195666666666668
-</code></pre>
-<ul>
-<li>로지스틱 회귀 공식을 그림으로 나타내면 인공신경망의 그림과 같다.</li>
-<li>인동신경망을 만들어 패션 아이템 분류 문제의 성능을 높일 수 있는지 지켜보자.</li>
-</ul>
-<h3 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h3><ul>
-<li>355~356p</li>
-<li>인공신경망 : <a target="_blank" rel="noopener" href="http://alexlenail.me/NN-SVG/index.html">http://alexlenail.me/NN-SVG/index.html</a></li>
-<li>입력층, 출력층, 뉴런(유닛)에 대해 숙지하자.</li>
-</ul>
-<h3 id="인공신경망-모델-적용"><a href="#인공신경망-모델-적용" class="headerlink" title="인공신경망 모델 적용"></a>인공신경망 모델 적용</h3><ul>
-<li>이미지 분류에는 인공 신경망이 적합하다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>텐서플로 &#x3D; 케라스</li>
-<li>케라스 API를 사용해 패션 아이템을 분류하는 가장 간단한 인공 신경망을 만들어 보자.</li>
-<li>train_test_split()</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>test_size&#x3D;0.2<ul>
-<li>훈련 세트에서 20%를 검증 세트로 덜어 내었다.</li>
-</ul>
-</li>
-<li>훈련 세트와 검증 세트의 크기를 알아보자.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_scaled.shape, train_target.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(48000, 784) (48000,)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(val_scaled.shape, val_target.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(12000, 784) (12000,)
-</code></pre>
-<ul>
-<li><p>60,000개 중에 12,000개가 검증 세트로 분리되었다.</p>
-</li>
-<li><p>먼저 훈련 세트로 모델을 만든다. 그 다음 검증 세트로 훈련한 모델을 평가해본다.</p>
-</li>
-<li><p>이미지 하나에 있는 픽셀은 784개. 뉴런은 10개. 이것을 모두 연결.</p>
-</li>
-<li><p>완전 연결층 &#x3D; 밀집층 &#x3D; 밀집하게 연결되어 있는 것</p>
-<ul>
-<li>fully connected layer &#x3D; dense layer</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_target[:<span class="number">10</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[7 3 5 8 6 9 3 3 9 9]
-</code></pre>
-<ul>
-<li>Dense 클래스를 통해 밀집층을 만들어보자</li>
-<li>활성화 함수<ul>
-<li>softmax와 같이 뉴런의 선형 방정직 계산 결과에 적용되는 함수.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 매개변수의 의미는 차례대로 뉴런개수, 뉴런의 출력에 적용할 함수, 입력의 크기다.</span></span><br><span class="line">dense = keras.layers.Dense(<span class="number">10</span>, activation = <span class="string">&#x27;softmax&#x27;</span>, input_shape=(<span class="number">784</span>, ))</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>방금 만든 밀집층을 가진 신경망 모델을 만들자.</li>
-<li>Sequential 클래스를 사용한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential(dense)</span><br></pre></td></tr></table></figure>
-
-<h3 id="인공-신경망으로-패션-아이템-분류하기"><a href="#인공-신경망으로-패션-아이템-분류하기" class="headerlink" title="인공 신경망으로 패션 아이템 분류하기"></a>인공 신경망으로 패션 아이템 분류하기</h3><ul>
-<li>훈련하기 전의 설정 단계</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss = <span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics = <span class="string">&quot;accuracy&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>모델을 훈련한다.<ul>
-<li>반복할 에포크 횟수를 epochs 매개변수로 지정</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.fit(train_scaled, train_target, epochs = <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics = <span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">history = model.fit(train_scaled, train_target, epochs = <span class="number">5</span>, verbose = <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Epoch 1/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.4782 - accuracy: 0.8383
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.5574 - accuracy: 0.8081
 Epoch 2/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.4574 - accuracy: 0.8484
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.3972 - accuracy: 0.8574
 Epoch 3/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.4450 - accuracy: 0.8525
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.3572 - accuracy: 0.8710
 Epoch 4/5
-1500/1500 [==============================] - 3s 2ms/step - loss: 0.4372 - accuracy: 0.8549
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.3353 - accuracy: 0.8805
 Epoch 5/5
-1500/1500 [==============================] - 2s 2ms/step - loss: 0.4318 - accuracy: 0.8575
-
-
-
-
-
-&lt;keras.callbacks.History at 0x7fb1c0b7f450&gt;
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.3187 - accuracy: 0.8855
 </code></pre>
 <ul>
-<li>갈수록 정확도가 증가함을 알 수 있다.</li>
-<li>검증 세트(val_scaled, val_target)에서 모델의 성능을 확인한다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
-
-<pre><code>375/375 [==============================] - 1s 1ms/step - loss: 0.4530 - accuracy: 0.8463
-
-
-
-
-
-[0.4530307352542877, 0.8463333249092102]
-</code></pre>
-<ul>
-<li>Reference : 혼자 공부하는 머신러닝 + 딥러닝</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-06T00:00:00.000Z" title="2022. 4. 6. 오전 9:00:00">2022-04-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T11:19:17.406Z" title="2022. 4. 9. 오후 8:19:17">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/">비지도학습</a></span><span class="level-item">6 minutes read (About 972 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/06/chapter_6_1/">chapter_6_1</a></h1><div class="content"><h1 id="비지도-학습"><a href="#비지도-학습" class="headerlink" title="비지도 학습"></a>비지도 학습</h1><ul>
-<li>vs 지도 학습<ul>
-<li>종속 변수가 있다 &#x3D; 타겟이 있다</li>
-</ul>
-</li>
-<li>비지도 학습은 종속변수 및 타겟이 없다.</li>
-<li>분류<ul>
-<li>다중분류</li>
-<li>전제조건 : (다양한 유형) 데이터가 많아야 함</li>
-<li>딥러닝과 연관이 됨(자연어 처리, 이미지)</li>
+<li>history 객체 값은 무슨 값이 있냐?<ul>
+<li>history 객체에는 훈련 측정값이 담겨 있는 history 딕셔너리가 들어 있다.</li>
+<li>dictionary 값으로 출력되기 때문에 다음과 같이 작성</li>
 </ul>
 </li>
 </ul>
-<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><ul>
-<li>과일가게 문제 : 많은 과일 사진을 각 과일 별로 분류해야 한다.</li>
-<li>다음을 참고하라 : <a target="_blank" rel="noopener" href="http://bit.ly/hg-06-1">http://bit.ly/hg-06-1</a></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(history.history.keys())</span><br></pre></td></tr></table></figure>
+
+<pre><code>dict_keys([&#39;loss&#39;, &#39;accuracy&#39;])
+</code></pre>
+<ul>
+<li><p>결과 : 손실과 정확도가 포함되어 있다.</p>
+</li>
+<li><p>손실 곡선</p>
+<ul>
+<li>history 속성에 포함된 손실과 정확도는 에포크마다 계산한 값이 순서대로 나열된 단순한 리스트이다.</li>
+<li>멧플롯립으로 간단히 그릴 수 있다.</li>
 </ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_7_3/output_12_0.png" alt="png"></p>
+<ul>
+<li>정확도 출력<ul>
+<li>이번에는 정확도를 출력해본다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(history.history[<span class="string">&#x27;accuracy&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_7_3/output_14_0.png" alt="png"></p>
+<ul>
+<li>확실히 에포크마다 손실이 감소하고 정확도가 향상됨을 알 수 있다.</li>
+<li>계속 손실이 감소하는지 확인해보자.<ul>
+<li>에포크를 20으로 늘려서 모델을 훈련하고 손실을 그려본다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>) <span class="comment"># 수치 조정</span></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_7_3/output_16_0.png" alt="png"></p>
+<ul>
+<li><p>예상대로 손실이 잘 감소한다.</p>
+</li>
+<li><p>검증손실</p>
+<ul>
+<li>다음과 같이 loss, accuracy, val_loss, val_accuracy 가 출력되도록 하는 것이 정석이다.</li>
+<li>에포크마다 검증 손실을 계산하기 위해 케라스 모델의 fit()메서드에 검증 데이터를 전달할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">10</span>, verbose=<span class="number">1</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/10
+1500/1500 [==============================] - 9s 6ms/step - loss: 0.5619 - accuracy: 0.8060 - val_loss: 0.4507 - val_accuracy: 0.8375
+Epoch 2/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3984 - accuracy: 0.8571 - val_loss: 0.3923 - val_accuracy: 0.8600
+Epoch 3/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3603 - accuracy: 0.8704 - val_loss: 0.3582 - val_accuracy: 0.8761
+Epoch 4/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3351 - accuracy: 0.8792 - val_loss: 0.3619 - val_accuracy: 0.8770
+Epoch 5/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3207 - accuracy: 0.8860 - val_loss: 0.3707 - val_accuracy: 0.8754
+Epoch 6/10
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3084 - accuracy: 0.8907 - val_loss: 0.3775 - val_accuracy: 0.8703
+Epoch 7/10
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2998 - accuracy: 0.8948 - val_loss: 0.3707 - val_accuracy: 0.8787
+Epoch 8/10
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2901 - accuracy: 0.8981 - val_loss: 0.3494 - val_accuracy: 0.8805
+Epoch 9/10
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2815 - accuracy: 0.9015 - val_loss: 0.3691 - val_accuracy: 0.8823
+Epoch 10/10
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2756 - accuracy: 0.9034 - val_loss: 0.4148 - val_accuracy: 0.8700
+</code></pre>
+<ul>
+<li>과대 &#x2F; 과소적합 문제를 조사하기 위해 훈련 손실과 검증 손실을 한 그래프에 그려서 비교해본다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_7_3/output_21_0.png" alt="png"></p>
+<ul>
+<li>검증 데이터 val이 갈수록 손실이 증가한다.</li>
+<li>더 나은 그래프를 위해 조정해본다.</li>
+<li>위 내용에서 optimizer &#x3D; adam을 추가</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer = <span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>) <span class="comment"># adam 추가</span></span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">10</span>, verbose=<span class="number">1</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.5635 - accuracy: 0.8080 - val_loss: 0.5627 - val_accuracy: 0.7847
+Epoch 2/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.4053 - accuracy: 0.8535 - val_loss: 0.3899 - val_accuracy: 0.8593
+Epoch 3/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3595 - accuracy: 0.8705 - val_loss: 0.3780 - val_accuracy: 0.8627
+Epoch 4/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3311 - accuracy: 0.8785 - val_loss: 0.3409 - val_accuracy: 0.8767
+Epoch 5/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3130 - accuracy: 0.8855 - val_loss: 0.3361 - val_accuracy: 0.8784
+Epoch 6/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.2950 - accuracy: 0.8899 - val_loss: 0.3473 - val_accuracy: 0.8775
+Epoch 7/10
+1500/1500 [==============================] - 5s 4ms/step - loss: 0.2818 - accuracy: 0.8961 - val_loss: 0.3380 - val_accuracy: 0.8781
+Epoch 8/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2707 - accuracy: 0.9003 - val_loss: 0.3430 - val_accuracy: 0.8823
+Epoch 9/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.2623 - accuracy: 0.9024 - val_loss: 0.3381 - val_accuracy: 0.8830
+Epoch 10/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2520 - accuracy: 0.9064 - val_loss: 0.3427 - val_accuracy: 0.8813
+</code></pre>
+<p><img src="/images/chapter_7_3/output_23_1.png" alt="png"></p>
+<ul>
+<li>val의 손실이 성공적으로 줄어들었다.</li>
+<li>구글링 : image classification django -&gt; 개발자라면 공부해봐라</li>
+<li>구글링 : image classification tensorflow -&gt; 이것도</li>
+</ul>
+<h3 id="드롭아웃"><a href="#드롭아웃" class="headerlink" title="드롭아웃"></a>드롭아웃</h3><ul>
+<li><p>훈련 과정에서 층에 있는 일부 뉴런을 랜덤하게 꺼서(뉴런의 출력을 0으로 만들어) 과대적합을 막는다.</p>
+</li>
+<li><p>기본적으로는 모든 파라미터를 연산하는 것이 원칙</p>
+<ul>
+<li>그런데, 일부 뉴런에서 출력이 없는 뉴런 발생</li>
+<li>기존 일부 뉴런은 계산에서 제외 시킴</li>
+</ul>
+</li>
+<li><p>인공신경망(뇌과학)</p>
+<ul>
+<li>값이 쏠림 현상 &#x3D; 뇌에 피가 고인 현상<br>&#x3D; 뇌출혈</li>
+</ul>
+</li>
+<li><p>앞서 정의한 model_fn() 함수에 드롭아웃 객체를 전달하여 층을 추가해본다.</p>
+</li>
+<li><p>여기에서 30% 정도를 드롭아웃한다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>)) <span class="comment"># 30% 드롭아웃</span></span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Model: &quot;sequential_4&quot;
+_________________________________________________________________
+ Layer (type)                /images/chapter_7_3/output Shape              Param #   
+=================================================================
+ flatten_4 (Flatten)         (None, 784)               0         
+                                                                 
+ dense_8 (Dense)             (None, 100)               78500     
+                                                                 
+ dropout (Dropout)           (None, 100)               0         
+                                                                 
+ dense_9 (Dense)             (None, 100)               10100     
+                                                                 
+=================================================================
+Total params: 88,600
+Trainable params: 88,600
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<ul>
+<li>결과. 은닉층 뒤에 추가된 드롭아웃 층(Dropout)은 훈련되는 모델 파라미터가 없다.</li>
+<li>일부 뉴런의 출력을 0으로 만들지만 전체 출력 배열의 크기를 바꾸지는 않는다.</li>
+<li>그래서 마음 편하게 검증 점수를 계산할 수 있다.</li>
+<li>드롭아웃한 상태에서 이전과 마찬가지로 훈련 손실과 검증 손실의 그래프를 그려 비교해본다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(optimizer = <span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>) <span class="comment"># adam 추가</span></span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>,   <span class="comment"># 수치 조정</span></span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_7_3/output_29_0.png" alt="png"></p>
+<ul>
+<li>과대적합이 확실히 줄었다.</li>
+<li>다만, 20번의 에포크 동안 훈련했기에 결국 다소 과대적합이 되었다.</li>
+<li>여기서 더 과대적합 하지 않게 하려면 에포크 횟수를 10으로 하고 다시 훈련하면 된다.</li>
+</ul>
+<h3 id="모델-저장과-복원"><a href="#모델-저장과-복원" class="headerlink" title="모델 저장과 복원"></a>모델 저장과 복원</h3><ul>
+<li><p>개발자 : 정확도는 중요하지 않음</p>
+<ul>
+<li>딥러닝 모델 활용해서 웹앱을 개발</li>
+</ul>
+</li>
+<li><p>분석가 &amp; 머신러닝 엔지니어 : 캐글대회(정확도 검증 필수)</p>
+</li>
+<li><p>에포크 횟수를 10으로 하고 다시 훈련한다.</p>
+</li>
+<li><p>그리고 나중에 사용하려면 이 모델을 저장해야 한다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))                                                    <span class="comment"># 30% 드롭아웃</span></span><br><span class="line">model.<span class="built_in">compile</span>(optimizer = <span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)  <span class="comment"># adam 추가</span></span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>,   <span class="comment"># 수치 조정</span></span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>save_weights()<ul>
+<li>훈련된 모델의 파라미터를 저장한다.</li>
+</ul>
+</li>
+<li>save()<ul>
+<li>모델 구조와 모델 파라미터를 함께 저장한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.save_weights(<span class="string">&#x27;model-weights.h5&#x27;</span>)</span><br><span class="line">model.save(<span class="string">&#x27;model-whole.h5&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>두 가지 실험을 해본다.</p>
+<ul>
+<li>첫 번째는 훈련을 하지 않은 새로운 모델을 만들고 model-weights.h5 파일에서 훈련된 모델 파라미터를 읽어서 사용한다.</li>
+<li>두 번째는 아예 model-whole.h5 파일에서 새로운 모델을 만들어 바로 사용한다.</li>
+</ul>
+</li>
+<li><p>첫 번째 실험</p>
+<ul>
+<li>모델 불러오기</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.load_weights(<span class="string">&#x27;model-weights.h5&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>406p</li>
+<li>10개 확률 중에 가장 큰 값의 인덱스를 골라 타깃 레이블과 비교하여 정확도를 계산해 본다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">val_labels = np.argmax(model.predict(val_scaled), axis=-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(val_labels == val_target))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8840833333333333
+</code></pre>
+<ul>
+<li>모델 전체를 파일에서 읽은 다음 검증 세트의 정확도를 출력해 본다.</li>
+<li>load_model()을 이용하여 파일을 읽으면 된다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = keras.models.load_model(<span class="string">&#x27;model-whole.h5&#x27;</span>)</span><br><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>375/375 [==============================] - 1s 3ms/step - loss: 0.3263 - accuracy: 0.8841
+
+
+
+
+
+[0.326292484998703, 0.8840833306312561]
+</code></pre>
+<ul>
+<li>같은 모델을 저장하고 다시 불렀기에 이전 코드와 동일한 정확도를 얻었다.</li>
+</ul>
+<h3 id="콜백"><a href="#콜백" class="headerlink" title="콜백"></a>콜백</h3><ul>
+<li>408p</li>
+<li>지금까지 20번의 에포크 동안 모델을 훈련하여 검증 점수가 상승하는 지점을 확인했다.</li>
+<li>이전처럼 모델을 두 번씩 훈련하지 않고 한 번에 끝내기 위해 콜백을 사용할 수 있다.</li>
+<li>콜백 &#x3D; 훈련 과정 중간에 어떤 작업을 수행할 수 있게 하는 객체이다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, </span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">checkpoint_cb = keras.callbacks.ModelCheckpoint(<span class="string">&#x27;best-model.h5&#x27;</span>, </span><br><span class="line">                                                save_best_only=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>, </span><br><span class="line">          validation_data=(val_scaled, val_target),</span><br><span class="line">          callbacks=[checkpoint_cb])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;keras.callbacks.History at 0x7f3da939e310&gt;
+</code></pre>
+<ul>
+<li>model_fn()함수로 모델을 만들고 compile()을 호출한다.</li>
+<li>모델이 훈련한 후에 best-model.h5에 최상의 검증 점수를 낸 모델이 저장된다.</li>
+<li>이 모델을 load_model()함수로 다시 읽어서 예측을 수행한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = keras.models.load_model(<span class="string">&#x27;best-model.h5&#x27;</span>)</span><br><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>375/375 [==============================] - 1s 2ms/step - loss: 0.3197 - accuracy: 0.8858
+
+
+
+
+
+[0.31966158747673035, 0.8858333230018616]
+</code></pre>
+<ul>
+<li><p>EarlyStopping</p>
+<ul>
+<li>조기 종료</li>
+<li>에포크를 많이 주면 줄수록 성능(가중치 업데이트 &#x2F; 기울기가 계속 미분)이 좋아야 하는 것이 원리</li>
+<li>에포크 100 &#x2F; 50 에포크 시점과 90 에포크 시점 성능 차이 없음</li>
+<li>즉, 계속 진행해도 좋아질지 안 좋아질지 모르기에 조기 종료하는 것.</li>
+</ul>
+</li>
+<li><p>EarlyStopping 콜백을 ModelCheckpoint 콜백과 함께 사용하면 가장 낮은 검증 손실의 모델을 파일에 저장한다.</p>
+</li>
+<li><p>그리고 검증 손실이 다시 상승할 때 훈련을 중지할 수 있다.</p>
+</li>
+<li><p>훈련을 중지한 다음 현재 모델의 파라미터를 최상의 파라미터로 되돌린다.</p>
+</li>
+<li><p>두 콜백을 함께 사용해보자.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, </span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">checkpoint_cb = keras.callbacks.ModelCheckpoint(<span class="string">&#x27;best-model.h5&#x27;</span>, </span><br><span class="line">                                                save_best_only=<span class="literal">True</span>)</span><br><span class="line">early_stopping_cb = keras.callbacks.EarlyStopping(patience=<span class="number">2</span>,                 <span class="comment"># patience는 몇 개의 콜백을 리스트로 전달할지 결정한다.</span></span><br><span class="line">                                                  restore_best_weights=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target),</span><br><span class="line">                    callbacks=[checkpoint_cb, early_stopping_cb])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>몇 번째 훈련에서 중지되는지 다음 코드로 확인할 수 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(early_stopping_cb.stopped_epoch)</span><br></pre></td></tr></table></figure>
+
+<pre><code>10
+</code></pre>
+<ul>
+<li>epoch 값이 10에 다다랐을 때, ‘조기종료’한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show() </span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_7_3/output_54_0.png" alt="png"></p>
+<ul>
+<li><p>이런 식으로 조기 종료 기법을 사용하면 안심하고 에포크 횟수를 크게 지정해도 괜찮다.</p>
+</li>
+<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-06T00:00:00.000Z" title="2022. 4. 6. 오전 9:00:00">2022-04-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-09T11:19:17.417Z" title="2022. 4. 9. 오후 8:19:17">2022-04-09</time></span><span class="level-item"> minkuen </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/">machine learning</a><span> / </span><a class="link-muted" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/">비지도학습</a></span><span class="level-item">4 minutes read (About 656 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/06/chapter_6_2/">chapter_6_2</a></h1><div class="content"><h1 id="k-평균"><a href="#k-평균" class="headerlink" title="k-평균"></a>k-평균</h1><ul>
+<li><p>각각의 픽셀값 (3차원 -&gt; 1차원 배열) 평균 구함</p>
+<ul>
+<li>픽셀의 평균값은 활용해서 사과, 바나나, 파인애플에 근사한 이미지를 추출한 것</li>
+</ul>
+</li>
+<li><p>어떻게 평균값을 구할 수 있을까?</p>
+<ul>
+<li>k-평균 알고리즘 (k-Means) 알고리즘</li>
+<li>평균값 &#x3D; Cluster Center &#x3D; Centroid</li>
+</ul>
+</li>
+</ul>
+<h3 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h3><p>다음을 참고하라 : <a target="_blank" rel="noopener" href="http://bit.ly/hg-06-2">http://bit.ly/hg-06-2</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!wget https://bit.ly/fruits_300_data -O fruits_300.npy</span><br></pre></td></tr></table></figure>
 
-<pre><code>--2022-03-31 03:09:03--  https://bit.ly/fruits_300_data
+<pre><code>--2022-03-31 02:17:17--  https://bit.ly/fruits_300_data
 Resolving bit.ly (bit.ly)... 67.199.248.11, 67.199.248.10
 Connecting to bit.ly (bit.ly)|67.199.248.11|:443... connected.
 HTTP request sent, awaiting response... 301 Moved Permanently
 Location: https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy [following]
---2022-03-31 03:09:03--  https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy
-Resolving github.com (github.com)... 140.82.121.4
-Connecting to github.com (github.com)|140.82.121.4|:443... connected.
+--2022-03-31 02:17:17--  https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy
+Resolving github.com (github.com)... 192.30.255.112
+Connecting to github.com (github.com)|192.30.255.112|:443... connected.
 HTTP request sent, awaiting response... 302 Found
 Location: https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy [following]
---2022-03-31 03:09:03--  https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.110.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+--2022-03-31 02:17:17--  https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 3000128 (2.9M) [application/octet-stream]
 Saving to: ‘fruits_300.npy’
 
-fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.03s   
+fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.05s   
 
-2022-03-31 03:09:03 (107 MB/s) - ‘fruits_300.npy’ saved [3000128/3000128]
+2022-03-31 02:17:17 (56.9 MB/s) - ‘fruits_300.npy’ saved [3000128/3000128]
 </code></pre>
 <ul>
-<li>numpy 파일을 불러옴</li>
+<li>넘파이 파일을 불러옴</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">fruits = np.load(<span class="string">&#x27;fruits_300.npy&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(fruits.shape) </span><br><span class="line"><span class="built_in">print</span>(fruits.ndim)  <span class="comment"># 차원 수 확인</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">fruits = np.load(<span class="string">&#x27;fruits_300.npy&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(fruits.shape)</span><br><span class="line"><span class="built_in">print</span>(fruits.ndim)</span><br></pre></td></tr></table></figure>
 
 <pre><code>(300, 100, 100)
 3
 </code></pre>
 <ul>
-<li>첫 번째 차원(300) &#x3D; 샘플의 개수</li>
-<li>두 번째 차원(100) &#x3D; 이미지 높이</li>
-<li>세 번째 차원(100) &#x3D; 이미지 너비</li>
-<li>이미지 크기 100 x 100</li>
+<li>3차원 (샘플개수, 너비, 높이)</li>
+<li>2차원 (샘플개수, 너비 x 높이)</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 첫 번째 행에 있는 픽셀 100개에 들어있는 값을 출력</span></span><br><span class="line">fruits[<span class="number">0</span>, <span class="number">0</span>, :]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fruits_2d = fruits.reshape(-<span class="number">1</span>, <span class="number">100</span>*<span class="number">100</span>)</span><br><span class="line">fruits_2d.shape</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>array([  1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
-         1,   1,   1,   2,   1,   2,   2,   2,   2,   2,   2,   1,   1,
-         1,   1,   1,   1,   1,   1,   2,   3,   2,   1,   2,   1,   1,
-         1,   1,   2,   1,   3,   2,   1,   3,   1,   4,   1,   2,   5,
-         5,   5,  19, 148, 192, 117,  28,   1,   1,   2,   1,   4,   1,
-         1,   3,   1,   1,   1,   1,   1,   2,   2,   1,   1,   1,   1,
-         1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
-         1,   1,   1,   1,   1,   1,   1,   1,   1], dtype=uint8)
+<pre><code>(300, 10000)
 </code></pre>
 <ul>
-<li>이미지 시각화<ul>
-<li>흑백 사진을 담고 있다.</li>
-<li>0~255까지의 정숫값을 가진다.</li>
+<li>k-평균 알고리즘 활용</li>
 </ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.imshow(fruits[<span class="number">0</span>], cmap=<span class="string">&#x27;gray&#x27;</span>)  <span class="comment"># cmap 은 옵션</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line">km = KMeans(n_clusters=<span class="number">3</span>, random_state = <span class="number">42</span>)</span><br><span class="line">km.fit(fruits_2d)</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/chapter_6_1/output_8_0.png" alt="png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.imshow(fruits[<span class="number">0</span>], cmap=<span class="string">&#x27;gray_r&#x27;</span>)  <span class="comment"># cmap 은 옵션</span></span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment"># 밝은 부분은 0에 가깝다</span></span><br><span class="line"><span class="comment"># 어두운 부분은 255에 가깝다</span></span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/chapter_6_1/output_9_0.png" alt="png"></p>
-<ul>
-<li>여러 이미지 시각화</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">axs[<span class="number">0</span>].imshow(fruits[<span class="number">100</span>], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">axs[<span class="number">1</span>].imshow(fruits[<span class="number">200</span>], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_11_0.png" alt="png"></p>
-<h3 id="픽셀값-분석"><a href="#픽셀값-분석" class="headerlink" title="픽셀값 분석"></a>픽셀값 분석</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">apple = fruits[<span class="number">0</span>:<span class="number">100</span>].reshape(-<span class="number">1</span>, <span class="number">100</span> * <span class="number">100</span>)  <span class="comment"># 두 번째와 세 번째 차원 크기가 100이므로.</span></span><br><span class="line">pineapple = fruits[<span class="number">100</span>:<span class="number">200</span>].reshape(-<span class="number">1</span>, <span class="number">100</span> * <span class="number">100</span>)</span><br><span class="line">banana = fruits[<span class="number">200</span>:<span class="number">300</span>].reshape(-<span class="number">1</span>, <span class="number">100</span> * <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(apple.shape)</span><br><span class="line"><span class="built_in">print</span>(pineapple.shape)</span><br><span class="line"><span class="built_in">print</span>(banana.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(100, 10000)
-(100, 10000)
-(100, 10000)
+<pre><code>KMeans(n_clusters=3, random_state=42)
 </code></pre>
 <ul>
-<li><p>axis &#x3D; 0 vs axis &#x3D; 1 차이 확인 (p.293)</p>
-</li>
-<li><p>각 이미지에 대한 픽셀 평균값 비교</p>
-</li>
+<li>모형학습 후, labels</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># axis = 1 = 열</span></span><br><span class="line"><span class="built_in">print</span>(apple.mean(axis = <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(km.labels_)</span><br></pre></td></tr></table></figure>
 
-<pre><code>[ 88.3346  97.9249  87.3709  98.3703  92.8705  82.6439  94.4244  95.5999
-  90.681   81.6226  87.0578  95.0745  93.8416  87.017   97.5078  87.2019
-  88.9827 100.9158  92.7823 100.9184 104.9854  88.674   99.5643  97.2495
-  94.1179  92.1935  95.1671  93.3322 102.8967  94.6695  90.5285  89.0744
-  97.7641  97.2938 100.7564  90.5236 100.2542  85.8452  96.4615  97.1492
-  90.711  102.3193  87.1629  89.8751  86.7327  86.3991  95.2865  89.1709
-  96.8163  91.6604  96.1065  99.6829  94.9718  87.4812  89.2596  89.5268
-  93.799   97.3983  87.151   97.825  103.22    94.4239  83.6657  83.5159
- 102.8453  87.0379  91.2742 100.4848  93.8388  90.8568  97.4616  97.5022
-  82.446   87.1789  96.9206  90.3135  90.565   97.6538  98.0919  93.6252
-  87.3867  84.7073  89.1135  86.7646  88.7301  86.643   96.7323  97.2604
-  81.9424  87.1687  97.2066  83.4712  95.9781  91.8096  98.4086 100.7823
- 101.556  100.7027  91.6098  88.8976]
+<pre><code>[2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+ 2 2 2 2 2 0 2 0 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 2 0 0 2 2 2 2 2 2 2 2 0 2
+ 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1]
 </code></pre>
 <ul>
-<li>각 과일에 대한 히스토그램 작성<ul>
-<li>히스토그램은 값이 발생하는 빈도를 그래프로 표시한 것.</li>
-<li>보통 x축은 값의 구간이고, y축은 발생 빈도이다.</li>
+<li>직접 샘플의 개수 확인</li>
 </ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plt.hist(np.mean(apple, axis = <span class="number">1</span>), alpha = <span class="number">0.8</span>)     <span class="comment"># alpha 는 투명도 조절하는 매개변수</span></span><br><span class="line">plt.hist(np.mean(pineapple, axis = <span class="number">1</span>), alpha = <span class="number">0.8</span>)</span><br><span class="line">plt.hist(np.mean(banana, axis = <span class="number">1</span>), alpha = <span class="number">0.8</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;pineapple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;pixel average&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;prequency&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.unique(km.labels_, return_counts=<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
 
-
-<p><img src="/images/chapter_6_1/output_18_0.png" alt="png"></p>
-<ul>
-<li><p>위 결과에서 banana는 픽셀 평균값이 다른 두 과일과 확연히 다르다.</p>
-<ul>
-<li>banana는 픽셀 평균값으로 구분하기 쉽다.</li>
-</ul>
-</li>
-<li><p>이번에는 샘플의 평균값이 아니라 픽셀별 평균값을 비교해 본다.</p>
-</li>
-<li><p>즉, 전체 샘플에 대해 각 픽셀의 평균을 조사한다.</p>
-</li>
-<li><p>axis&#x3D;0으로 지정하여 픽셀의 평균을 계산하면 된다.</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">axs[<span class="number">0</span>].bar(<span class="built_in">range</span>(<span class="number">10000</span>), np.mean(apple, axis=<span class="number">0</span>))</span><br><span class="line">axs[<span class="number">1</span>].bar(<span class="built_in">range</span>(<span class="number">10000</span>), np.mean(pineapple, axis=<span class="number">0</span>))</span><br><span class="line">axs[<span class="number">2</span>].bar(<span class="built_in">range</span>(<span class="number">10000</span>), np.mean(banana, axis=<span class="number">0</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_21_0.png" alt="png"></p>
-<ul>
-<li>대표 이미지</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apple_mean = np.mean(apple, axis=<span class="number">0</span>).reshape(<span class="number">100</span>, <span class="number">100</span>)</span><br><span class="line">pineapple_mean = np.mean(pineapple, axis=<span class="number">0</span>).reshape(<span class="number">100</span>, <span class="number">100</span>)</span><br><span class="line">banana_mean = np.mean(banana, axis=<span class="number">0</span>).reshape(<span class="number">100</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">axs[<span class="number">0</span>].imshow(apple_mean, cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">axs[<span class="number">1</span>].imshow(pineapple_mean, cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">axs[<span class="number">2</span>].imshow(banana_mean, cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_23_0.png" alt="png"></p>
-<h3 id="평균값과-가까운-사진-고르기"><a href="#평균값과-가까운-사진-고르기" class="headerlink" title="평균값과 가까운 사진 고르기"></a>평균값과 가까운 사진 고르기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abs_diff = np.<span class="built_in">abs</span>(fruits - apple_mean)</span><br><span class="line">abs_mean = np.mean(abs_diff, axis=(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(abs_mean.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(300,)
+<pre><code>(array([0, 1, 2], dtype=int32), array([111,  98,  91]))
 </code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_fruits</span>(<span class="params">arr, ratio=<span class="number">1</span></span>):</span><br><span class="line">    n = <span class="built_in">len</span>(arr)    <span class="comment"># n은 샘플 개수입니다</span></span><br><span class="line">    <span class="comment"># 한 줄에 10개씩 이미지를 그립니다. 샘플 개수를 10으로 나누어 전체 행 개수를 계산합니다. </span></span><br><span class="line">    rows = <span class="built_in">int</span>(np.ceil(n/<span class="number">10</span>))</span><br><span class="line">    <span class="comment"># 행이 1개 이면 열 개수는 샘플 개수입니다. 그렇지 않으면 10개입니다.</span></span><br><span class="line">    cols = n <span class="keyword">if</span> rows &lt; <span class="number">2</span> <span class="keyword">else</span> <span class="number">10</span></span><br><span class="line">    fig, axs = plt.subplots(rows, cols, </span><br><span class="line">                            figsize=(cols*ratio, rows*ratio), squeeze=<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(rows):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(cols):</span><br><span class="line">            <span class="keyword">if</span> i*<span class="number">10</span> + j &lt; n:    <span class="comment"># n 개까지만 그립니다.</span></span><br><span class="line">                axs[i, j].imshow(arr[i*<span class="number">10</span> + j], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">            axs[i, j].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">draw_fruits(fruits[km.labels_==<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_6_2/output_15_0.png" alt="png"></p>
+<h3 id="클러스터-중심"><a href="#클러스터-중심" class="headerlink" title="클러스터 중심"></a>클러스터 중심</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">draw_fruits(km.cluster_centers_.reshape(-<span class="number">1</span>, <span class="number">100</span>, <span class="number">100</span>), ratio=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_6_2/output_17_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(km.transform(fruits_2d[<span class="number">100</span>:<span class="number">101</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[3393.8136117  8837.37750892 5267.70439881]]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(km.predict(fruits_2d[<span class="number">100</span>:<span class="number">101</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">draw_fruits(fruits[<span class="number">100</span>:<span class="number">101</span>])</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_6_2/output_20_0.png" alt="png"></p>
+<h3 id="최적의-k-평균-찾기"><a href="#최적의-k-평균-찾기" class="headerlink" title="최적의 k-평균 찾기"></a>최적의 k-평균 찾기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">inertia = []</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">7</span>):</span><br><span class="line">  km = KMeans(n_clusters = k, random_state=<span class="number">42</span>)</span><br><span class="line">  km.fit(fruits_2d)</span><br><span class="line">  inertia.append(km.inertia_)</span><br><span class="line">plt.plot(<span class="built_in">range</span>(<span class="number">2</span>, <span class="number">7</span>), inertia)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/chapter_6_2/output_22_0.png" alt="png"></p>
 <ul>
-<li>오차의 값이 가장 작은 순서대로 100개를 골라본다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apple_index = np.argsort(abs_mean)[:<span class="number">100</span>]</span><br><span class="line">fig, axs = plt.subplots(<span class="number">10</span>, <span class="number">10</span>, figsize=(<span class="number">10</span>,<span class="number">10</span>))  </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_27_0.png" alt="png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">apple_index = np.argsort(abs_mean)[:<span class="number">100</span>]</span><br><span class="line">fig, axs = plt.subplots(<span class="number">10</span>, <span class="number">10</span>, figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):     <span class="comment"># 2중 for문</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        axs[i, j].imshow(fruits[apple_index[i*<span class="number">10</span> + j]], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">        axs[i, j].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/chapter_6_1/output_28_0.png" alt="png"></p>
-<ul>
-<li>Reference : 혼자 공부하는 머신러닝 + 딥러닝</li>
+<li><p>위 결과 최적의 k-평균은 3.0 정도 된다.</p>
+</li>
+<li><p>chapter6. 비지도학습은 잘 안 쓰인다. 시각화 문법만 유의해서 살펴보자.</p>
+</li>
+<li><p>Reference : 혼자 공부하는 머신러닝 + 딥러닝</p>
+</li>
 </ul>
 </div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/tags/python/page/0/">Previous</a></div><div class="pagination-next"><a href="/tags/python/page/2/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/tags/python/">1</a></li><li><a class="pagination-link" href="/tags/python/page/2/">2</a></li><li><a class="pagination-link" href="/tags/python/page/3/">3</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">130</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">50</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">34</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/JPA/"><span class="level-start"><span class="level-item">JPA</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/Java/"><span class="level-start"><span class="level-item">Java</span></span><span class="level-end"><span class="level-item tag">10</span></span></a><ul><li><a class="level is-mobile" href="/categories/Java/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Java/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/JavaScript/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="level-start"><span class="level-item">생활코딩</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/R/"><span class="level-start"><span class="level-item">R</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/R/%EA%B8%B0%EC%B4%88/"><span class="level-start"><span class="level-item">기초</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/R/%EB%B6%84%EC%84%9D-%EB%B0%A9%EB%B2%95/"><span class="level-start"><span class="level-item">분석 방법</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">18</span></span></a><ul><li><a class="level is-mobile" href="/categories/SQL/PL-SQL/"><span class="level-start"><span class="level-item">PL/SQL</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/SQL/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Vue-js/"><span class="level-start"><span class="level-item">Vue.js</span></span><span class="level-end"><span class="level-item tag">7</span></span></a><ul><li><a class="level is-mobile" href="/categories/Vue-js/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/chatbot/"><span class="level-start"><span class="level-item">chatbot</span></span><span class="level-end"><span class="level-item tag">11</span></span></a><ul><li><a class="level is-mobile" href="/categories/chatbot/kakao-chatbot/"><span class="level-start"><span class="level-item">kakao_chatbot</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">16</span></span></a><ul><li><a class="level is-mobile" href="/categories/frontEnd/html-css/"><span class="level-start"><span class="level-item">html &amp; css</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/frontEnd/javascript/"><span class="level-start"><span class="level-item">javascript</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/git/github-blog/"><span class="level-start"><span class="level-item">github blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">34</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/"><span class="level-start"><span class="level-item">library</span></span><span class="level-end"><span class="level-item tag">9</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/library/numpy/"><span class="level-start"><span class="level-item">numpy</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pandas/"><span class="level-start"><span class="level-item">pandas</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/pyspark/"><span class="level-start"><span class="level-item">pyspark</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/library/visualization/"><span class="level-start"><span class="level-item">visualization</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/machine-learning/"><span class="level-start"><span class="level-item">machine learning</span></span><span class="level-end"><span class="level-item tag">22</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/machine-learning/%EA%B0%9C%EB%85%90/"><span class="level-start"><span class="level-item">개념</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC/"><span class="level-start"><span class="level-item">데이터 전처리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%94%A5%EB%9F%AC%EB%8B%9D/"><span class="level-start"><span class="level-item">딥러닝</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5/"><span class="level-start"><span class="level-item">비지도학습</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"><span class="level-start"><span class="level-item">알고리즘</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/python/machine-learning/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D/"><span class="level-start"><span class="level-item">인공신경망</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/"><span class="level-start"><span class="level-item">기초문법</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%EC%9E%90%EB%A3%8C%ED%98%95-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/"><span class="level-start"><span class="level-item">자료형, 반복문, 조건문</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%81%B4%EB%9E%98%EC%8A%A4/"><span class="level-start"><span class="level-item">클래스</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98/"><span class="level-start"><span class="level-item">함수</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">18</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/NiFi/"><span class="level-start"><span class="level-item">NiFi</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/VScode/"><span class="level-start"><span class="level-item">VScode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/airflow/"><span class="level-start"><span class="level-item">airflow</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/anaconda/"><span class="level-start"><span class="level-item">anaconda</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/crawling/"><span class="level-start"><span class="level-item">crawling</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/elasticsearch/"><span class="level-start"><span class="level-item">elasticsearch</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/oracle/"><span class="level-start"><span class="level-item">oracle</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/postgreSQL/"><span class="level-start"><span class="level-item">postgreSQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/spark/"><span class="level-start"><span class="level-item">spark</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/wsl2/"><span class="level-start"><span class="level-item">wsl2</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-25T00:00:00.000Z">2023-09-25</time></p><p class="title"><a href="/2023/09/25/jpa_jpql_2/">JPQL 중급 문법</a></p><p class="categories"><a href="/categories/JPA/">JPA</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-15T00:00:00.000Z">2023-09-15</time></p><p class="title"><a href="/2023/09/15/jpa_jpql/">JPQL</a></p><p class="categories"><a href="/categories/JPA/">JPA</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-09T00:00:00.000Z">2023-09-09</time></p><p class="title"><a href="/2023/09/09/jpa_value_type/">JPA 값 타입</a></p><p class="categories"><a href="/categories/JPA/">JPA</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-17T00:00:00.000Z">2023-07-17</time></p><p class="title"><a href="/2023/07/17/jpa_relation/">JPA 프록시, 연관 관계</a></p><p class="categories"><a href="/categories/JPA/">JPA</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-04T00:00:00.000Z">2023-07-04</time></p><p class="title"><a href="/2023/07/04/jpa_advanced_mapping/">JPA 고급 매핑</a></p><p class="categories"><a href="/categories/JPA/">JPA</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/09/"><span class="level-start"><span class="level-item">September 2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/07/"><span class="level-start"><span class="level-item">July 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/06/"><span class="level-start"><span class="level-item">June 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/05/"><span class="level-start"><span class="level-item">May 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/04/"><span class="level-start"><span class="level-item">April 2023</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">September 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/08/"><span class="level-start"><span class="level-item">August 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">July 2022</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">June 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JPA/"><span class="tag">JPA</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JPA-%EA%B8%B0%EC%B4%88/"><span class="tag">JPA 기초</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NiFi/"><span class="tag">NiFi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Notion/"><span class="tag">Notion</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PL-SQL/"><span class="tag">PL/SQL</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R/"><span class="tag">R</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/R-Markdown/"><span class="tag">R Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VScord/"><span class="tag">VScord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue-js/"><span class="tag">Vue.js</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue-js-%EA%B8%B0%EC%B4%88/"><span class="tag">Vue.js 기초</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anaconda/"><span class="tag">anaconda</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/chatbot/"><span class="tag">chatbot</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crawling/"><span class="tag">crawling</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github-blog/"><span class="tag">github blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/heroku/"><span class="tag">heroku</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/javascript/"><span class="tag">javascript</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kakao-chatbot/"><span class="tag">kakao_chatbot</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/tags/oracle/"><span class="tag">oracle</span><span class="tag">15</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgreSQL/"><span class="tag">postgreSQL</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/"><span class="tag">생활코딩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="kmk3593 blog" height="28"></a><p class="is-size-7"><span>&copy; 2023 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
